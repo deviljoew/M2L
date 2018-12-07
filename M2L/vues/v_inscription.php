@@ -142,7 +142,7 @@
               <strong><input type="text" class="form-control form-control-sm" value="<?php echo $ville;?>" id="ville" name="ville" placeholder="Ville">
             </div>
           </div>
-          <span style="visibility:hidden;color:red;">*</span><button type="submit" class="btn btn-light" style="">Inscription</button>
+          <span style="visibility:hidden;color:red;">*</span><button type="submit" class="btn btn-success" style="">Inscription</button>
           </div>
 
         </form>

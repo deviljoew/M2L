@@ -82,7 +82,7 @@ function verifChamps()
             </div>
           </div>
         </div>
-          <strong><span style="color:#33ffad;visibility:hidden;">*</span></strong><button type="submit" class="btn btn-light" style="">Envoyer</button>
+          <strong><span style="color:#33ffad;visibility:hidden;">*</span></strong><button type="submit" class="btn btn-success" style="">Envoyer</button>
           </div>
         </form>
       </div>
