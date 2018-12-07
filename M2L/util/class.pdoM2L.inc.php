@@ -132,7 +132,7 @@ public function identification($mail,$mdp)
 
   }
 
- 
+
   /**
   * Récupere le lien pour savoir si c'est un adhérent
   * @param $mail
@@ -210,11 +210,26 @@ public function identification($mail,$mdp)
   public function recupLigneFraisValideTre()
   {
     $req="select NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais,demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=1 order by NOM;";
-    $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais trésorier validé à échoué".$req);
+    $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais trésorier validé a échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
   }
 
+
+  /**
+  * Récupere les frais professionnels du demandeur en attente en fonction du mail
+  *
+  * @param $mail
+  * @return un tableau associatif du motif
+ */
+
+  public function recupNomPrenomDemandeursTre()
+  {
+    $req="select DISTINCT NOM,PRENOM from lignes_frais, demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=1 order by NOM;";
+    $res = PdoM2L::$monPdo->query($req)or die ("La récup des nom des demandeur de lignes de frais a échoué".$req);
+    $frais= $res->fetchAll();
+    return $frais;
+  }
 
   /**
   * Récupere les frais professionnels du demandeur en attente en fonction du mail et de la date
@@ -274,7 +289,7 @@ public function identification($mail,$mdp)
     $adherent= $res->fetch();
     return $adherent;
   }
-  
+
 /**
   * Fait le lien entre le demandeur qui est un adhérent de la base de données
   *

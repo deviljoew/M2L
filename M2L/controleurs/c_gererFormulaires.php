@@ -101,10 +101,12 @@ switch($action)
 		include("./vues/v_demandeattenteTre.php");
 		break;
 	}
+
 	case 'fraisConfirmerTre':
 	{
 		$mail=$_SESSION['mail'];
-		$fraisAttente =$pdo->recupLigneFraisValideTre();
+		$fraisValides = $pdo->recupLigneFraisValideTre();
+		$fraisDemandeur = $pdo->recupNomPrenomDemandeursTre();
 		Include("./vues/v_demandeverifieTre.php");
 		break;
 	}

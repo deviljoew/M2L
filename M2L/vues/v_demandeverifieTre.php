@@ -16,7 +16,7 @@
               <td class="display-4" style="font-size:20px;text-align:center;background-color:#AAAAAA;">Coût total des frais</td>
             </tr>
           <?php
-                foreach($fraisAttente as $unfrais){
+                foreach($fraisValides as $unfrais){
             ?>
           <tr>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['NOM'] != ""){echo $unfrais['NOM'];}else{ echo "non renseigné";}?></td>
@@ -30,7 +30,20 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].'€';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
            </tr>
-          <?php } ?>
+                     <?php } ?>
+           <tr>
+             <td colspan=10 style="text-align:center;"><div class="dropdown">
+               <button style="width:800px;" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <strong>Générer document CERFA (PDF)</strong>
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <?php foreach($fraisDemandeur as $unDemandeur){ ?>
+                    <a style="width:800px;" class="dropdown-item" href="index.php?uc=formulaire&action=voirProfil"><?php echo $unDemandeur['NOM'] . " " .  $unDemandeur['PRENOM'];?></a>
+                <?php } ?>
+                </div>
+               </div>
+             </td>
+           </tr>
         </table>
     </div>
 </div>
