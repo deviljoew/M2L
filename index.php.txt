@@ -1,3 +1,0 @@
-<HTLM>
-coucou
-</HTML>
