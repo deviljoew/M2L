@@ -30,7 +30,7 @@
           </tr>
           <?php } ?>
           <td colspan=10 style="text-align:center;">
-             <a href="index.php?uc=Profil&action=modifierProfil"><button style="width:100%;" class="btn btn-dark">Visualiser le bordereau de frais</button></a>
+             <a href="index.php?uc=Profil&action=modifierProfil"><button style="width:100%;" class="btn btn-success">Visualiser le bordereau de frais</button></a>
             </td>
         </table>
     </div>
