@@ -125,7 +125,8 @@ switch($action)
 
 	case 'genererPDF' :
 	{
-
+		$nom = $_REQUEST['nom'];
+		$prenom = $_REQUEST['prenom'];
 		break;
 	}
 }
