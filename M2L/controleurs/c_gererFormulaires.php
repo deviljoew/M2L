@@ -122,5 +122,11 @@ switch($action)
 		include("./vues/v_demandeattenteTre.php");
 		break;
 	}
+
+	case 'genererPDF' :
+	{
+
+		break;
+	}
 }
 ?>
