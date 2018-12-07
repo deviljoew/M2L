@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
+    <div class="col-md-9" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
     <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Vos notes de frais validées :</p>
         <table class="table table-light table-hover table-bordered">
             <tr>
@@ -12,7 +12,7 @@
               <td class="display-4" style="font-size:15px;text-align:center;">Coût repas</td>
               <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
               <td class="display-4" style="font-size:20px;text-align:center;background-color:#AAAAAA;">Coût total des frais</td>
-              
+
             </tr>
           <?php
                 foreach($fraisAttente as $unfrais){
@@ -26,7 +26,7 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].'€';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].'€';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
-       
+
           </tr>
           <?php } ?>
           <td colspan=10 style="text-align:center;">
@@ -34,7 +34,7 @@
             </td>
         </table>
     </div>
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:700px;align:center;">
+    <div class="col-md-3" style="background-color:black; opacity:0.75; height:700px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
         Votre liste de frais acceptées.<br>En fin d'année, vous allez pouvoir recevoir un document CERFA (pdf) qui vous sera envoyé par mail en cliquant sur le bouton associé. (Cela comprend uniquement les frais acceptés de l'année en cours)<br>Vous pourrez ainsi le joindre à vos impots et faire valoir ce don lors de votre déclaration de revenus pour

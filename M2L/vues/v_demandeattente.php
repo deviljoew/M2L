@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
+    <div class="col-md-9" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
     <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Vos notes de frais :</p>
         <table class="table table-light table-hover table-bordered">
             <tr>
@@ -32,11 +32,11 @@
           </tr>
 
           <?php } ?>
-           
+
         </table>
 
     </div>
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:700px;align:center;">
+    <div class="col-md-3" style="background-color:black; opacity:0.75; height:700px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes en attentes</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
         Vos lignes de frais en attente de validation par le trésorier.<br><br>
