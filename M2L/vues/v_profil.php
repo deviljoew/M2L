@@ -24,7 +24,7 @@
           </tr>
           <tr>
             <td colspan=7 style="text-align:center;">
-             <a href="index.php?uc=Profil&action=modifierProfil"><button style="width:100%;" class="btn btn-light">Modifier profil</button></a>
+             <a href="index.php?uc=Profil&action=modifierProfil"><button style="width:100%;" class="btn btn-success">Modifier profil</button></a>
             </td>
           </tr>
         </table>
