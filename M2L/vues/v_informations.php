@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12" style="background-color:black; opacity:0.75; height:700px;align:center;">
+    <div class="col-md-12" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">La maison des ligues de Lorraine</p>
       <p class="h5" style="color:white;margin-left:20px;margin-right:10px;">
         <br>
@@ -14,7 +14,6 @@
         Les associations sportives (les clubs) peuvent profiter de dispositions fiscales apparues en 2008 pour faire bénéficier de remises d'impôts aux adhérents engageant des frais, en particulier dans le cadre de déplacements liés à des compétitions, des stages sportifs, des réunions...<br> Il s'agit de faciliter par l'informatisation l'établissement du document officiel permettant la remise d'impôts.
       </p>
     </div>
-  
+
       </div>
     </div>
-

@@ -7,6 +7,6 @@
       <input type="password" class="form-control form-control-sm" id="motdepasseconnexion" name="motdepasseconnexion" placeholder="Mot de passe">
     </div>
   </div>
-    <button type="submit" name="Valider" class="btn btn-success mx-sm-1 mb-1" style="margin-top:2px;">Connexion</button>
-	<a style="color:black;" href="index.php?uc=oubliemdp&action=envoimdp">mot de passe oublié ?</a>
+    <button TITLE="Connexion" type="submit" name="Valider" class="btn btn-success mx-sm-1 mb-1" style="margin-top:2px;">Connexion</button>
+	<a style="color:white;" href="index.php?uc=oubliemdp&action=envoimdp">mot de passe oublié ?</a>
 </form>

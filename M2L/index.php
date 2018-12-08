@@ -42,7 +42,6 @@ $date="";
 $rue="";
 $codepostal="";
 $ville="";
-
 $motif="";
 $dateform="";
 $peage="";
@@ -50,8 +49,10 @@ $trajet="";
 $km="";
 $hebergement="";
 $repas="";
-
 $message="";
+
+$colorHTML = "#8eF989";
+
 $action = $_REQUEST['action'];
 switch($uc)
 {

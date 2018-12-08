@@ -47,14 +47,14 @@ function verifChamps()
             </tr>
             <tr>
               <td colspan=7 style="text-align:center;">
-                <button value="modifier" type="submit" style="width:400px;margin-right:150px;" class="btn btn-dark">Modifier</button>
+                <button TITLE="Modifier la demande" value="modifier" type="submit" style="width:400px;margin-right:150px;" class="btn btn-dark">Modifier</button>
                 </form>
-                <a class="btn btn-dark" style="width:400px;" href="index.php?uc=formulaire&action=fraisAttente">Annuler</a>
+                <a TITLE="Annuler la modification" class="btn btn-dark" style="width:400px;" href="index.php?uc=formulaire&action=fraisAttente">Annuler</a>
               </td>
             </tr>
         </table>
     </div>
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:700px;align:center;">
+    <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Modification des demandes</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
         Vous pouvez modifier vos lignes de frais ci contre<br><br>

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 setHeight" style="background-color:#00000055; opacity:0.9;text-align:center;">
+    <div class="col-md-12 setHeight" style="background-color:#00000055; opacity:0.9;text-align:center;height:740px;">
       <a class="Display-4" style="font-size:20px;text-align:center;color:white;decoration:none;font:bold;" href="index.php?uc=Profil&action=voirProfil"><img style="margin:20px;" src="./images/usericone.png" width="150px"/></a>
       <p class="Display-4" style="font-size:18px;color:white;">
         <strong><?php echo $civ." ".$_SESSION['nom'];?></strong><br>
@@ -24,7 +24,7 @@
           </tr>
           <tr>
             <td colspan=7 style="text-align:center;">
-             <a href="index.php?uc=Profil&action=modifierProfil"><button style="width:100%;" class="btn btn-success">Modifier profil</button></a>
+             <a TITLE="Modifier le profil" href="index.php?uc=Profil&action=modifierProfil"><button style="width:100%;" class="btn btn-success">Modifier profil</button></a>
             </td>
           </tr>
         </table>

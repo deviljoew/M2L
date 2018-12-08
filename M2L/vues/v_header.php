@@ -31,20 +31,20 @@ if(!isset($_REQUEST['uc'])){
                   {
                       ?>
                     <li class="nav-item <?php if($action == "formdon"){?> active <?php } ?>">
-                      <a class="nav-link hoverNav" href="index.php?uc=formulaire&action=formdon">Formulaire de dons</a>
+                      <a TITLE="Formulaire de dons" class="nav-link hoverNav" href="index.php?uc=formulaire&action=formdon">Formulaire de dons</a>
                     </li>
                     <li class="nav-item <?php if($action == "attente"){?> active <?php } ?>">
-                      <a class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttente">Demandes en attentes</a>
+                      <a TITLE="Demandes en attentes" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttente">Demandes en attentes</a>
                     </li>
                     <li class="nav-item <?php if($action == "valide"){?> active <?php } ?>">
-                      <a class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmer">Demandes validés</a>
+                      <a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmer">Demandes validées</a>
                     </li>
                 <?php }else if(isset($_SESSION['tresorier']) && $_SESSION['tresorier'] == 'ok'){ ?>
                     <li class="nav-item <?php if($action == "attente"){?> active <?php } ?>">
-                      <a class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttenteTre">Frais à valider</a>
+                      <a TITLE="Demandes à valider" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttenteTre">Frais à valider</a>
                     </li>
                     <li class="nav-item <?php if($action == "valide"){?> active <?php } ?>">
-                      <a class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmerTre">Frais acceptés</a>
+                      <a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmerTre">Frais acceptés</a>
                     </li>
                 <?php } ?>
               </ul>

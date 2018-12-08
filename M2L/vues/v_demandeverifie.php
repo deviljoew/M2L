@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-9" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
+    <div class="col-md-9" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;height:740px;">
     <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Vos notes de frais validées :</p>
         <table class="table table-light table-hover table-bordered">
             <tr>
@@ -30,11 +30,11 @@
           </tr>
           <?php } ?>
           <td colspan=10 style="text-align:center;">
-             <a href="index.php?uc=formulaire&action=afficherBordereau&mail=<?php $mail;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser le bordereau de frais</button></a>
+             <a TITLE="Visualiser votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?php $mail;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser le bordereau de frais</button></a>
             </td>
         </table>
     </div>
-    <div class="col-md-3" style="background-color:black; opacity:0.75; height:700px;align:center;">
+    <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
         Votre liste de frais acceptées.<br>En fin d'année, vous allez pouvoir recevoir un document CERFA (pdf) qui vous sera envoyé par mail en cliquant sur le bouton associé. (Cela comprend uniquement les frais acceptés de l'année en cours)<br>Vous pourrez ainsi le joindre à vos impots et faire valoir ce don lors de votre déclaration de revenus pour

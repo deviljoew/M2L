@@ -61,7 +61,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:700px;align:center;">
+    <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">La maison des ligues de Lorraine</p>
       <p class="h5" style="color:white;margin-left:20px;margin-right:10px;">
         <br>
@@ -74,36 +74,36 @@
         Les associations sportives (les clubs) peuvent profiter de dispositions fiscales apparues en 2008 pour faire bénéficier de remises d'impôts aux adhérents engageant des frais, en particulier dans le cadre de déplacements liés à des compétitions, des stages sportifs, des réunions... Il s'agit de faciliter par l'informatisation l'établissement du document officiel permettant la remise d'impôts.
       </p>
     </div>
-    <div class="col-md-8" style="background-color:#00000055;z-index:1;">
-  <p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:#33ffad;">  * Champs obligatoires</span></strong></p>
+    <div class="col-md-8" style="background-color:#00000055;z-index:1;height:740px;">
+  <p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en name " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form name="inscription" style="margin:50px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
           <div class="form-row">
-              <strong><span style="color:#33ffad;">*</span></strong><div class="form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
               <input type="email" class="form-control form-control-sm" value="<?php if(isset($_POST['mail'])) { echo $_REQUEST['mail'];} ;?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com">
             </div>
-              <strong><span style="color:#33ffad;">*</span></strong><div class="form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
               <input type="password" class="form-control form-control-sm" id="motdepasse1" name="motdepasse1" placeholder="Mot de passe">
             </div>
-              <strong><span style="color:#33ffad;">*</span></strong><div class="form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
               <input type="password" class="form-control form-control-sm" id="motdepasse2" name="motdepasse2" placeholder="Confirmer le mot de passe">
             </div>
           </div>
           <div class="form-check">
-            <strong><span style="visibility:hidden;color:#33ffad;">*</span></strong><input class="form-check-input" type="checkbox" value="<?php echo $_POST['checkboxlicence']; ?>"   id="checkboxlicence" name="checkboxlicence" onClick="cocher('licence', 'adressemail', 'motdepasse1', 'motdepasse2', 'civilite', 'prenom', 'nom', 'datenaissance', 'rue', 'codepostal', 'ville' );">
+            <strong><span style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span></strong><input class="form-check-input" type="checkbox" value="<?php echo $_POST['checkboxlicence']; ?>"   id="checkboxlicence" name="checkboxlicence" onClick="cocher('licence', 'adressemail', 'motdepasse1', 'motdepasse2', 'civilite', 'prenom', 'nom', 'datenaissance', 'rue', 'codepostal', 'ville' );">
             <label style="color:white;" class="form-check-label" for="checkboxlicence">
               Cocher si vous êtes licencié
             </label>
           </div>
           <div class="form-row">
-              <strong><span id="checked" style="visibility:hidden;color:#33ffad;">*</span></strong><div class="form-group col-md-3">
+              <strong><span id="checked" style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
               <input type="text" class="form-control form-control-sm" disabled="true" value="<?php if(isset($_POST['licence'])) { echo $_REQUEST['licence'];} ?>" id="licence" name="licence"  placeholder="Licence">
             </div>
             <div class="form-group col-md-5">
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked" style="color:#33ffad;">*</span></strong><div class="form-group col-md-3">
+            <strong><span id="unchecked" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
               <select class="form-control form-control-sm" id="civilite" name="civilite">
                 <option value="" selected>Choisir une civilite</option>
                 <option value="F" <?php if (isset($_POST['civilite']) && $_POST['civilite']=="F") {echo "selected='selected'" ; } ?>>Feminin</option>
@@ -114,15 +114,15 @@
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked1" style="color:#33ffad;">*</span></strong><div class="form-group col-md-5">
+            <strong><span id="unchecked1" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-5">
               <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['nom'])) { echo $_REQUEST['nom'];} ?>" id="nom" name="nom" placeholder="Nom">
             </div>
-            <strong><span id="unchecked2" style="color:#33ffad;">*</span></strong><div class="form-group col-md-5">
+            <strong><span id="unchecked2" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-5">
             <input type="text" class="form-control form-control-sm" id="prenom" value="<?php if(isset($_POST['prenom'])) { echo $_REQUEST['prenom'];} ?>" name="prenom" placeholder="Prénom">
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked3" style="color:#33ffad;">*</span></strong><div class="input-group col-md-5">
+            <strong><span id="unchecked3" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group col-md-5">
               <input type="date" class="form-control form-control-sm" id="datenaissance" value="<?phpif(isset($_POST['datenaissance'])) { echo $_REQUEST['datenaissance'];} ?>" name="datenaissance">
               <div class="form-group input-group-append">
                 <span class="input-group-text form-control-sm">Date naissance</span>
@@ -130,19 +130,19 @@
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked4" style="color:#33ffad;">*</span></strong><div class="form-group col-md-6">
+            <strong><span id="unchecked4" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-6">
               <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['rue'])) { echo $_REQUEST['rue'];} ?>" id="rue" name="rue" placeholder="Rue">
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked5" style="color:#33ffad;">*</span></strong><div class="form-group col-md-2">
+            <strong><span id="unchecked5" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-2">
               <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['codepostal'])) { echo $_REQUEST['codepostal'];} ?>" id="codepostal" name="codepostal" placeholder="Code postal">
             </div>
-            <strong><span id="unchecked6" style="color:#33ffad;">*</span></strong><div class="form-group col-md-6">
+            <strong><span id="unchecked6" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-6">
               <strong><input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['ville'])) { echo $_REQUEST['ville'];} ?>" id="ville" name="ville" placeholder="Ville">
             </div>
           </div>
-          <span style="visibility:hidden;color:red;">*</span><button type="submit" class="btn btn-success" style="">Inscription</button>
+          <span style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span><button TITLE="S'inscrire" type="submit" class="btn btn-success" style="">Inscription</button>
           </div>
 
         </form>
