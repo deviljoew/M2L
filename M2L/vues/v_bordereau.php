@@ -27,7 +27,7 @@
           <td class="display-4" style="font-size:15px;text-align:center;">Coût péage</td>
           <td class="display-4" style="font-size:15px;text-align:center;">Coût repas</td>
           <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
-          <td class="display-4" style="font-size:20px;text-align:center;background-color:#AAAAAA;">Coût total des frais</td>
+          <td class="display-4" style="font-size:20px;text-align:center;background-color:#CCCCCC;">Coût total des frais</td>
 
         </tr>
       <?php
@@ -41,11 +41,38 @@
         <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_PEAGE'] != ""){echo $unfrais['COUT_PEAGE'].'€';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].'€';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].'€';}else{ echo "non renseigné";}?></td>
-        <td class="h4" style="font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
-
+        <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
       </tr>
       <?php } ?>
+      <tr>
+        <td colspan=7 class="h4" style="font-size:17px;text-align:center;">Montant total des frais de déplacement</td>
+        <td class="h4" style="font-size:17px;text-align:center;background-color:#9CFCAC;"><?php $fraisTotal = 0; foreach($fraisValide as $unfrais){ $fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']); } echo $fraisTotal.'€'; ?></td>
+      </tr>
     </table>
+    <?php if(isset($mail)){?>
+      <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Je suis le représentant des adhérents suivants :
+        <br><br>
+      </p>
+    <?php }else{?>
+      <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Je suis licencié sous le n° de licence suivant :
+        <br><br>
+      </p>
+    <?php } ?>
+      <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Montant total des dons :
+        <?php echo $fraisTotal ?>
+        <br><br>
+      </p>
+      <p class="h4" style="text-align: center;font-size:20px;color:white;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de toutes les justificatifs correspondants
+        <br><br>
+      </p>
+      <div style="background-color:red;">
+        <p class="h4" style="margin-left:600px;font-size:20px;color:white;margin-top:10px;">A<span style="margin-left:200px;">Le</span>
+          <br><br>
+        </p>
+        <p class="h4" style="margin-left:700px;font-size:20px;color:white;margin-top:10px;">Signature du bénévole :
+          <br><br>
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -13,7 +13,7 @@
               <td class="display-4" style="font-size:15px;text-align:center;">Coût péage</td>
               <td class="display-4" style="font-size:15px;text-align:center;">Coût repas</td>
               <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
-              <td class="display-4" style="font-size:20px;text-align:center;background-color:#AAAAAA;">Coût total des frais</td>
+              <td class="display-4" style="font-size:20px;text-align:center;background-color:#CCCCCC;">Coût total</td>
             </tr>
           <?php
                 foreach($fraisValides as $unfrais){
@@ -28,7 +28,7 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_PEAGE'] != ""){echo $unfrais['COUT_PEAGE'].'€';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].'€';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].'€';}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
+            <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
            </tr>
                      <?php } ?>
            <tr>
