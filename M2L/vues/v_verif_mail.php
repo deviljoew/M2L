@@ -9,9 +9,9 @@
       s'agisse bien de votre adresse.
       </p>
 
-      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=accueil" method="POST">
+      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=gererAccueil&action=accueil" method="POST">
         <div class="form-group">
-          <button type="submit" class="btn btn-light">Retour à l'accueil</button>
+          <button type="submit" class="btn btn-success">Retour à l'accueil</button>
         </div>
       </form>
     </div>

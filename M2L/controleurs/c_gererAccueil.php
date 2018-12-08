@@ -1,5 +1,6 @@
 <?php // Controleur pour contacter M2L
 $action = $_REQUEST['action'];
+
 switch($action)
 {
 	case 'accueil':
@@ -20,11 +21,12 @@ switch($action)
 	case 'inscription':
 	{
 		$mail=$_REQUEST['adressemail'];
+		$recupmail=$pdo->RecupDemandeur($mail);
 		if(isset($_REQUEST['checkboxlicence']))
 		{
 			$licence=$_REQUEST['licence'];
 			$demandeurinfos=$pdo->RecupAdherent($licence);
-			$mail=$pdo->RecupDemandeur($mail);
+			
 			//On test l'existance du numéro de licence dans la bdd
 			if($demandeurinfos[0]==null)
 			{
@@ -32,10 +34,10 @@ switch($action)
 				include("./vues/v_erreurs.php");
 				include("./vues/v_inscription.php");
 			} //On test la non existance de l'adresse mail dans la bdd
-			else if($mail[0]!=null)
+			else if($recupmail!=null)
 				{
 
-					$erreurs="L'adresse mail est déjà utilisé";
+					$erreurs="L'adresse mailll est déjà utilisé";
 					include("./vues/v_erreurs.php");
 					include("./vues/v_inscription.php");
 				} 
@@ -66,15 +68,9 @@ switch($action)
 					include("./vues/v_verif_mail.php");
 				}
 		}
-		else if($mail[0]!=null)
+		else if($recupmail==null)
 				{
-
-					$erreurs="L'adresse mail est déjà utilisé";
-					include("./vues/v_erreurs.php");
-					include("./vues/v_inscription.php");
-				} 
-				else
-				{	//On récupere les infos du formulaire
+					//On récupere les infos du formulaire
 					$num_recu=0;
 					$prenom = $_REQUEST['prenom'];
 					$nom=$_REQUEST['nom'];
@@ -95,6 +91,7 @@ switch($action)
 					else {
 
 					$codepostal = $_REQUEST['codepostal'];
+
 					if($civilite=="F")
 						$civ="Madame";
 					else
@@ -105,14 +102,19 @@ switch($action)
 					//On insert un nouveau demandeur dans la bdd
 					$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu, $motdepasse1,$civilite,$daten );
 					include("./vues/v_verif_mail.php");
+					}
+				} 
+				else
+				{	
+					$erreurs="L'adresse mail est déjà utilisé";
+					include("./vues/v_erreurs.php");
+					include("./vues/v_inscription.php");
+
 				}
-		}
+		
 
   		break;
 	}
-	case  'connexion' :
-	{
-		break;
-	}
+	
 }
 ?>
