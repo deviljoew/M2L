@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-9" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
-    <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Notes de frais des bénévoles</p>
+    <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Bordereau de frais</p>
     <br>
     <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Je soussigné(e)
       <br><br>
