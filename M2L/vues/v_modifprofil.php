@@ -44,7 +44,7 @@
             </tr>
             <tr>
               <td colspan=7 style="text-align:center;">
-                <button value="modifier" type="submit" style="width:400px;margin-right:150px;" class="btn btn-dark">Modifier</button>
+                <button value="modifier" type="submit" style="width:400px;margin-right:150px;" class="btn btn-success">Modifier</button>
                 </form>
                 <a class="btn btn-dark" style="width:400px;" href="index.php?uc=Profil&action=voirProfil">Annuler</a>
               </td>

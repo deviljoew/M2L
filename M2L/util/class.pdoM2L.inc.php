@@ -195,7 +195,7 @@ public function identification($mail,$mdp)
 
   public function recupLigneFraisTre()
   {
-    $req="select  lignes_frais.ADRESSE_MAIL,NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais,demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=0 order by NOM;";
+    $req="select  lignes_frais.ADRESSE_MAIL,NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais,demandeurs where valider=0 order by NOM;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais trésorier à échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -240,7 +240,7 @@ public function identification($mail,$mdp)
 
   public function recupLigneFrais2($mail,$date)
   {
-    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where DATE='$date' and ADRESSE_MAIL='$mail' and valider=0;";
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where DATE='$date' and lignes_frais.ADRESSE_MAIL='$mail' and valider=0;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des fraisss à échoué".$req);
     $frais= $res->fetch();
     return $frais;

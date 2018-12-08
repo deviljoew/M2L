@@ -129,5 +129,13 @@ switch($action)
 		$prenom = $_REQUEST['prenom'];
 		break;
 	}
+
+	case 'afficherBordereau' :
+	{
+		$mail = $_REQUEST['mail'];
+		$fraisValide =$pdo->recupLigneFraisValide($mail);
+		include("./vues/v_bordereau.php");
+		break;
+	}
 }
 ?>

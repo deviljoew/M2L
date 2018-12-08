@@ -33,7 +33,7 @@
                      <?php } ?>
            <tr>
              <td colspan=10 style="text-align:center;"><div class="dropdown">
-               <button style="width:800px;" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <button style="width:800px;" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <strong>Générer document CERFA (PDF)</strong>
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
