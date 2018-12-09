@@ -47,7 +47,7 @@ function verifChamps()
             </tr>
             <tr>
               <td colspan=7 style="text-align:center;">
-                <button TITLE="Modifier la demande" value="modifier" type="submit" style="width:400px;margin-right:150px;" class="btn btn-dark">Modifier</button>
+                <button TITLE="Modifier la demande" value="modifier" type="submit" style="width:400px;margin-right:150px;" class="btn btn-success">Modifier</button>
                 </form>
                 <a TITLE="Annuler la modification" class="btn btn-dark" style="width:400px;" href="index.php?uc=formulaire&action=fraisAttente">Annuler</a>
               </td>

@@ -3,21 +3,28 @@ if(!isset($_REQUEST['uc'])){
 	 $_REQUEST['action'] = 'accueil';
 }
 ?>
-<ul class="cb-slideshow">
-         <li><span>Image 01</span></li>
-         <li><span>Image 02</span></li>
-         <li><span>Image 03</span></li>
-         <li><span>Image 04</span></li>
-         <li><span>Image 05</span></li>
-         <li><span>Image 06</span></li>
- </ul>
-
-    <div class="container-fluid" style="height:auto; background-color:black; opacity:0.9;">
+    <div class="container-fluid" style="z-index:1;height:auto; background-color:black; opacity:0.9;">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
           <p class="display-4" style="color:white"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
+				</div>
+				<div class="col-md-6" style="z-index:10;">
+          <?php
+           if((!isset($_SESSION['demandeur']) || $_SESSION['demandeur'] == "non") && (!isset($_SESSION['tresorier']) || $_SESSION['tresorier'] == "non")){
+              include("v_form_connexion.php");
+           }
+          else {
+                  include("v_acces_profil.php");
+                } ?>
+        </div>
+			</div>
+		</div>
+
+		<div class="container-fluid" style="z-index:-1;height:auto; background-color:black; opacity:0.9;">
+      <div class="row">
+        <div class="col-md-12">
           <nav class="navbar navbar-expand-lg navbar-dark hoverNav" style="background-color: black;margin:10px;">
-            <a class="navbar-brand hoverNav" disabled="disabled" href="#">Menu</a>
+            <span class="navbar-brand hoverNav" disabled="disabled">Menu</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,15 +57,6 @@ if(!isset($_REQUEST['uc'])){
               </ul>
             </div>
           </nav>
-        </div>
-        <div class="col-md-4">
-          <?php
-           if((!isset($_SESSION['demandeur']) || $_SESSION['demandeur'] == "non") && (!isset($_SESSION['tresorier']) || $_SESSION['tresorier'] == "non")){
-              include("v_form_connexion.php");
-           }
-          else {
-                  include("v_acces_profil.php");
-                } ?>
         </div>
       </div>
     </div>

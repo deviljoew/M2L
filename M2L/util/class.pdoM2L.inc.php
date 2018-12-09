@@ -25,7 +25,7 @@
   **/
  	private function __construct()
  	{
-     		PdoM2L::$monPdo = new PDO('mysql:host=localhost;dbname=m2l', 'root', '');
+     	PdoM2L::$monPdo = new PDO('mysql:host=localhost;dbname=m2l', 'root', '');
  			PdoM2L::$monPdo->query("SET CHARACTER SET utf8");
  	}
  	public function _destruct(){
