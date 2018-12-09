@@ -6,8 +6,7 @@
           <strong>maison-ligues-lorraine@m2l.com</strong><br>
           <strong><a TITLE="Contacer le site" class="hoverNav" success href="index.php?uc=contact&action=voirContact">Contact</a><strong>
         </div>
-		<div class="col-md-4">
-
+		    <div class="col-md-4">
         </div>
       </div>
     </div>

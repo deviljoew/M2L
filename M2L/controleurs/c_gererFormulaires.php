@@ -134,6 +134,23 @@ switch($action)
 	{
 		$mail = $_REQUEST['mail'];
 		$fraisValide =$pdo->recupLigneFraisValide($mail);
+		$demandeur=$pdo->RecupDemandeur($mail);
+		$nom=$demandeur['NOM'];
+		$prenom=$demandeur['PRENOM'];
+		$rue=$demandeur['RUE'];
+		$cp=$demandeur['CP'];
+		$ville=$demandeur['VILLE'];
+		$mdp=$demandeur['MDP'];
+
+		if($_SESSION['sexe']=='F')
+		{
+			$civ="Madame";
+			$sexe="Féminin";
+		}
+		else{
+			$civ="Monsieur";
+			$sexe="Masculin";
+		}
 		include("./vues/v_bordereau.php");
 		break;
 	}
