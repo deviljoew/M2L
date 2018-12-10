@@ -38,7 +38,7 @@
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                  <?php foreach($fraisDemandeur as $unDemandeur){ ?>
-                    <a style="width:800px;" class="dropdown-item" href="index.php?uc=formulaire&action=voirProfil&nom=<?php $unDemandeur['NOM']; ?>&prenom= <?php $unDemandeur['PRENOM']; ?>"><?php echo $unDemandeur['NOM'] . " " .  $unDemandeur['PRENOM'];?></a>
+                    <a style="width:800px;" class="dropdown-item" href="index.php?uc=formulaire&action=voirProfil&nom=<?=$unDemandeur['NOM'];?>&prenom=<?=$unDemandeur['PRENOM']; ?>"><?php echo $unDemandeur['NOM'] . " " .  $unDemandeur['PRENOM'];?></a>
                 <?php } ?>
                 </div>
                </div>
