@@ -5,10 +5,10 @@ if(!isset($_REQUEST['uc'])){
 ?>
     <div class="container-fluid" style="z-index:1;height:auto; background-color:black; opacity:0.9;">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <p class="display-4" style="color:white"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
 				</div>
-				<div class="col-md-6" style="z-index:10;">
+				<div class="col-md-4" style="z-index:10;">
           <?php
            if((!isset($_SESSION['demandeur']) || $_SESSION['demandeur'] == "non") && (!isset($_SESSION['tresorier']) || $_SESSION['tresorier'] == "non")){
               include("v_form_connexion.php");
