@@ -28,9 +28,11 @@
             <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
 
           </tr>
-          <?php } ?>
+        <?php } $backgroundColor = "#FFFFFF";?>
           <td colspan=10 style="text-align:center;">
+
              <a TITLE="Visualiser votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser le bordereau de frais de <?php echo $annee; ?></button></a>
+
             </td>
         </table>
     </div>

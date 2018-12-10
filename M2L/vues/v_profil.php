@@ -2,6 +2,14 @@
   <div class="row">
     <div class="col-md-12 setHeight" style="background-color:#00000055; opacity:0.9;text-align:center;height:740px;">
       <a class="Display-4" style="font-size:20px;text-align:center;color:white;decoration:none;font:bold;" href="index.php?uc=Profil&action=voirProfil"><img style="margin:20px;" src="./images/usericone.png" width="150px"/></a>
+      <?php
+        if(isset($erreurs)){
+          include("./vues/v_erreurs.php");
+        }
+        if(isset($message)){
+          include("./vues/v_message.php");
+        }
+      ?>
       <p class="Display-4" style="font-size:18px;color:white;">
         <strong><?php echo $civ." ".$_SESSION['nom'];?></strong><br>
         <?php echo $_SESSION['type']?><br><br>

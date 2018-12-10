@@ -75,6 +75,23 @@
       </p>
     </div>
     <div class="col-md-8" style="background-color:#00000055;z-index:1;height:740px;">
+      <?php
+        if(isset($_REQUEST['message']))
+        {
+          $message = $_REQUEST['message'];
+        }
+        if(isset($_REQUEST['erreurs']))
+        {
+          $erreurs = $_REQUEST['erreurs'];
+        }
+
+        if(isset($erreurs)){
+          include("./vues/v_erreurs.php");
+        }
+        if(isset($message)){
+          include("./vues/v_message.php");
+        }
+      ?>
   <p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en name " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form name="inscription" style="margin:50px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
