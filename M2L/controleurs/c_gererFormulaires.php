@@ -96,7 +96,16 @@ switch($action)
 	{
 		$mail=$_SESSION['mail'];
 		$fraisAttente =$pdo->recupLigneFraisValide($mail);
-		Include("./vues/v_demandeverifie.php");
+		
+		//Recupère l'année du bordereau
+		$date = date('Y-m-d');
+		$date = date_parse($date);
+    	$jour = $date['day'];
+    	$mois = $date['month'];
+    	$annee = $date['year'];
+		if($mois==12&&$jour>=24)
+			$annee++;
+		include("./vues/v_demandeverifie.php");
 		break;
 	}
 //Trésorier ----------------------------------------------------------------------------
@@ -125,6 +134,7 @@ switch($action)
 		$validation = $pdo->fraisValidation($mail,$date);
 		$message="La validation de cette ligne a bien été enregistrée";
 		$fraisAttente = $pdo->recupLigneFraisTre();
+
 		include("./vues/v_demandeattenteTre.php");
 		break;
 	}
@@ -140,23 +150,11 @@ switch($action)
 	{
 		$mail = $_REQUEST['mail'];
 		$fraisValide =$pdo->recupLigneFraisValide($mail);
-		$demandeur=$pdo->RecupDemandeur($mail);
-		$nom=$demandeur['NOM'];
-		$prenom=$demandeur['PRENOM'];
-		$rue=$demandeur['RUE'];
-		$cp=$demandeur['CP'];
-		$ville=$demandeur['VILLE'];
-		$mdp=$demandeur['MDP'];
+		$annee=$_REQUEST['annee'];
+		$licence=$_SESSION['licence'];
+		
 
-		if($_SESSION['sexe']=='F')
-		{
-			$civ="Madame";
-			$sexe="Féminin";
-		}
-		else{
-			$civ="Monsieur";
-			$sexe="Masculin";
-		}
+
 		include("./vues/v_bordereau.php");
 		break;
 	}

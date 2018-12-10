@@ -31,6 +31,8 @@ switch($action)
 					}
 					else {
 						$_SESSION['type']='Adhérent';
+						$_SESSION['licence']=$lien['NUMERO_LICENCE'];
+
 					}
 					$_SESSION['mail'] = $demandeur['ADRESSE_MAIL'];
 					$_SESSION['nom'] = $demandeur['NOM'];
@@ -66,7 +68,7 @@ switch($action)
 			$_SESSION['demandeur'] = "non";
 			$_SESSION['tresorier'] = "non";
 			$erreurs="Veuillez vous identifier pour continuer";
-			include ("./vues/v_erreurs.php");
+
 		}
 		break;
 	}
