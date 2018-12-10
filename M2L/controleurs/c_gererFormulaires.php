@@ -64,11 +64,9 @@ switch($action)
 				$ligneFrais=$pdo->modifierFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement);
 
 				$message="Les modifications ont bien été enregistré";
-				include("vues/v_message.php");
 			}
 			else{
 				$message="Aucune modification effectuée";
-				include("vues/v_message.php");
 			}
 		$fraisAttente = $pdo->recupLigneFrais($mail);
 		include("./vues/v_demandeattente.php");
@@ -80,9 +78,18 @@ switch($action)
 		$mail=$_SESSION['mail'];
 		$requete= $pdo->supprimerFrais($mail,$date);
 		$message="La ligne de frais a bien été supprimé";
-		include("vues/v_message.php");
 		$fraisAttente = $pdo->recupLigneFrais($mail);
 		include("./vues/v_demandeattente.php");
+		break;
+	}
+	case 'supprimerfraisTre':
+	{
+		$date =strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
+		$mail=$_SESSION['mail'];
+		$requete= $pdo->supprimerFrais($mail,$date);
+		$message="La ligne de frais a bien été supprimé";
+		$fraisAttente = $pdo->recupLigneFrais($mail);
+		include("./vues/v_demandeattenteTre.php");
 		break;
 	}
 	case 'fraisConfirmer':
@@ -117,7 +124,6 @@ switch($action)
 		$mail = $_REQUEST['adressemail'];
 		$validation = $pdo->fraisValidation($mail,$date);
 		$message="La validation de cette ligne a bien été enregistrée";
-		include("vues/v_message.php");
 		$fraisAttente = $pdo->recupLigneFraisTre();
 		include("./vues/v_demandeattenteTre.php");
 		break;

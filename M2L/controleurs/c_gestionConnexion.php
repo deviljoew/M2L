@@ -16,10 +16,9 @@ switch($action)
 			{
 				//... on réaffiche le formulaire
 				$erreurs="Votre email ou votre mot de passe est incorrect.<br/>Recommencez SVP...";
-				include ("./vues/v_erreurs.php");
 				$_SESSION['demandeur'] = "non";
 				$_SESSION['tresorier'] = "non";
-				header("Location: index.php?uc=accueil&action=accueil",true);
+				header("Location: index.php?uc=accueil&action=accueil&erreurs= $erreurs;",true);
 			}
 			else if($demandeur!=null)
 				{

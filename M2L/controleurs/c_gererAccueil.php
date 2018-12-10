@@ -26,27 +26,25 @@ switch($action)
 		{
 			$licence=$_REQUEST['licence'];
 			$demandeurinfos=$pdo->RecupAdherent($licence);
-			
+
 			//On test l'existance du numéro de licence dans la bdd
 			if($demandeurinfos[0]==null)
 			{
 				$erreurs="Le numéro de licence n'est pas attribué";
-				include("./vues/v_erreurs.php");
 				include("./vues/v_inscription.php");
 			} //On test la non existance de l'adresse mail dans la bdd
 			else if($recupmail!=null)
 				{
 
-					$erreurs="L'adresse mailll est déjà utilisé";
-					include("./vues/v_erreurs.php");
+					$erreurs="L'adresse mail est déjà utilisée";
 					include("./vues/v_inscription.php");
-				} 
+				}
 				else
 				{
 					$motdepasse1 = $_REQUEST['motdepasse1'];
 					$num_recu=0;
 					//Récupère les infos adhérent
-					
+
 					$nom = $demandeurinfos[0];
 					$prenom = $demandeurinfos[1];
 					$civilite = $demandeurinfos[2];
@@ -77,15 +75,14 @@ switch($action)
 					$civilite = $_REQUEST['civilite'];
 					$date=$_REQUEST['datenaissance'];
 					$motdepasse1 = $_REQUEST['motdepasse1'];
-					
+
 					$daten= strftime('%Y-%m-%d',strtotime($date));
 					$rue=$_REQUEST['rue'];
 					$ville=$_REQUEST['ville'];
 					//Permet de savoir si le code postal est valide
 					if(!estUnCp($_REQUEST['codepostal']))
 					{
-						$erreurs="Veuillez saisir un code postaleee valide";
-						include("./vues/v_erreurs.php");
+						$erreurs="Veuillez saisir un code postal valide";
 						include("./vues/v_inscription.php");
 					}
 					else {
@@ -103,18 +100,17 @@ switch($action)
 					$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu, $motdepasse1,$civilite,$daten );
 					include("./vues/v_verif_mail.php");
 					}
-				} 
+				}
 				else
-				{	
+				{
 					$erreurs="L'adresse mail est déjà utilisé";
-					include("./vues/v_erreurs.php");
 					include("./vues/v_inscription.php");
 
 				}
-		
+
 
   		break;
 	}
-	
+
 }
 ?>

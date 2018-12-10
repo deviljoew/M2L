@@ -39,7 +39,6 @@ switch($action)
 			if(!estUnCp($cp))
 			{
 				$erreurs="Veuillez saisir un code postal valide";
-				include("./vues/v_erreurs.php");
 			}else
 			{
 				$mail=$_SESSION['mail'];
@@ -80,7 +79,7 @@ switch($action)
 						$_SESSION['ville'] = $ville;
 					}
 					else{
-						$message="Aucune modificatio effectuée pour votre profil";
+						$message="Aucune modification effectuée pour votre profil";
 					}
 				}else
 				{
@@ -121,7 +120,6 @@ switch($action)
 				$civ="Monsieur";
 				$sexe="Masculin";
 			}
-			include("vues/v_message.php");
 			include("vues/v_profil.php");
 			break;
 	}
