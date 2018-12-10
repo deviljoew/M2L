@@ -14,21 +14,21 @@
         <div class="form-group">
           <div class="form-row form-group">
               <div class="col-md-5">
-                <input type="text" class="form-control form-control-sm" value="<?php echo $nom;?>" id="nom" name="nom" placeholder="Nom">
+                <input type="text" class="form-control form-control-sm" value="<?php if(isset($_SESSION['nom'])) { echo $_SESSION['nom'];}?>" id="nom" name="nom" placeholder="Nom" required>
               </div>
               <div class="col-md-5">
-                <input type="text" class="form-control form-control-sm" value="<?php echo $prenom;?>" id="prenom" name="prenom" placeholder="Prenom">
+                <input type="text" class="form-control form-control-sm" value="<?php if(isset($_SESSION['prenom'])) { echo $_SESSION['prenom'];}?>" id="prenom" name="prenom" placeholder="Prenom" required>
               </div>
           </div>
           <div class="row form-group">
             <div class="col-md-8">
-              <input type="email" class="form-control form-control-sm" value="<?php echo $mail;?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com"/>
+              <input type="email" class="form-control form-control-sm" value="<?php if(isset($_SESSION['mail'])) { echo $_SESSION['mail'];}?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com" required/>
             </div>
             <div class="col-md-4">
             </div>
           </div>
           <div class="form-group">
-            <textarea type="text" rows="10" cols="50" class="form-control form-control-sm" id="message" name="message" placeholder="Message"></textarea>
+            <textarea type="text" style="resize: none;" rows="15" cols="50" class="form-control form-control-sm" id="message" name="message" placeholder="Message" required></textarea>
           </div>
           <button TITLE="Envoyer" type="submit" class="btn btn-success">Envoyer</button>
         </form>
