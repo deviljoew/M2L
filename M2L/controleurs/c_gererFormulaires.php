@@ -95,18 +95,18 @@ switch($action)
 	case 'fraisConfirmer':
 	{
 		$mail=$_SESSION['mail'];
-		$fraisAttente =$pdo->recupLigneFraisValide($mail);
-		
-		//Recupère l'année du bordereau
-		$date = date('Y-m-d');
-		$date = date_parse($date);
-    	$jour = $date['day'];
-    	$mois = $date['month'];
-    	$annee = $date['year'];
-		if($mois==12&&$jour>=24)
-			$annee++;
-		include("./vues/v_demandeverifie.php");
-		break;
+			 $fraisAttente =$pdo->recupLigneFraisValide($mail);
+
+			 //Recupère l'année du bordereau
+			 $date = date('Y-m-d');
+			 $date = date_parse($date);
+			 $jour = $date['day'];
+			 $mois = $date['month'];
+			 $annee = $date['year'];
+			 if($mois==12&&$jour>=24)
+					 $annee++;
+			 include("./vues/v_demandeverifie.php");
+			 break;
 	}
 //Trésorier ----------------------------------------------------------------------------
 	case 'fraisAttenteTre':
@@ -149,14 +149,19 @@ switch($action)
 	case 'afficherBordereau' :
 	{
 		$mail = $_REQUEST['mail'];
-		$fraisValide =$pdo->recupLigneFraisValide($mail);
-		$annee=$_REQUEST['annee'];
-		$licence=$_SESSION['licence'];
-		
-
-
-		include("./vues/v_bordereau.php");
-		break;
+        $fraisValide =$pdo->recupLigneFraisValide($mail);
+        $annee=$_REQUEST['annee'];
+        $licence=$_SESSION['licence'];
+        $club =$pdo->recupClub($licence);
+        $association=$club[0].', '.$club[1].', '.$club[2].' '.$club[3];
+        $fraisTotal = 0; 
+        foreach($fraisValide as $unfrais)
+        { 
+        	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']); 
+        } 
+        $tarifkm=$_SESSION['tarifkm'];
+        include("./vues/v_bordereau.php");
+        break;
 	}
 }
 ?>

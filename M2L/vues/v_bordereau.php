@@ -15,7 +15,8 @@
     <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">en tant que don.
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Frais de déplacements :
+    <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <?php echo $tarifkm; ?>
+      
       <br><br>
     </p>
     <table class="table table-light table-hover table-bordered">
@@ -27,7 +28,7 @@
           <td class="display-4" style="font-size:15px;text-align:center;">Coût péage</td>
           <td class="display-4" style="font-size:15px;text-align:center;">Coût repas</td>
           <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
-          <td class="display-4" style="font-size:20px;text-align:center;background-color:#AAAAAA;">Coût total des frais</td>
+          <td class="display-4" style="font-size:20px;text-align:center;background-color:#AAAAAA;">Coût total des frais</td> 
 
         </tr>
       <?php
@@ -43,13 +44,18 @@
         <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].'€';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
 
+
       </tr>
       <?php } ?>
+      <tr>
+        <td colspan=7 class="h4" style="font-size:17px;text-align:center;">Montant total des frais de déplacement</td>
+        <td class="h4" style="font-size:17px;text-align:center;background-color:#CECECE;"><?php echo $fraisTotal.'€'; ?></td>
+      </tr>
     </table>
     <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;"><?php if($_SESSION['type']=="Adhérent"){echo "Je suis licencié sous le n° de licence suivant ".$_SESSION['prenom'].' '.$_SESSION['nom'].', n° '.$licence;}else{ echo "Je suis le représentant légal des adhérents suivants : " ;} ?>
       <br><br>
      <p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Montant total des dons :
-        <span style="color:red;"><?php echo $fraisTotal . '€' ?></span>
+        <span style="color:red;"><?php echo $fraisTotal.'€' ?></span>
         <br><br>
       </p>
 
