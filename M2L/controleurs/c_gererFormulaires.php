@@ -152,9 +152,14 @@ switch($action)
         $fraisValide =$pdo->recupLigneFraisValide($mail);
         $annee=$_REQUEST['annee'];
         $licence=$_SESSION['licence'];
-
-
-
+        $club =$pdo->recupClub($licence);
+        $association=$club[0].', '.$club[1].', '.$club[2].' '.$club[3];
+        $fraisTotal = 0;
+        foreach($fraisValide as $unfrais)
+        {
+        	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']);
+        }
+        $tarifkm=$_SESSION['tarifkm'];
         include("./vues/v_bordereau.php");
         break;
 	}

@@ -60,6 +60,21 @@ public function identification($mail,$mdp)
   $demandeur=$res->fetch();
   return $demandeur;
 }
+
+  /**
+ * Retourne le club
+ *
+ * @param 
+ * @param 
+ * @return le club
+*/
+public function recupClub($licence)
+{
+  $req = "Select clubs.NOM,clubs.RUE,clubs.CP,clubs.VILLE from clubs,adherents where clubs.NUM_CLUB=adherents.NUM_CLUB and NUMERO_LICENCE='$licence';";
+  $res = PdoM2L::$monPdo->query($req) or die ("La recup du club a échoué");
+  $club=$res->fetch();
+  return $club;
+}
  /**
   * Insert un nouveau demandeur dans la bdd
   *
