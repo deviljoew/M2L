@@ -7,10 +7,10 @@
         Inscrivez votre adresse mail (existante)<br>
         nous allons renvoyer le mot de passe à cette adresse.
         </p>
-      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=gerermdp&action=mail" method="POST">
+      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=oubliemdp&action=mail" method="POST">
         <div class="form-group">
           <div class="form-group">
-            <input type="email" class="form-control form-control-sm" id="adressemail" placeholder="Mail"/>
+            <input type="email" class="form-control form-control-sm" name="adressemail" placeholder="Mail"/>
           </div>
           <button TITLE="Envoyer à l'adresse mail" type="submit" class="btn btn-success">Envoyer</button>
         </form>

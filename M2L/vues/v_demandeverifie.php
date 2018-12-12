@@ -41,7 +41,7 @@
     <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
-        Votre liste de frais acceptées.<br>En fin d'année, vous allez pouvoir recevoir un document CERFA (pdf) qui vous sera envoyé par mail en cliquant sur le bouton associé. (Cela comprend uniquement les frais acceptés de l'année en cours)<br>Vous pourrez ainsi le joindre à vos impots et faire valoir ce don lors de votre déclaration de revenus pour
+        Votre liste de frais acceptées.<br>En fin d'année, vous allez pouvoir recevoir un document CERFA (pdf) qui vous sera envoyé par mail (Cela comprend uniquement les frais acceptés de l'année en cours)<br>Vous pourrez ainsi le joindre à vos impots et faire valoir ce don lors de votre déclaration de revenus pour
 bénéficier de remise d’impôts.
         <br><br>
         Vos demandes validées ne peuvent pas être modifiées.<br>En cas de problème, n'hésitez pas à contacter votre club.<br><br>

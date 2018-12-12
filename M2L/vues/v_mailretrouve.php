@@ -6,7 +6,7 @@
       <br>
       Vous allez recevoir à l'adresse mail saisi votre mot de passe.
       </p>
-      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=accueil" method="POST">
+      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=accueil&action=accueil" method="POST">
         <div class="form-group">
           <button TITLE="Retourner à l'accueil" type="submit" class="btn btn-success">Retour à l'accueil</button>
         </div>
