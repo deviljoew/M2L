@@ -13,7 +13,7 @@
               <td class="display-4" style="font-size:20px;text-align:center;">Motif</td>
               <td class="display-4" style="font-size:20px;text-align:center;">Trajet</td>
               <td class="display-4" style="font-size:20px;text-align:center;">Kilomètres</td>
-              <td class="display-4" style="font-size:15px;text-align:center;background-color:#CCCCCC;">Coût trajet</td>
+              <td class="display-4" style="font-size:20px;text-align:center;background-color:#CCCCCC;">Coût trajet</td>
               <td class="display-4" style="font-size:20px;text-align:center;">Coût péage</td>
               <td class="display-4" style="font-size:20px;text-align:center;">Coût repas</td>
               <td class="display-4" style="font-size:20px;text-align:center;">Coût hébergement</td>
@@ -28,12 +28,12 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['DATE'] != ""){echo $date;}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['LIBELLE'] != ""){echo $unfrais['LIBELLE'];}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['TRAJET'] != ""){echo $unfrais['TRAJET'];}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['KM'] != ""){echo $unfrais['KM'].'km';}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php if($unfrais['TRAJET'] != ""){echo "Cout trajet";}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_PEAGE'] != ""){echo $unfrais['COUT_PEAGE'].'€';}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].'€';}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].'€';}else{ echo "non renseigné";}?></td>
-            <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
+            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['KM'] != ""){echo $unfrais['KM'].' km';}else{ echo "non renseigné";}?></td>
+            <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo ($unfrais['KM']*$tarifkm).' €';  ?></td>
+            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_PEAGE'] != ""){echo $unfrais['COUT_PEAGE'].' €';}else{ echo "non renseigné";}?></td>
+            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].' €';}else{ echo "non renseigné";}?></td>
+            <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
+            <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].' €'; ?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><a TITLE="Modifier votre demande" href="index.php?uc=formulaire&date=<?=$date?>&motif=<?=$unfrais['LIBELLE']?>&trajet=<?=$unfrais['TRAJET']?>&km=<?=$unfrais['KM']?>&peage=<?=$unfrais['COUT_PEAGE']?>&repas=<?=$unfrais['COUT_REPAS']?>&hebergement=<?=$unfrais['COUT_HEBERGEMENT']?>&action=modifierfrais"><img width="30px" src="./images/edit.png"/></a></td>
             <td class="h4" style="font-size:17px;text-align:center;"><a TITLE="Supprimer votre demande"href="index.php?uc=formulaire&date=<?=$unfrais['DATE']?>&action=supprimerfrais" onclick="return confirm('Voulez-vous vraiment supprimer cette ligne de frais? Attention, aucun retour ne sera possible.');"><img width="30px" src="./images/suppr.png"/></a></td>
           </tr>

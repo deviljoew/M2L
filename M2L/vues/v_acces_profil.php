@@ -9,6 +9,8 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="index.php?uc=Profil&action=voirProfil">Profil</a>
+          <?php if(isset($_SESSION['tresorier']) && $_SESSION['tresorier'] == 'ok') { ?>
+          <a class="dropdown-item" href="index.php?uc=Profil&action=voirTarif">Tarif kilométrique</a> <?php } ?>
           <a class="dropdown-item" href="index.php?uc=Connexion&action=deconnexion" onclick="return confirm('Voulez-vous vraiment vous deconnecter ? ');">Deconnexion</a>
         </div>
      	  <img width="85px" src="./images/usericone.png"/>

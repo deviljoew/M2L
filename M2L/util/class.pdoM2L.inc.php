@@ -76,6 +76,23 @@ public function recupClub($licence)
   return $club;
 }
  /**
+ * Retourne le tarif km
+ *
+ * @param 
+ * @param 
+ * @return  le tarif km
+*/
+public function recupTarifKM()
+{
+  $req = "Select tarifKM from tresorier where ADRESSE_MAIL='estelle@gmail.com';";
+  $res = PdoM2L::$monPdo->query($req) or die ("La recup du tarif a échoué");
+  $tarif=$res->fetch();
+  return $tarif;
+}
+
+  
+
+ /**
   * Insert un nouveau demandeur dans la bdd
   *
   * @return le demandeur créé
@@ -363,6 +380,21 @@ public function recupClub($licence)
     $res = PdoM2L::$monPdo->query($req) or die ("La validation de la ligne de frais à échoué".$req);
 
   }
+  /**
+ * Retourne le tarif km
+ *
+ * @param 
+ * @param 
+ * @return  le tarif km
+*/
+public function majTarifKM($tarif)
+{
+  $req = "Update tresorier set tarifKM=$tarif where ADRESSE_MAIL='estelle@gmail.com';";
+  $res = PdoM2L::$monPdo->query($req) or die ("La recup du tarif a échoué");
+  $tarif=$res->fetch();
+  return $tarif;
+}
+
 
 /**
  * Supprime la ligne de frais selectionné

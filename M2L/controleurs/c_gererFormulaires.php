@@ -1,5 +1,6 @@
 <?php
 $action = $_REQUEST['action'];
+$tarifkm=$_SESSION['tarif']; //convertit en float
 switch($action)
 {
 	case 'formdon':
@@ -29,6 +30,7 @@ switch($action)
 		$mail=$_SESSION['mail'];
 
 		$fraisAttente = $pdo->recupLigneFrais($mail);
+		
 		include("./vues/v_demandeattente.php");
 		break;
 	}
@@ -159,7 +161,7 @@ switch($action)
         {
         	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']);
         }
-        $tarifkm=$_SESSION['tarifkm'];
+      
         include("./vues/v_bordereau.php");
         break;
 	}

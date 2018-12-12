@@ -1,5 +1,6 @@
 <?php // Controleur pour gerer le profil M2L
 $action = $_REQUEST['action'];
+$tarifkm=$_SESSION['tarif'];
 switch($action)
 {
 	case 'voirProfil':
@@ -122,6 +123,36 @@ switch($action)
 			}
 			include("vues/v_profil.php");
 			break;
+	}
+	case 'voirTarif':
+	{
+		
+		include("vues/v_tarif.php");
+  		break;
+	}
+	case 'modifiertarif' :
+	{
+		
+		include("vues/v_modiftarif.php");
+		break;
+	}
+	case 'misAjoursTarif' :
+	{
+		if($tarifkm!=$_REQUEST['tarif'])
+		{
+			$tarif=$pdo->majTarifKM($tarifkm);
+			$_SESSION['tarif']=$_REQUEST['tarif'];
+
+			$message="Les modifications ont bien été enregistré";
+		}
+		else {
+			$message="Aucune modification effectuée";
+
+		}
+		$tarifkm=$_SESSION['tarif'];
+		include("vues/v_tarif.php");
+		
+		break;
 	}
 }
 ?>

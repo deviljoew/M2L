@@ -11,6 +11,7 @@ switch($action)
 			$mdp=$_REQUEST['motdepasseconnexion'];
 			$demandeur=$pdo->identification($mail,$mdp);
 			$tresorier=$pdo->recupTresorier($mail,$mdp);
+			$tarifkm=$pdo->recupTarifKM();
 			// Si l'identification a échoué pour le demandeur...
 			if($demandeur==null && $tresorier==null)
 			{
@@ -34,6 +35,7 @@ switch($action)
 						$_SESSION['licence']=$lien['NUMERO_LICENCE'];
 
 					}
+					$_SESSION['tarif']=$tarifkm[0];
 					$_SESSION['mail'] = $demandeur['ADRESSE_MAIL'];
 					$_SESSION['nom'] = $demandeur['NOM'];
 					$_SESSION['mdp']=$demandeur['MDP'];
@@ -51,8 +53,9 @@ switch($action)
 					$_SESSION['mail'] = $tresorier['ADRESSE_MAIL'];
 					$licence=$tresorier['NUMERO_LICENCE'];
 					$tresorier=$pdo->RecupAdherent($licence);
+					$_SESSION['tarif']=$tarifkm[0];
 					$_SESSION['type']='Trésorier';
-					$_SESSION['tarifkm'] = $tresorier['tarifKM'];
+					
 					$_SESSION['nom'] = $tresorier['NOM'];
 					$_SESSION['mdp']=$tresorier['MDP'];
 					$_SESSION['prenom'] = $tresorier['PRENOM'];
