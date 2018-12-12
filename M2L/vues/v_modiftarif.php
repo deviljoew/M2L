@@ -42,8 +42,8 @@
             <td style="text-align:center;"><input  TITLE="Modifier le profil" type="text" class="form-control form-control-sm" value="<?php echo $tarifkm; ?>" id="tarif"  name="tarif" placeholder="Tarif km"></td>
           </tr>
           <tr>
-            <td colspan="2" style="text-align:center;"><button onClick="return verifChamps();" style="width:400px;margin-right:150px;" class="btn btn-success">Valider le nouveau tarif kilométrique</button>
-            <a href="index.php?uc=Profil&action=voirTarif" TITLE="Modifier le profil" style="width:400px;" class="btn btn-dark">Annuler</a></td>
+            <td colspan="2" style="text-align:center;"><button onClick="return verifChamps();" style="width:35%;margin-right:10%;" class="btn btn-success">Valider le nouveau tarif kilométrique</button>
+            <a href="index.php?uc=Profil&action=voirTarif" TITLE="Modifier le profil" style="width:35%;" class="btn btn-dark">Annuler</a></td>
           </tr>
         </table>
       </form>
