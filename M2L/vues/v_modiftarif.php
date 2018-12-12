@@ -36,7 +36,7 @@
       ?>
         <p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Tarif kilométrique actuel utilisé pour le(s) frais de déplacement(s) des demandeurs</p>
       <form name="modiftarif" style="margin:50px;" action="index.php?uc=Profil&action=misAjoursTarif" onSubmit="return verifChamps();" method="POST">
-        <table class="table table-light table-bordered">
+        <table class="table table-hover table-light table-bordered">
           <tr>
             <td style="text-align:center;">Tarif kilométrique</td>
             <td style="text-align:center;"><input  TITLE="Modifier le profil" type="text" class="form-control form-control-sm" value="<?php echo $tarifkm; ?>" id="tarif"  name="tarif" placeholder="Tarif km"></td>
