@@ -4,17 +4,17 @@
       <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Notes de frais validées :</p>
           <table class="table table-light table-hover table-bordered">
             <tr>
-              <td class="display-4" style="font-size:20px;text-align:center;">Nom</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Prenom</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Date</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Motif</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Trajet</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Kilomètres</td>
-              <td class="display-4" style="font-size:20px;text-align:center;background-color:#CCCCCC;">Coût trajet</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Coût péage</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Coût repas</td>
-              <td class="display-4" style="font-size:20px;text-align:center;">Coût hébergement</td>
-              <td class="display-4" style="font-size:20px;text-align:center;background-color:#CCCCCC;">Coût total</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Nom</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Prenom</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Date</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Motif</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Trajet</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Kilomètres</td>
+              <td class="display-4" style="font-size:18px;text-align:center;background-color:#CCCCCC;">Coût trajet</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Coût péage</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Coût repas</td>
+              <td class="display-4" style="font-size:18px;text-align:center;">Coût hébergement</td>
+              <td class="display-4" style="font-size:18px;text-align:center;background-color:#CCCCCC;">Coût total</td>
             </tr>
           <?php
                 foreach($fraisValides as $unfrais){
