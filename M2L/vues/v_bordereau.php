@@ -4,19 +4,17 @@
     <p class="display-4" style="color:black"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
     <p class="display-4" style="text-align:center;font-size:40px;color:black;margin-left:20px;margin-top:10px;">Bordereau de frais de l'année <?php echo $annee; ?></p>
     <br>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Je soussigné(e) <?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?>
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Je soussigné(e) <strong><?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?></strong>
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">demeurant <?php echo $_SESSION['rue'].' '.$_SESSION['cp'].' '.$_SESSION['ville']; ?>
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">demeurant <strong><?php echo $_SESSION['rue'].' '.$_SESSION['cp'].' '.$_SESSION['ville']; ?></strong>
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">certifie renoncer au remboursement des frais ci-dessous et les laisser à l'association <?php echo $association; ?>
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">certifie renoncer au remboursement des frais ci-dessous et les laisser à l'association <strong><?php echo $association.' '; ?></strong> en tant que don.
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">en tant que don.
-      <br><br>
-    </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <?php echo $tarifkm.' €'; ?>
+   
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <strong><?php echo $tarifkm.' €'; ?></strong>
 
       <br><br>
     </p>
@@ -63,7 +61,7 @@
       </p>
 
         <br>
-      <p class="display-4" style="text-align: center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de toutes les justificatifs correspondants
+      <p class="display-4" style="text-align: center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de tout les justificatifs correspondants
         <br>
       </p>
       <div >
