@@ -55,7 +55,7 @@ switch($action)
 					$tresorier=$pdo->RecupAdherent($licence);
 					$_SESSION['tarif']=$tarifkm[0];
 					$_SESSION['type']='Trésorier';
-					
+
 					$_SESSION['nom'] = $tresorier['NOM'];
 					$_SESSION['mdp']=$tresorier['MDP'];
 					$_SESSION['prenom'] = $tresorier['PRENOM'];

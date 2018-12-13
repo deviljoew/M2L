@@ -1,4 +1,4 @@
-    <div class="container-fluid" style="background-image:URL(./images/Web_images/footer.png);position:fixed;bottom:0;">
+    <div class="container-fluid" style='background-color:black;opacity:0.9;position:fixed;bottom:0;'>
       <div class="row">
         <div class="col-md-4">
         </div>

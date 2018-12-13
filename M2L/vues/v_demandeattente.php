@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-9" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;height:740px;">
-      <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Vos notes de frais :</p>
+    <div class="col-md-9" style="background-color:#00000055;opacity:0.9;height:740px;">
+      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Vos notes de frais :</p>
       <?php
         if(isset($message)){
           include("vues/v_message.php");
@@ -51,4 +51,5 @@
         Vous pouvez modifier vos demandes ci-contre en cliquant sur le bouton associé.
       </p>
     </div>
+  </div>
 </div>

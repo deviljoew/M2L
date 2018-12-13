@@ -1,3 +1,8 @@
+<?php
+  if($_SESSION['demandeur'] != 'ok' && $_SESSION['tresorier'] != 'ok'){
+    header("index.php?uc=accueil&action=accueil");
+  }
+?>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12" style="padding-bottom:30px;background-color:white;">
@@ -13,7 +18,7 @@
     <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">certifie renoncer au remboursement des frais ci-dessous et les laisser à l'association <strong><?php echo $association.' '; ?></strong> en tant que don.
       <br><br>
     </p>
-   
+
     <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <strong><?php echo $tarifkm.' €'; ?></strong>
 
       <br><br>
@@ -77,8 +82,12 @@
         </p>
       </div>
       <br>
+
       <div>
-        <p class="h4" style="text-align:center;margin-left:10%;font-size:20px;color:black;margin-top:10px;">A<span style="margin-left:10%;">Partie réservée à l'association</span>
+        <p class="h4" style=";margin-left:10%;font-size:20px;color:black;margin-top:10px;">Partie réservée à l'association
+          <br><br>
+        </p>
+        <p class="h4" style="margin-left:10%;font-size:20px;color:black;margin-top:10px;">A
           <br><br>
         </p>
         <p class="h4" style="margin-left:10%;font-size:20px;color:black;margin-top:10px;">n° d'ordre du reçu :
