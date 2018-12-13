@@ -1,6 +1,6 @@
 <?php session_start();
 require_once("./util/fonctions.inc.php");
-
+require('./util/fpdf/fpdf.php');
 require_once("./util/class.pdoM2L.inc.php");
 
   /* Création d'une instance d'accès à la base de données */
@@ -21,14 +21,14 @@ require_once("./util/class.pdoM2L.inc.php");
     <title>Maison des ligues de Lorraine</title>
   </head>
 <body style="background-color:#000000">
-	<ul class="cb-slideshow">
+<!--	<ul class="cb-slideshow">
 					 <li><span>Image 01</span></li>
 					 <li><span>Image 02</span></li>
 					 <li><span>Image 03</span></li>
 					 <li><span>Image 04</span></li>
 					 <li><span>Image 05</span></li>
 					 <li><span>Image 06</span></li>
-	 </ul>
+	 </ul> -->
 <?php
 
 
@@ -63,7 +63,7 @@ $colorHTML = "#8eF989";
 
 $action = $_REQUEST['action'];
 
-if($action != 'afficherBordereau')
+if($action != 'afficherBordereau'&&$action!='genererpdf')
 	Include("./vues/v_header.php");
 
 switch($uc)
@@ -85,7 +85,7 @@ switch($uc)
 		{include("./controleurs/c_gestionConnexion.php");break; }
 
 }
-if($action != 'afficherBordereau')
+if($action != 'afficherBordereau'&&$action!='genererpdf')
 	include("./vues/v_footer.php") ;
 ?>
 </body>

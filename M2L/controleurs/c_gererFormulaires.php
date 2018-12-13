@@ -141,10 +141,11 @@ switch($action)
 		break;
 	}
 
-	case 'genererPDF' :
+	case 'genererpdf' :
 	{
 		$nom = $_REQUEST['nom'];
 		$prenom = $_REQUEST['prenom'];
+		include('./vues/v_pdfCERFA.php');
 		break;
 	}
 
@@ -165,5 +166,7 @@ switch($action)
         include("./vues/v_bordereau.php");
         break;
 	}
+
+
 }
 ?>
