@@ -1,3 +1,8 @@
+<?php
+  if(!isset($_SESSION['demandeur']) && !isset($_SESSION['tresorier'])){
+    header("index.php?uc=accueil&action=accueil");
+  }
+?>
 <div class="container-fluid" >
   <div class="row">
   	<div class="col-md-4">

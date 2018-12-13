@@ -5,3 +5,7 @@
 .hoverNav:hover{
   color:#00e68a;
 }
+
+#backgroundfooter{
+  background-image:url("./images/Web_images/footer.png");
+}
