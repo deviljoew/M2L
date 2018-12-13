@@ -16,7 +16,7 @@
     <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">en tant que don.
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:white;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <?php echo $tarifkm.' €'; ?>
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <?php echo $tarifkm.' €'; ?>
 
       <br><br>
     </p>
