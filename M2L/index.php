@@ -21,17 +21,17 @@ require_once("./util/class.pdoM2L.inc.php");
     <title>Maison des ligues de Lorraine</title>
   </head>
 <body style="background-color:#000000">
-<!--	<ul class="cb-slideshow">
+	<ul class="cb-slideshow">
 					 <li><span>Image 01</span></li>
 					 <li><span>Image 02</span></li>
 					 <li><span>Image 03</span></li>
 					 <li><span>Image 04</span></li>
 					 <li><span>Image 05</span></li>
 					 <li><span>Image 06</span></li>
-	 </ul>-->
+	 </ul>
 <?php
 
-Include("./vues/v_header.php");
+
 
 if(!isset($_REQUEST['uc'])){
      $uc = 'accueil';
@@ -62,6 +62,10 @@ $message="";
 $colorHTML = "#8eF989";
 
 $action = $_REQUEST['action'];
+
+if($action != 'afficherBordereau')
+	Include("./vues/v_header.php");
+
 switch($uc)
 {
 	//Gere la page principale avec l'inscription
@@ -81,7 +85,8 @@ switch($uc)
 		{include("./controleurs/c_gestionConnexion.php");break; }
 
 }
-include("./vues/v_footer.php") ;
+if($action != 'afficherBordereau')
+	include("./vues/v_footer.php") ;
 ?>
 </body>
 </html>

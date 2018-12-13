@@ -25,7 +25,7 @@ if(!isset($_REQUEST['uc'])){
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav hoverNav">
-						<li class="nav-item <?php if($action == "accueil"){?> active <?php } ?>">
+						<li class="nav-item <?php if($action == "informations"){?> active <?php } ?>">
 							<a class="nav-link hoverNav" href="<?php if($_SESSION['demandeur'] == 'ok' || $_SESSION['tresorier'] == 'ok') { echo "index.php?uc=gererAccueil&action=informations";} else { echo "index.php?uc=accueil&action=accueil";} ?>">Accueil<span class="sr-only">(current)</span></a>
 						</li>
 							<?php
@@ -35,17 +35,17 @@ if(!isset($_REQUEST['uc'])){
 								<li class="nav-item <?php if($action == "formdon"){?> active <?php } ?>">
 									<a TITLE="Formulaire de dons" class="nav-link hoverNav" href="index.php?uc=formulaire&action=formdon">Formulaire de dons</a>
 								</li>
-								<li class="nav-item <?php if($action == "attente"){?> active <?php } ?>">
+								<li class="nav-item <?php if($action == "fraisAttente"){?> active <?php } ?>">
 									<a TITLE="Demandes en attentes" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttente">Demandes en attentes</a>
 								</li>
-								<li class="nav-item <?php if($action == "valide"){?> active <?php } ?>">
+								<li class="nav-item <?php if($action == "fraisConfirmer"){?> active <?php } ?>">
 									<a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmer">Demandes validées</a>
 								</li>
 						<?php }else if(isset($_SESSION['tresorier']) && $_SESSION['tresorier'] == 'ok'){ ?>
-								<li class="nav-item <?php if($action == "attente"){?> active <?php } ?>">
+								<li class="nav-item <?php if($action == "fraisAttenteTre"){?> active <?php } ?>">
 									<a TITLE="Demandes à valider" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttenteTre">Frais à valider</a>
 								</li>
-								<li class="nav-item <?php if($action == "valide"){?> active <?php } ?>">
+								<li class="nav-item <?php if($action == "fraisConfirmerTre"){?> active <?php } ?>">
 									<a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmerTre">Frais acceptés</a>
 								</li>
 						<?php } ?>

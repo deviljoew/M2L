@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" >
   <div class="row">
     <div class="col-md-12" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;height:740px;">
       <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Notes de frais à valider :</p>

@@ -44,9 +44,9 @@
             </tr>
             <tr>
               <td colspan=7 style="text-align:center;">
-                <button TITLE="Modifier le profil" value="modifier" type="submit" style="width:35%;margin-right:10%;" class="btn btn-success">Modifier</button>
+                <button TITLE="Modifier le profil" value="modifier" type="submit" style="width:35%;margin-right:10%;" class="btn btn-success">Modifier <img src="./images/valider_white.png" width="12px" height="12px"/></button>
                 </form>
-                <a TITLE="Annuler la modification" class="btn btn-dark" style="width:35%;" href="index.php?uc=Profil&action=voirProfil">Annuler</a>
+                <a TITLE="Annuler la modification" class="btn btn-dark" style="width:35%;" href="index.php?uc=Profil&action=voirProfil">Annuler <img src="./images/suppr_white.png" width="12px" height="12px"/></a>
               </td>
             </tr>
         </table>
