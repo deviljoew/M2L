@@ -11,7 +11,7 @@
 
         Installée depuis 2003 dans la banlieue Nancéienne, la M2L accueille l'ensemble du mouvement sportif Lorrain qui représente près de 6 500 clubs, plus de 525 000 licenciés et près de 50 000 bénévoles.
 
-        Les associations sportives (les clubs) peuvent profiter de dispositions fiscales apparues en 2008 pour faire bénéficier de remises d'impôts aux adhérents engageant des frais, en particulier dans le cadre de déplacements liés à des compétitions, des stages sportifs, des réunions...<br> Il s'agit de faciliter par l'informatisation l'établissement du document officiel permettant la remise d'impôts.
+        Les associations sportives (les clubs) peuvent profiter de dispositions fiscales apparues en 2008 pour faire bénéficier de remises d'impôts aux adhérents engageant des frais, en particulier dans le cadre de déplacements liés à des compétitions, des stages sportifs, des réunions...<br> Il s'agit de faciliter, par l'informatisation, l'établissement du document officiel permettant la remise d'impôts.
       </p>
     </div>
 

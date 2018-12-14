@@ -64,8 +64,8 @@ public function identification($mail,$mdp)
   /**
  * Retourne le club
  *
- * @param 
- * @param 
+ * @param
+ * @param
  * @return le club
 */
 public function recupClub($licence)
@@ -78,8 +78,8 @@ public function recupClub($licence)
  /**
  * Retourne le tarif km
  *
- * @param 
- * @param 
+ * @param
+ * @param
  * @return  le tarif km
 */
 public function recupTarifKM()
@@ -90,7 +90,7 @@ public function recupTarifKM()
   return $tarif;
 }
 
-  
+
 
  /**
   * Insert un nouveau demandeur dans la bdd
@@ -114,7 +114,7 @@ public function recupTarifKM()
   public function ajouterLigneFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement)
   {
     $req="Insert into lignes_frais values ('$mail','$date','$motif','$trajet',$km,$peage,$repas,$hebergement,0);";
-    $res = PdoM2L::$monPdo->query($req) or die ("L'insertion de ligne frais à échoué".$req);
+    $res = PdoM2L::$monPdo->query($req) or die ("L'insertion de ligne frais à échoué ".$req);
 
   }
 
@@ -383,8 +383,8 @@ public function recupTarifKM()
   /**
  * Retourne le tarif km
  *
- * @param 
- * @param 
+ * @param
+ * @param
  * @return  le tarif km
 */
 public function majTarifKM($tarif)
@@ -409,5 +409,17 @@ public function majTarifKM($tarif)
 
   }
 
+  /**
+   * Supprime la ligne de frais selectionné
+   *
+   * @param
+   * @return la ligne de frais supprimé
+  */
+    public function supprimerFraisTre($mail, $date)
+    {
+      $req="delete from lignes_frais where lignes_frais.ADRESSE_MAIL = '$mail' and lignes_frais.DATE='$date';";
+      $res = PdoM2L::$monPdo->query($req) or die ("La suppression de la ligne de frais à échoué".$req);
+
+    }
  }
  ?>

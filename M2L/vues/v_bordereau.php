@@ -19,7 +19,7 @@
       <br><br>
     </p>
 
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Tarif kilometrique appliqué pour le remboursement : <strong><?php echo $tarifkm.' €'; ?></strong>
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Tarif kilométrique appliqué pour le remboursement : <strong><?php echo $tarifkm.' €'; ?></strong>
 
       <br><br>
     </p>
@@ -48,7 +48,7 @@
         <td class="h4" style="color:black;font-size:17px;text-align:center;"><?php if($unfrais['COUT_PEAGE'] != ""){echo $unfrais['COUT_PEAGE'].' €';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="color:black;font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].' €';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="color:black;font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
-        <td class="h4" style="color:black;font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE'].'€'; ?></td>
+        <td class="h4" style="color:black;font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+($unfrais['KM']*$tarifkm).'€'; ?></td>
 
 
       </tr>
@@ -66,7 +66,7 @@
       </p>
 
         <br>
-      <p class="display-4" style="text-align: center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de tout les justificatifs correspondants
+      <p class="display-4" style="text-align: center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de tous les justificatifs correspondants
         <br>
       </p>
       <div >

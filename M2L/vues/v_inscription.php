@@ -123,8 +123,8 @@
             <strong><span id="unchecked" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
               <select class="form-control form-control-sm" id="civilite" name="civilite">
                 <option value="" selected>Choisir une civilite</option>
-                <option value="F" <?php if (isset($_POST['civilite']) && $_POST['civilite']=="F") {echo "selected='selected'" ; } ?>>Feminin</option>
-                <option value="M" <?php if (isset($_POST['civilite']) && $_POST['civilite']=="M") {echo "selected='selected'" ; } ?>>Masculin</option>
+                <option value="F" <?php if (isset($_POST['civilite']) && $_POST['civilite']=="F") {echo "selected='selected'" ; } ?>>Madame</option>
+                <option value="M" <?php if (isset($_POST['civilite']) && $_POST['civilite']=="M") {echo "selected='selected'" ; } ?>>Monsieur</option>
               </select>
             </div>
             <div class="form-group col-md-5">

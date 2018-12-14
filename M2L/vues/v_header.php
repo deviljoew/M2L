@@ -6,7 +6,8 @@ if(!isset($_REQUEST['uc'])){
     <div class="container-fluid" style="z-index:1;height:auto; background-color:black; opacity:0.9;">
       <div class="row">
         <div class="col-md-8">
-          <p class="display-4" style="color:white"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
+					<p class="display-4" style="color:white"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
+          <p class="display-4" style="margin-left:20px;font-size:30px;color:<?php echo $colorHTML; ?>">Application de gestion des bordereaux</p>
 				</div>
 				<div class="col-md-4" style="z-index:10;">
           <?php
