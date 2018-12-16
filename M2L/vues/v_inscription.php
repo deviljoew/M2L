@@ -113,7 +113,7 @@
               <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
               <input type="password" class="form-control form-control-sm" id="motdepasse2" name="motdepasse2" placeholder="Confirmer le mot de passe">
               <div class="input-group-append">
-                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Comfirmer le mot de passe</span>
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Confirmer le mot de passe</span>
               </div>
             </div>
           </div>
