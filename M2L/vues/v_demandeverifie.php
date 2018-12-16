@@ -41,13 +41,15 @@
 
           <td colspan=6 style="text-align:center;">
             <form action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" method="POST" target="_blank">
-            <select multiple="multiple" size="4" class="form-control form-control-sm" id="adh" name="adh[ ]" required>
+            <select multiple="multiple" size="4" class="form-control form-control-sm" id="adh" name="adh[]" required>
 
              <?php foreach($adherents as $unadh)
              {
-              ?>
-              <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
-              <?php
+
+                ?>
+                <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
+                <?php
+
              }
               ?>
             </select>
