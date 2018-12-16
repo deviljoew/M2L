@@ -1,3 +1,4 @@
+<script lang="javascript"> window.print(); </script>
 <?php
   if($_SESSION['demandeur'] != 'ok' && $_SESSION['tresorier'] != 'ok'){
     header("index.php?uc=accueil&action=accueil");

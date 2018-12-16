@@ -60,7 +60,7 @@
 </script>
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" style="padding-bottom:30px;">
     <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">La maison des ligues de Lorraine</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
@@ -94,7 +94,7 @@
 
         $colorHTMLi = "#070d13";
       ?>
-  <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
+  <p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en name " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form name="inscription" style="margin:50px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
           <div class="form-row">
