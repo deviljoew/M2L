@@ -91,19 +91,30 @@
         if(isset($message)){
           include("./vues/v_message.php");
         }
+
+        $colorHTMLi = "#070d13";
       ?>
   <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en name " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form name="inscription" style="margin:50px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
           <div class="form-row">
-              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
               <input type="email" class="form-control form-control-sm" value="<?php if(isset($_POST['mail'])) { echo $_REQUEST['mail'];} ;?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Adresse mail</span>
+              </div>
             </div>
-              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
               <input type="password" class="form-control form-control-sm" id="motdepasse1" name="motdepasse1" placeholder="Mot de passe">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Mot de passe</span>
+              </div>
             </div>
-              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
               <input type="password" class="form-control form-control-sm" id="motdepasse2" name="motdepasse2" placeholder="Confirmer le mot de passe">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Comfirmer le mot de passe</span>
+              </div>
             </div>
           </div>
           <div class="form-check">
@@ -113,8 +124,11 @@
             </label>
           </div>
           <div class="form-row">
-              <strong><span id="checked" style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+              <strong><span id="checked" style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
               <input type="text" class="form-control form-control-sm" disabled="true" value="<?php if(isset($_POST['licence'])) { echo $_REQUEST['licence'];} ?>" id="licence" name="licence"  placeholder="Licence">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Licence</span>
+              </div>
             </div>
             <div class="form-group col-md-5">
             </div>
@@ -131,32 +145,47 @@
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked1" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-5">
+            <strong><span id="unchecked1" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-5">
               <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['nom'])) { echo $_REQUEST['nom'];} ?>" id="nom" name="nom" placeholder="Nom">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Nom</span>
+              </div>
             </div>
-            <strong><span id="unchecked2" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-5">
+            <strong><span id="unchecked2" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-5">
             <input type="text" class="form-control form-control-sm" id="prenom" value="<?php if(isset($_POST['prenom'])) { echo $_REQUEST['prenom'];} ?>" name="prenom" placeholder="Prénom">
+            <div class="input-group-append">
+              <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Prenom</span>
+            </div>
             </div>
           </div>
           <div class="form-row">
             <strong><span id="unchecked3" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group col-md-5">
               <input type="date" class="form-control form-control-sm" id="datenaissance" value="<?phpif(isset($_POST['datenaissance'])) { echo $_REQUEST['datenaissance'];} ?>" name="datenaissance">
               <div class="form-group input-group-append">
-                <span class="input-group-text form-control-sm">Date naissance</span>
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Date naissance</span>
               </div>
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked4" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-6">
+            <strong><span id="unchecked4" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-6">
               <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['rue'])) { echo $_REQUEST['rue'];} ?>" id="rue" name="rue" placeholder="Rue">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Rue</span>
+              </div>
             </div>
           </div>
           <div class="form-row">
-            <strong><span id="unchecked5" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-2">
+            <strong><span id="unchecked5" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
               <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['codepostal'])) { echo $_REQUEST['codepostal'];} ?>" id="codepostal" name="codepostal" placeholder="Code postal">
+              <div class="input-group-append">
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Code postal</span>
+              </div>
             </div>
-            <strong><span id="unchecked6" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-6">
-              <strong><input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['ville'])) { echo $_REQUEST['ville'];} ?>" id="ville" name="ville" placeholder="Ville">
+            <strong><span id="unchecked6" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-5">
+              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['ville'])) { echo $_REQUEST['ville'];} ?>" id="ville" name="ville" placeholder="Ville">
+                <div class="input-group-append">
+                  <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Ville</span>
+                </div>
             </div>
           </div>
           <span style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span><button TITLE="S'inscrire" type="submit" class="btn btn-success" style="">Inscription</button>

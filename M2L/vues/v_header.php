@@ -34,13 +34,13 @@ if(!isset($_REQUEST['uc'])){
 							{
 									?>
 								<li class="nav-item <?php if($action == "formdon"){?> active <?php } ?>">
-									<a TITLE="Formulaire de dons" class="nav-link hoverNav" href="index.php?uc=formulaire&action=formdon">Formulaire de dons</a>
+									<a TITLE="Formulaire de dons" class="nav-link hoverNav" href="index.php?uc=formulaire&action=formdon">Création de note de frais</a>
 								</li>
 								<li class="nav-item <?php if($action == "fraisAttente"){?> active <?php } ?>">
-									<a TITLE="Demandes en attentes" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttente">Demandes en attentes</a>
+									<a TITLE="Demandes en attentes" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttente">Frais en attentes</a>
 								</li>
 								<li class="nav-item <?php if($action == "fraisConfirmer"){?> active <?php } ?>">
-									<a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmer">Demandes validées</a>
+									<a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmer">Frais validés</a>
 								</li>
 						<?php }else if(isset($_SESSION['tresorier']) && $_SESSION['tresorier'] == 'ok'){ ?>
 								<li class="nav-item <?php if($action == "fraisAttenteTre"){?> active <?php } ?>">
