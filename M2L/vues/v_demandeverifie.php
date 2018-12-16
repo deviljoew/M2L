@@ -57,7 +57,7 @@
             <?php } ?>
           <td colspan=10 style="text-align:center;">
 
-             <a TITLE="Visualiser votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser le bordereau de frais de <?php echo $annee; ?></button></a>
+             <a TITLE="Visualiser/Imprimer votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser/Imrprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
 
             </td>
         </table>
