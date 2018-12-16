@@ -112,6 +112,10 @@ switch($action)
 			 $annee = $date['year'];
 			 if($mois==12&&$jour>=24)
 					 $annee++;
+		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok') 
+		{ 
+			$adherents =$pdo->RecupAdherentSR();
+		}
 			 include("./vues/v_demandeverifie.php");
 			 break;
 	}
@@ -157,15 +161,21 @@ switch($action)
 	case 'afficherBordereau' :
 	{
 		$mail = $_REQUEST['mail'];
-        $fraisValide =$pdo->recupLigneFraisValide($mail);
-        $annee=$_REQUEST['annee'];
+		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok') 
+		{ 
+			$adherents =$_REQUEST['adh'];
+		}
+		$annee=$_REQUEST['annee'];
+        $fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
+        
         $licence=$_SESSION['licence'];
+
         $club =$pdo->recupClub($licence);
         $association=$club[0].', '.$club[1].', '.$club[2].' '.$club[3];
         $fraisTotal = 0;
         foreach($fraisValide as $unfrais)
         {
-        	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']);
+        	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+$unfrais['KM']*$tarifkm);
         }
 
         include("./vues/v_bordereau.php");

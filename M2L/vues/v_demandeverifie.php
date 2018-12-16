@@ -28,9 +28,33 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+($unfrais['KM']*$tarifkm).' €'; ?></td>
-
           </tr>
-        <?php } $backgroundColor = "#FFFFFF";?>
+          
+        <?php } $backgroundColor = "#FFFFFF";?> 
+        <?php if($_SESSION['type']="Demandeur") { ?>
+        <tr>
+          <td colspan=6 style="text-align:center;">
+
+            <p>Séléctionner le ou les adhérents pour votre bordeau de frais : <strong><span style="font-size:15px;color:red">  * Champs obligatoires</span></strong><br>Appuyer sur maj ou ctrl pour en sélectionner plusieurs.</p>
+
+            </td>
+       
+        <td colspan=6 style="text-align:center;">
+
+            <select multiple size="3" class="form-control form-control-sm" id="adh" name="adh" required>
+              <option disabled="disabled" selected>Adhérent(s)</option>
+             <?php foreach($adherents as $unadh)
+             {
+              ?>
+              <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
+              <?php
+             }
+              ?>
+              
+            </select>
+
+            </td></tr>
+            <?php } ?>
           <td colspan=10 style="text-align:center;">
 
              <a TITLE="Visualiser votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser le bordereau de frais de <?php echo $annee; ?></button></a>

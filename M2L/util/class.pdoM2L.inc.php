@@ -174,7 +174,7 @@ public function recupTarifKM()
   {
       $req="select NUMERO_LICENCE from lien where ADRESSE_MAIL= '$mail';";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup de l'adherent à échoué".$req);
-    $renvoi = $res->fetch();
+    $renvoi = $res->fetchAll();
     return $renvoi;
   }
 
@@ -294,6 +294,22 @@ public function recupTarifKM()
   }
 
 /**
+  * Récupere les frais professionnels du demandeur validés pour l'année en cours
+  *
+  * @param $mail
+  * @return un tableau associatif du motif
+ */
+
+  public function recupLigneFraisAnnee($mail,$annee)
+  {
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where ADRESSE_MAIL='$mail' and YEAR($annee)=DATE and valider=1;";
+    $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
+    $frais= $res->fetchAll();
+    return $frais;
+  }
+
+
+/**
   * Récupere le demandeur correspondant au mail
   *
   * @param $licence
@@ -319,6 +335,21 @@ public function recupTarifKM()
       $req="select NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN from adherents where NUMERO_LICENCE = '$licence'";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup de l'adherent à échoué".$req);
     $adherent= $res->fetch();
+    return $adherent;
+  }
+
+  /**
+  * Récupere le ou les adhérent sous responsabilité
+  *
+  * @param $licence
+  * @return un tableau associatif de l'adhérent
+ */
+
+  public function RecupAdherentSR()
+  {
+      $req="select distinct NUMERO_LICENCE,NOM,PRENOM from adherents;";
+    $res = PdoM2L::$monPdo->query($req)or die ("La récup de l'adherent sr à échoué".$req);
+    $adherent= $res->fetchAll();
     return $adherent;
   }
 
