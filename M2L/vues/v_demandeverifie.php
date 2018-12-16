@@ -29,38 +29,43 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+($unfrais['KM']*$tarifkm).' €'; ?></td>
           </tr>
-          
-        <?php } $backgroundColor = "#FFFFFF";?> 
+
+        <?php } $backgroundColor = "#FFFFFF";?>
         <?php if($_SESSION['type']="Demandeur") { ?>
         <tr>
           <td colspan=6 style="text-align:center;">
 
             <p>Séléctionner le ou les adhérents pour votre bordeau de frais : <strong><span style="font-size:15px;color:red">  * Champs obligatoires</span></strong><br>Appuyer sur maj ou ctrl pour en sélectionner plusieurs.</p>
 
-            </td>
-       
-        <td colspan=6 style="text-align:center;">
+          </td>
 
+          <td colspan=6 style="text-align:center;">
+            <form action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" method="POST">
             <select multiple size="3" class="form-control form-control-sm" id="adh" name="adh" required>
               <option disabled="disabled" selected>Adhérent(s)</option>
              <?php foreach($adherents as $unadh)
              {
-              ?>
-              <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
-              <?php
+                if($unadh['nom'] != $_SESSION['nom']){
+                ?>
+                <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
+                <?php
+                }
              }
               ?>
-              
             </select>
 
-            </td></tr>
-            <?php } ?>
+          </td>
+        </tr>
+        <?php } ?>
+        <tr>
           <td colspan=10 style="text-align:center;">
 
-             <a TITLE="Visualiser/Imprimer votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser/Imrprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
+             <a TITLE="Visualiser/Imprimer votre bordereau" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
 
-            </td>
-        </table>
+           </td>
+        </tr>
+        <form>
+      </table>
     </div>
     <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
