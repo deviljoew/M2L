@@ -13,12 +13,17 @@ switch($action)
 	{
 		$mail=$_SESSION['mail'];
 		$dateform=$_REQUEST['date'];
-		$motif=$_REQUEST['motif'];
+
+		if($_REQUEST['motif'] == "autre")
+			$motif = $_REQUEST['motifA'];
+		else
+			$motif=$_REQUEST['motif'];
+
 		$km=$_REQUEST['km'];
 		$peage=$_REQUEST['peage'];
 		$hebergement=$_REQUEST['hebergement'];
 		$repas=$_REQUEST['repas'];
-		$trajet=$_REQUEST['trajet'];
+		$trajet=$_REQUEST['depart']."_".$_REQUEST['arrivee'];
 		$motifs = $pdo->recupMotifs();
 		$dateform= strftime('%Y-%m-%d',strtotime($dateform));
 		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
@@ -30,7 +35,7 @@ switch($action)
 		$mail=$_SESSION['mail'];
 
 		$fraisAttente = $pdo->recupLigneFrais($mail);
-		
+
 		include("./vues/v_demandeattente.php");
 		break;
 	}
@@ -87,10 +92,10 @@ switch($action)
 	case 'supprimerfraisTre':
 	{
 		$date =strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
-		$mail=$_SESSION['mail'];
-		$requete= $pdo->supprimerFrais($mail,$date);
+		$mail=$_REQUEST['mail'];
+		$requete= $pdo->supprimerFraisTre($mail,$date);
 		$message="La ligne de frais a bien été supprimé";
-		$fraisAttente = $pdo->recupLigneFrais($mail);
+		$fraisAttente = $pdo->recupLigneFraisTre();
 		include("./vues/v_demandeattenteTre.php");
 		break;
 	}
@@ -162,7 +167,7 @@ switch($action)
         {
         	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']);
         }
-      
+
         include("./vues/v_bordereau.php");
         break;
 	}

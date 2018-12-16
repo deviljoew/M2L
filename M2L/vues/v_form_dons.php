@@ -12,23 +12,42 @@ function verifChamps()
 }
 
 </script>
+<script lang="javascript">
+
+function motifAutre(obj1)
+{
+  if(document.getElementById("motif").value == "autre"){
+    dons.elements[obj1].disabled=false;
+    document.getElementById("motifA").style.visibility = "visible";
+    document.getElementById("etoileautre").style.visibility = "visible";
+  }
+  else {
+    dons.elements[obj1].disabled=true;
+    document.getElementById("motifA").style.visibility = "hidden";
+    document.getElementById("etoileautre").style.visibility = "hidden";
+  }
+}
+
+</script>
 
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Formulaire de dons</p>
+      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Formulaire de note de frais</p>
       <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
         <br>
-        Nous souhaitons permettre aux adhérents ne souhaitant pas être remboursé de pouvoir faire valoir leur don lors de leur déclaration de revenus et de bénéficier alors d'une remise d’impôts.<br><br>
+        Nous souhaitons permettre aux adhérents ne désirant pas être remboursé de pouvoir faire valoir leur don lors de leur déclaration de revenus et de bénéficier alors d'une remise d’impôts.<br><br>
 
-        Après avoir rempli le formulaire ci-contre, vous allez recevoir par mail un document CERFA à joindre lors de votre déclaration d'impôts.
+        Après avoir rempli le formulaire ci-contre, vous pourrez toujours le modifier, le supprimer dans l'onglet <span style="color:<?php echo $colorHTML; ?>">Demandes en attentes</span>.<br><br>
+
+        Le tresorier validera ou non la note frais et celle-ci viendra alimenter votre bordereau disponible dans l'onglet <span style="color:<?php echo $colorHTML; ?>">Demandes validées</span>.
       </p>
     </div>
     <div class="col-md-8" style="background-color:#00000055;height:740px;">
-	<p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Formulaire<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
+	<p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Edition de notes de frais<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en id " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
-      <form style="margin:50px;" action="index.php?uc=formulaire&action=formvalider" method="POST" onsubmit="return verifChamps();">
+      <form name="dons" style="margin:50px;" action="index.php?uc=formulaire&action=formvalider" method="POST" onsubmit="return verifChamps();">
         <div class="form-row">
           <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="group-form input-group col-md-5">
             <input type="date" class="form-control form-control-sm" value="<?php echo $dateform;?>" id="date" name="date" required>
@@ -37,9 +56,10 @@ function verifChamps()
             </div>
           </div>
         </div>
+
         <div class="form-row">
           <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
-            <select class="form-control form-control-sm" id="motif" name="motif" required>
+            <select onchange="motifAutre('motifA');" class="form-control form-control-sm" id="motif" name="motif" required>
               <option disabled="disabled" selected>Motif</option>
              <?php foreach($motifs as $unmotif)
              {
@@ -48,12 +68,21 @@ function verifChamps()
               <?php
              }
               ?>
+              <option value="autre" <?php if ($motif=="$unmotif[0]") {echo "selected='selected'" ; }?>>Autre...</option>
             </select>
           </div>
+
+          <strong><span id="etoileautre" style="visibility:hidden;color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+            <input style="visibility:hidden;" disabled="disabled" type="text" class="form-control form-control-sm" value="" id="motifA" name="motifA" placeholder="Autre..." required>
+          </div>
         </div>
+
         <div class="form-row">
-          <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-4">
-            <input type="text" class="form-control form-control-sm" value="<?php echo $trajet;?>" id="trajet" name="trajet" placeholder="Trajet">
+          <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+            <input type="text" class="form-control form-control-sm" value="<?php echo $trajet;?>" id="depart" name="depart" placeholder="Ville départ">
+          </div>
+          <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
+            <input type="text" class="form-control form-control-sm" value="<?php echo $trajet;?>" id="arrivee" name="arrivee" placeholder="Ville arrivée">
           </div>
           <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group col-md-3">
             <input type="text" class="form-control form-control-sm" value="<?php echo $km;?>" id="km" name="km" placeholder="Kilometres parcourus">
