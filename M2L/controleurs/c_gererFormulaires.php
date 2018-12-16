@@ -112,8 +112,8 @@ switch($action)
 			 $annee = $date['year'];
 			 if($mois==12&&$jour>=24)
 					 $annee++;
-		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok') 
-		{ 
+		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok')
+		{
 			$adherents =$pdo->RecupAdherentSR();
 		}
 			 include("./vues/v_demandeverifie.php");
@@ -161,13 +161,13 @@ switch($action)
 	case 'afficherBordereau' :
 	{
 		$mail = $_REQUEST['mail'];
-		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok') 
-		{ 
+		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok')
+		{
 			$adherents =$_REQUEST['adh'];
 		}
 		$annee=$_REQUEST['annee'];
         $fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
-        
+
         $licence=$_SESSION['licence'];
 
         $club =$pdo->recupClub($licence);

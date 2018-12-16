@@ -40,9 +40,9 @@
           </td>
 
           <td colspan=6 style="text-align:center;">
-            <form action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" method="POST">
+            <form action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" method="POST" target="_blank">
             <select multiple size="3" class="form-control form-control-sm" id="adh" name="adh" required>
-              <option disabled="disabled" selected>Adhérent(s)</option>
+
              <?php foreach($adherents as $unadh)
              {
                 if($unadh['nom'] != $_SESSION['nom']){
