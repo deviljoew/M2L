@@ -35,7 +35,7 @@
         <tr>
           <td colspan=6 style="text-align:center;">
 
-            <p>Séléctionner le ou les adhérents pour votre bordeau de frais : <strong><span style="font-size:15px;color:red">  * Champs obligatoires</span></strong><br>Appuyer sur maj ou ctrl pour en sélectionner plusieurs.</p>
+            <p>Sélectionner le ou les adhérents pour votre bordereau de frais : <strong><span style="font-size:15px;color:red">  * Champs obligatoires</span></strong><br>Appuyer sur maj ou ctrl pour en sélectionner plusieurs.</p>
 
             </td>
        
@@ -54,12 +54,22 @@
             </select>
 
             </td></tr>
-            <?php } ?>
+           
+            <tr>
           <td colspan=10 style="text-align:center;">
 
              <button style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button>
-</form>
+        </form>
             </td>
+          </tr>
+            <?php } else{?>
+             <tr>
+          <td colspan=10 style="text-align:center;">
+            
+             <button style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button>
+            </td>
+          </tr>
+           <?php } ?>
         </table>
     </div>
     <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
