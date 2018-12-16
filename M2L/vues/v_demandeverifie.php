@@ -29,7 +29,7 @@
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+($unfrais['KM']*$tarifkm).' €'; ?></td>
           </tr>
-          
+          <form method="Post" action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"> 
         <?php } $backgroundColor = "#FFFFFF";?> 
         <?php if($_SESSION['type']="Demandeur") { ?>
         <tr>
@@ -42,7 +42,7 @@
         <td colspan=6 style="text-align:center;">
 
             <select multiple size="3" class="form-control form-control-sm" id="adh" name="adh" required>
-              <option disabled="disabled" selected>Adhérent(s)</option>
+             
              <?php foreach($adherents as $unadh)
              {
               ?>
@@ -57,8 +57,8 @@
             <?php } ?>
           <td colspan=10 style="text-align:center;">
 
-             <a TITLE="Visualiser/Imprimer votre bordereau" href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser/Imrprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
-
+             <button style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button>
+</form>
             </td>
         </table>
     </div>

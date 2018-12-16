@@ -14,20 +14,18 @@ switch($action)
 		$mail=$_SESSION['mail'];
 		$dateform=$_REQUEST['date'];
 
-		if($_REQUEST['motif'] == "autre")
-			$motif = $_REQUEST['motifA'];
-		else
+		
 			$motif=$_REQUEST['motif'];
-
-		$km=$_REQUEST['km'];
-		$peage=$_REQUEST['peage'];
-		$hebergement=$_REQUEST['hebergement'];
-		$repas=$_REQUEST['repas'];
-		$trajet=$_REQUEST['depart']."_".$_REQUEST['arrivee'];
-		$motifs = $pdo->recupMotifs();
-		$dateform= strftime('%Y-%m-%d',strtotime($dateform));
-		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
-		include("./vues/v_form_valider.php");
+			$km=$_REQUEST['km'];
+			$peage=$_REQUEST['peage'];
+			$hebergement=$_REQUEST['hebergement'];
+			$repas=$_REQUEST['repas'];
+			$trajet=$_REQUEST['depart']."_".$_REQUEST['arrivee'];
+			$motifs = $pdo->recupMotifs();
+			$dateform= strftime('%Y-%m-%d',strtotime($dateform));
+			$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
+			include("./vues/v_form_valider.php");
+	
 		break;
 	}
 	case 'fraisAttente':
@@ -112,7 +110,7 @@ switch($action)
 			 $annee = $date['year'];
 			 if($mois==12&&$jour>=24)
 					 $annee++;
-		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok') 
+		 if($_SESSION['type']="Demandeur")
 		{ 
 			$adherents =$pdo->RecupAdherentSR();
 		}
@@ -161,7 +159,7 @@ switch($action)
 	case 'afficherBordereau' :
 	{
 		$mail = $_REQUEST['mail'];
-		if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok') 
+		 if($_SESSION['type']="Demandeur")
 		{ 
 			$adherents =$_REQUEST['adh'];
 		}

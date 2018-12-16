@@ -58,9 +58,10 @@ function motifAutre(obj1)
         </div>
 
         <div class="form-row">
+        
           <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="form-group col-md-3">
             <select onchange="motifAutre('motifA');" class="form-control form-control-sm" id="motif" name="motif" required>
-              <option disabled="disabled" selected>Motif</option>
+              <option disabled="disabled" value="" selected>Selectionner un motif</option>
              <?php foreach($motifs as $unmotif)
              {
               ?>
