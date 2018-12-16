@@ -1,5 +1,4 @@
 <?php
-
 ob_get_clean();
 class PDF extends FPDF
 {
