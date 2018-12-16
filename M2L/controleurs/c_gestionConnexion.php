@@ -33,7 +33,6 @@ switch($action)
 					else {
 						$_SESSION['type']='Adhérent';
 						$_SESSION['licence']=$lien['NUMERO_LICENCE'];
-
 					}
 					$_SESSION['tarif']=$tarifkm[0];
 					$_SESSION['mail'] = $demandeur['ADRESSE_MAIL'];

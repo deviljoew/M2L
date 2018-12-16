@@ -41,7 +41,7 @@
 
           <td colspan=6 style="text-align:center;">
             <form action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" method="POST" target="_blank">
-            <select multiple size="3" class="form-control form-control-sm" id="adh" name="adh" required>
+            <select multiple size="4" class="form-control form-control-sm" id="adh" name="adh" required>
 
              <?php foreach($adherents as $unadh)
              {
@@ -56,15 +56,23 @@
 
           </td>
         </tr>
-        <?php } ?>
         <tr>
           <td colspan=10 style="text-align:center;">
 
-             <a TITLE="Visualiser/Imprimer votre bordereau" target="_blank"><button style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
+             <button type="submit" TITLE="Visualiser/Imprimer votre bordereau" style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
 
            </td>
         </tr>
-        <form>
+      </form>
+      <?php }else{ ?>
+        <tr>
+          <td colspan=10 style="text-align:center;">
+
+             <a href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" TITLE="Visualiser/Imprimer votre bordereau"><button type="submit" style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
+
+           </td>
+        </tr>
+      <?php } ?>
       </table>
     </div>
     <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
