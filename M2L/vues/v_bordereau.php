@@ -60,7 +60,8 @@
       </tr>
     </table>
     <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;"><?php if($_SESSION['type']=="Adhérent"){echo "Je suis licencié sous le n° de licence suivant ".$_SESSION['prenom'].' '.$_SESSION['nom'].', n° '.$licence;}else{ echo "Je suis le représentant légal des adhérents suivants : </br>";
-    echo var_dump($adherents);
+    foreach ($adherents as $unadh)
+      echo $unadh."\n";
       /*foreach ($adherents as $unadh)
         {
           echo $unadh[2].' '.$unadh[1].', licence n° '.$unadh[0].'</br>';

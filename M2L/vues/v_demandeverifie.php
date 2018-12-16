@@ -41,7 +41,7 @@
 
           <td colspan=6 style="text-align:center;">
             <form action="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" method="POST" target="_blank">
-            <select multiple size="4" class="form-control form-control-sm" id="adh" name="adh" required>
+            <select multiple="multiple" size="4" class="form-control form-control-sm" id="adh" name="adh[ ]" required>
 
              <?php foreach($adherents as $unadh)
              {
