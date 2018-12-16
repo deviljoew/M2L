@@ -26,6 +26,7 @@ switch($action)
 					$_SESSION['demandeur'] = "ok";
 					$_SESSION['tresorier'] = "non";
 					$lien=$pdo->recupLien($mail);
+					$message= "".$lien[0];
 					if($lien[0]==null)
 					{
 						$_SESSION['type']='Demandeur';
@@ -45,7 +46,7 @@ switch($action)
 					$_SESSION['sexe'] = $demandeur['SEXE'];
 					$_SESSION['daten'] = strftime('%d-%m-%Y',strtotime($demandeur['DATEN']));
 					$fraisAttente = $pdo->recupLigneFrais($mail);
-					header("Location: index.php?uc=formulaire&action=formdon",true);
+					header("Location: index.php?uc=formulaire&action=formdon&message=$message",true);
 				}else{
 					$_SESSION['tresorier'] = "ok";
 					$_SESSION['demandeur'] = "non";
