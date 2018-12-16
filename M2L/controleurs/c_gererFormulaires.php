@@ -158,6 +158,14 @@ switch($action)
 		break;
 	}
 
+
+
+
+
+
+
+
+
 	case 'afficherBordereau' :
 	{
 		$mail = $_REQUEST['mail'];
