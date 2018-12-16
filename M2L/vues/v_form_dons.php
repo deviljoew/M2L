@@ -30,7 +30,7 @@ function motifAutre(obj1)
 
 </script>
 
-<?php $colorHTMLi = "#070d13"?>
+<?php $colorHTMLi = "#070d13";?>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
