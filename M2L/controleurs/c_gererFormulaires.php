@@ -13,18 +13,16 @@ switch($action)
 	{
 		$mail=$_SESSION['mail'];
 		$dateform=$_REQUEST['date'];
-
-		
-			$motif=$_REQUEST['motif'];
-			$km=$_REQUEST['km'];
-			$peage=$_REQUEST['peage'];
-			$hebergement=$_REQUEST['hebergement'];
-			$repas=$_REQUEST['repas'];
-			$trajet=$_REQUEST['depart']."_".$_REQUEST['arrivee'];
-			$motifs = $pdo->recupMotifs();
-			$dateform= strftime('%Y-%m-%d',strtotime($dateform));
-			$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
-			include("./vues/v_form_valider.php");
+		$motif=$_REQUEST['motif'];
+		$km=$_REQUEST['km'];
+		$peage=$_REQUEST['peage'];
+		$hebergement=$_REQUEST['hebergement'];
+		$repas=$_REQUEST['repas'];
+		$trajet=$_REQUEST['depart']."_".$_REQUEST['arrivee'];
+		$motifs = $pdo->recupMotifs();
+		$dateform= strftime('%Y-%m-%d',strtotime($dateform));
+		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
+		include("./vues/v_form_valider.php");
 	
 		break;
 	}

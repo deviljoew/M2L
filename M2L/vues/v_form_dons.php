@@ -69,7 +69,7 @@ function motifAutre(obj1)
               <?php
              }
               ?>
-              <option value="autre" <?php if ($motif=="$unmotif[0]") {echo "selected='selected'" ; }?>>Autre...</option>
+              
             </select>
           </div>
 
