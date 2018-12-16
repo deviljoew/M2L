@@ -45,11 +45,11 @@
 
              <?php foreach($adherents as $unadh)
              {
-                if($unadh['nom'] != $_SESSION['nom']){
+                
                 ?>
                 <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
                 <?php
-                }
+                
              }
               ?>
             </select>
