@@ -8,13 +8,24 @@ function Header()
     // Logo
     $this->Image('./images/cerfa.png',10,6,30);
     // Police Arial gras 15
-    $this->SetFont('Arial','B',15);
+    $this->SetFont('Arial','B',14);
     // Décalage à droite
     $this->Cell(80);
     // Titre
     $this->Cell(30,10,'Reçu au titre des dons à \n certains organismes d\'intérêt général',0,0,'C');
     // Saut de ligne
     $this->Ln(20);
+     $this->SetFont('Arial','',12);
+    //n° CERFA
+    $this->Cell(30,10,'N° 115080*02',0,0,'C');
+    // Décalage à droite
+    $this->Cell(120);
+    // Numero du recu
+    $this->Cell(30,10,'Numero d\'orde du reçu:',0,1,'C');
+    $this->Cell(150);
+    $this->SetFont('Arial','B',12);
+    $this->Cell(30,10,'2016-14',1,1,'C');
+
 }
 
 // Pied de page
@@ -25,89 +36,9 @@ function Footer()
     // Police Arial italique 8
     $this->SetFont('Arial','I',8);
     // Numéro de page
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-}
-// Chargement des données
-function LoadData($file)
-{
-    // Lecture des lignes du fichier
-    $lines = file($file);
-    $data = array();
-    foreach($lines as $line)
-        $data[] = explode(';',trim($line));
-    return $data;
+    $this->Cell(0,10,'Page '.$this->PageNo().'/1',0,0,'C');
 }
 
-// Tableau simple
-function BasicTable($header, $data)
-{
-    // En-tête
-    foreach($header as $col)
-        $this->Cell(40,7,$col,1);
-    $this->Ln();
-    // Données
-    foreach($data as $row)
-    {
-        foreach($row as $col)
-            $this->Cell(40,6,$col,1);
-        $this->Ln();
-    }
-}
-
-// Tableau amélioré
-function ImprovedTable($header, $data)
-{
-    // Largeurs des colonnes
-    $w = array(40, 35, 45, 40);
-    // En-tête
-    for($i=0;$i<count($header);$i++)
-        $this->Cell($w[$i],7,$header[$i],1,0,'C');
-    $this->Ln();
-    // Données
-    foreach($data as $row)
-    {
-        $this->Cell($w[0],6,$row[0],'LR');
-        $this->Cell($w[1],6,$row[1],'LR');
-        $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R');
-        $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R');
-        $this->Ln();
-    }
-    // Trait de terminaison
-    $this->Cell(array_sum($w),0,'','T');
-}
-
-// Tableau coloré
-function FancyTable($header, $data)
-{
-    // Couleurs, épaisseur du trait et police grasse
-    $this->SetFillColor(255,0,0);
-    $this->SetTextColor(255);
-    $this->SetDrawColor(128,0,0);
-    $this->SetLineWidth(.3);
-    $this->SetFont('','B');
-    // En-tête
-    $w = array(40, 35, 45, 40);
-    for($i=0;$i<count($header);$i++)
-        $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
-    $this->Ln();
-    // Restauration des couleurs et de la police
-    $this->SetFillColor(224,235,255);
-    $this->SetTextColor(0);
-    $this->SetFont('');
-    // Données
-    $fill = false;
-    foreach($data as $row)
-    {
-        $this->Cell($w[0],6,$row[0],'LR',0,'L',$fill);
-        $this->Cell($w[1],6,$row[1],'LR',0,'L',$fill);
-        $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R',$fill);
-        $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R',$fill);
-        $this->Ln();
-        $fill = !$fill;
-    }
-    // Trait de terminaison
-    $this->Cell(array_sum($w),0,'','T');
-}
 
 
 }
@@ -115,18 +46,27 @@ function FancyTable($header, $data)
 $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetTitle('Reçu CERFA don',true);
-$pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,'bonjour');
-$header = array('Pays', 'Capitale', 'Superficie (km²)', 'Pop. (milliers)');
-// Chargement des données
-$data = 'pays.txt';
-$pdf->SetFont('Arial','',14);
-$pdf->AddPage();
-$pdf->BasicTable($header,$data);
-$pdf->AddPage();
-$pdf->ImprovedTable($header,$data);
-$pdf->AddPage();
-$pdf->FancyTable($header,$data);
++$pdf->SetFont('Arial','B',14);
+$pdf->SetFillColor(210,210,200);
+$pdf->Cell(190, 8, "Bénéficiaire de versements", 1, 1, "C", true);
+$pdf->SetFont('Arial','',12);
+$pdf->MultiCell(190,5, "\nNom ou dénomination : \n
+Adresse : \n
+............................................................................................................................................................... \n
+                                       Oeuvre ou organisme d'intérêt général \n ", 1, "L", false);
+$pdf->SetFont('Arial','B',14);
+$pdf->SetFillColor(210,210,200);
+$pdf->Cell(190, 8, "Donateur", 1, 1, "C", true);
+$pdf->SetFont('Arial','',12);
+$pdf->MultiCell(190,8, "\nNom : \nAdresse : \nCode postal :                     Commune : \n ", 1, "L", false);
+$pdf->MultiCell(190,8, "\nLe bénéficiaire reconnait avoir reçu au titre des versements ouvrant droit à réduction d'impôt, la somme de : \n
+Somme en toute lettre : \n
+Date du paiement : \n
+Motif du versement : Autres \n
+                                                                                                                         Date et signature: \n
+                                                                                                                         \n
+                                                                                                                         ", 1, "L", false);
+
 $pdf->Output();
 
 ?>

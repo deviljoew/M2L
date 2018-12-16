@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 06 déc. 2018 à 10:40
+-- Généré le :  ven. 14 déc. 2018 à 19:25
 -- Version du serveur :  5.7.17
--- Version de PHP :  5.6.30
+-- Version de PHP :  7.1.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -133,20 +133,21 @@ CREATE TABLE `lignes_frais` (
   `COUT_PEAGE` bigint(4) DEFAULT '0',
   `COUT_REPAS` bigint(4) DEFAULT '0',
   `COUT_HEBERGEMENT` bigint(4) DEFAULT '0',
-  `valider` tinyint(1) NOT NULL DEFAULT '0'
+  `valider` tinyint(1) NOT NULL DEFAULT '0',
+  `COUT_TRAJET` float DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `lignes_frais`
 --
 
-INSERT INTO `lignes_frais` (`ADRESSE_MAIL`, `DATE`, `LIBELLE`, `TRAJET`, `KM`, `COUT_PEAGE`, `COUT_REPAS`, `COUT_HEBERGEMENT`, `valider`) VALUES
-('fesfes@es', '2018-08-29 00:00:00', 'Réunion', 'fsdf', 5, 4, 5, 7, 0),
-('lagarde@gmail.com', '2012-12-10 00:00:00', 'Compétition internationale', 'jioj', 8, 6, 1, 2, 1),
-('lagarde@gmail.com', '2014-12-07 00:00:00', 'Compétition internationale', 'jioj', 8, 1, 1, 2, 1),
-('lagarde@gmail.com', '2018-12-05 00:00:00', 'Compétition nationale', 'Paris_Lyon', 300, 52, 80, 100, 0),
-('lagarde@gmail.com', '2018-12-16 00:00:00', 'Compétition internationale', 'jioj', 8, 66, 1, 2, 0),
-('lagarde@gmail.com', '2018-12-18 00:00:00', 'Réunion', 'vcd', 25, 24, 25, 36, 0);
+INSERT INTO `lignes_frais` (`ADRESSE_MAIL`, `DATE`, `LIBELLE`, `TRAJET`, `KM`, `COUT_PEAGE`, `COUT_REPAS`, `COUT_HEBERGEMENT`, `valider`, `COUT_TRAJET`) VALUES
+('fesfes@es', '2018-08-29 00:00:00', 'Réunion', 'fsdf', 5, 4, 5, 7, 0, 0),
+('lagarde@gmail.com', '2012-12-10 00:00:00', 'Compétition internationale', 'jioj', 8, 6, 1, 2, 1, 0),
+('lagarde@gmail.com', '2014-12-07 00:00:00', 'Compétition internationale', 'jioj', 8, 1, 1, 2, 1, 0),
+('lagarde@gmail.com', '2018-12-05 00:00:00', 'Compétition nationale', 'Paris_Lyon', 300, 52, 80, 100, 0, 0),
+('lagarde@gmail.com', '2018-12-16 00:00:00', 'Compétition internationale', 'jioj', 8, 66, 1, 2, 0, 0),
+('lagarde@gmail.com', '2018-12-18 00:00:00', 'Réunion', 'vcd', 25, 24, 25, 36, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -198,16 +199,16 @@ INSERT INTO `motifs` (`LIBELLE`) VALUES
 CREATE TABLE `tresorier` (
   `ADRESSE_MAIL` varchar(45) NOT NULL,
   `NUMERO_LICENCE` bigint(4) NOT NULL DEFAULT '0',
-  `MDP` char(32) DEFAULT NULL
+  `MDP` char(32) DEFAULT NULL,
+  `tarifKM` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `tresorier`
 --
 
-INSERT INTO `tresorier` (`ADRESSE_MAIL`, `NUMERO_LICENCE`, `MDP`) VALUES
-('estelle@gmail.com', 170540010340, '1234'),
-('etoiledu65@gmail.com', 170540010443, '1234');
+INSERT INTO `tresorier` (`ADRESSE_MAIL`, `NUMERO_LICENCE`, `MDP`, `tarifKM`) VALUES
+('estelle@gmail.com', 170540010340, '1234', 0.27);
 
 --
 -- Index pour les tables déchargées
