@@ -160,11 +160,19 @@ switch($action)
 		 if($_SESSION['type']="Demandeur")
 		{ 
 			$adherents =$_REQUEST['adh'];
+			/*for($i=0;$i<=Count($adherents);$i++)
+			{
+
+				RecupAdherent($adherents[$i]);
+			}*/
+		} else {
+				$licence=$_SESSION['licence'];
+
 		}
 		$annee=$_REQUEST['annee'];
         $fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
         
-        $licence=$_SESSION['licence'];
+        
 
         $club =$pdo->recupClub($licence);
         $association=$club[0].', '.$club[1].', '.$club[2].' '.$club[3];

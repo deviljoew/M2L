@@ -20,14 +20,14 @@ require_once("./util/class.pdoM2L.inc.php");
     <title>Maison des ligues de Lorraine</title>
   </head>
 <body style="background-color:#000000">
-<ul class="cb-slideshow">
+<!-- <ul class="cb-slideshow">
 					 <li><span>Image 01</span></li>
 					 <li><span>Image 02</span></li>
 					 <li><span>Image 03</span></li>
 					 <li><span>Image 04</span></li>
 					 <li><span>Image 05</span></li>
 					 <li><span>Image 06</span></li>
-	 </ul> 
+	 </ul> -->
 <?php
 
 
