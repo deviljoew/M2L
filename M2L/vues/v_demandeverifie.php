@@ -35,7 +35,7 @@
         <tr>
           <td colspan=6 style="text-align:center;">
 
-            <p>Séléctionner le ou les adhérents pour votre bordeau de frais : <strong><span style="font-size:15px;color:red">  * Champs obligatoires</span></strong><br>Appuyer sur maj ou ctrl pour en sélectionner plusieurs.</p>
+            <p>Sélectionner le ou les adhérents pour votre bordereau de frais : <strong><span style="font-size:15px;color:red">  * Champs obligatoires</span></strong><br>Appuyer sur maj ou ctrl pour en sélectionner plusieurs.</p>
 
           </td>
 
@@ -53,6 +53,7 @@
              }
               ?>
             </select>
+
 
           </td>
         </tr>
@@ -74,6 +75,7 @@
         </tr>
       <?php } ?>
       </table>
+
     </div>
     <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
