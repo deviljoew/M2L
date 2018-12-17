@@ -165,12 +165,13 @@ switch($action)
 		if($_SESSION['type']="Demandeur")
 		{
 			$adherents =$_POST['adh'];
-
-			for($i=0;$i<Count($adherents);$i++)
+			/*$i=0
+			foreach($adherents as $unadh))
 			{
-				$lesadh[$i]=$pdo->RecupAdherent($adherents[$i]);
+				$lesadh[$i]=$pdo->RecupAdherent($unadh);
+				$i++;
 
-			}
+			}*/
 		} else {
 				$licence=$_SESSION['licence'];
 

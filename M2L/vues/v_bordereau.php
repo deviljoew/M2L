@@ -64,9 +64,11 @@
     foreach ($adherents as $unadh)
     {
 
-          echo $unadh[2].' '.$unadh[1].', licence n° '.$unadh[0].'</br>';
+          $lesadh=$pdo->RecupAdherent($unadh);
+          echo $lesadh[2].' '.$lesadh[1].', licence n° '.$lesadh[0].'</br>';
+        
+        } }?>
 
-        }?>
       <br><br>
      <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Montant total des dons :
         <span style="color:red;"><?php echo $fraisTotal.' €' ?></span>
