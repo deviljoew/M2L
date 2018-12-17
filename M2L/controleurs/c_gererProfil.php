@@ -15,7 +15,7 @@ switch($action)
 			$civ="Monsieur";
 			$sexe="Masculin";
 		}
-		include("vues/v_profil.php");
+		include("./vues/v_profil.php");
   		break;
 	}
 	case 'modifierProfil' :
@@ -30,7 +30,7 @@ switch($action)
 			$civ="Monsieur";
 			$sexe="Masculin";
 		}
-		include("vues/v_modifprofil.php");
+		include("./vues/v_modifprofil.php");
 		break;
 	}
 	case 'misAjoursProfil' :
@@ -121,19 +121,19 @@ switch($action)
 				$civ="Monsieur";
 				$sexe="Masculin";
 			}
-			include("vues/v_profil.php");
+			include("./vues/v_profil.php");
 			break;
 	}
 	case 'voirTarif':
 	{
 		
-		include("vues/v_tarif.php");
+		include("./vues/v_tarif.php");
   		break;
 	}
 	case 'modifiertarif' :
 	{
 		
-		include("vues/v_modiftarif.php");
+		include("./vues/v_modiftarif.php");
 		break;
 	}
 	case 'misAjoursTarif' :
@@ -150,7 +150,7 @@ switch($action)
 
 		}
 		$tarifkm=$_SESSION['tarif'];
-		include("vues/v_tarif.php");
+		include("./vues/v_tarif.php");
 		
 		break;
 	}

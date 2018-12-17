@@ -7,22 +7,21 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12" style="padding-bottom:30px;background-color:white;">
-    <p class="display-4" style="color:black"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
+    <p class="display-4" style="text-align:center;color:black"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
     <p class="display-4" style="text-align:center;font-size:40px;color:black;margin-left:20px;margin-top:10px;">Bordereau de frais de l'année <?php echo $annee; ?></p>
     <br>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Je soussigné(e) <strong><?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?></strong>
+    <p class="display-4" style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Je soussigné(e) <strong><?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?></strong>
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">demeurant <strong><?php echo $_SESSION['rue'].' '.$_SESSION['cp'].' '.$_SESSION['ville']; ?></strong>
+    <p class="display-4" style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">demeurant <strong><?php echo $_SESSION['rue'].' '.$_SESSION['cp'].' '.$_SESSION['ville']; ?></strong>
       <br><br>
     </p>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">certifie renoncer au remboursement des frais ci-dessous et les laisser à l'association <strong><?php echo $association.' '; ?></strong> en tant que don.
+    <p class="display-4" style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">certifie renoncer au remboursement des frais ci-dessous et les laisser à l'association <br><strong><?php echo $association.' '; ?></strong><br>en tant que don.
       <br><br>
     </p>
 
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p><p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Tarif kilométrique appliqué pour le remboursement : <strong><?php echo $tarifkm.' €'; ?></strong>
-
-      <br><br>
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p>
+    <p class="display-4" style="text-align:center;font-size:16px;color:black;margin-left:20px;margin-top:10px;">Tarif kilométrique appliqué pour le remboursement : <strong><?php echo $tarifkm.' €'; ?></strong>
     </p>
     <table class="table table-light table-hover table-bordered">
         <tr>
@@ -59,14 +58,17 @@
         <td class="h4" style="color:black;font-size:17px;text-align:center;background-color:#CECECE;"><?php echo $fraisTotal.' €'; ?></td>
       </tr>
     </table>
-    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;"><?php if($_SESSION['type']=="Adhérent"){echo "Je suis licencié sous le n° de licence suivant ".$_SESSION['prenom'].' '.$_SESSION['nom'].', n° '.$licence;}else{ echo "Je suis le représentant légal des adhérents suivants : </br>";
+
+    <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;"><?php if($_SESSION['type']=="Adhérent"){echo "Je suis licencié sous le n° de licence suivant "; ?> <p  style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;"><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'].', n° '.$licence;}else{ echo "Je suis le représentant légal des adhérents suivants : </br>";
 
     foreach ($adherents as $unadh)
-    {
-
-          $lesadh=$pdo->RecupAdherent($unadh);
-          echo $lesadh[1].' '.$lesadh[0].', licence n° '.$unadh.'</br>';
-        
+    {    
+      $lesadh=$pdo->RecupAdherent($unadh);
+      ?>
+        <p  style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">
+         
+          <?php echo $lesadh[1].' '.$lesadh[0].', licence n° '.$unadh.'</br>'; ?> </p>
+        <?php
         } }?>
 
       <br><br>
@@ -80,9 +82,11 @@
         <br>
       </p>
       <div >
-
-
-      <div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+      <div class="col-md-6">
         <p class="h4" style="margin-left:50%;font-size:20px;color:black;margin-top:10px;">A<span style="margin-left:10%;">Le</span>
           <br><br>
         </p>
@@ -91,27 +95,30 @@
           <br><br>
         </p>
       </div>
-      <br>
+    </div>
 
-      <div>
-        <p class="h4" style=";margin-left:10%;font-size:20px;color:black;margin-top:10px;">Partie réservée à l'association
+      <br>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+      <div class="col-md-5" style="border-style:solid;background-color:#DD9966;">
+        <p class="h4" style=";margin-left:1%;font-size:20px;color:black;margin-top:10px;">Partie réservée à l'association
           <br><br>
         </p>
-        <p class="h4" style="margin-left:10%;font-size:20px;color:black;margin-top:10px;">A
+        <p class="h4" style="margin-left:1%;font-size:20px;color:black;margin-top:10px;">A
           <br><br>
         </p>
-        <p class="h4" style="margin-left:10%;font-size:20px;color:black;margin-top:10px;">n° d'ordre du reçu :
+        <p class="h4" style="margin-left:1%;font-size:20px;color:black;margin-top:10px;">n° d'ordre du reçu :
           <br><br>
         </p>
-        <p class="h4" style="margin-left:10%;font-size:20px;color:black;margin-top:10px;">Remis le :
+        <p class="h4" style="margin-left:1%;font-size:20px;color:black;margin-top:10px;">Remis le :
           <br><br>
         </p>
         <p class="h4" style="margin-bottom:50px;margin-left:10%;font-size:20px;color:black;margin-top:10px;">Signature du trésorier :
           <br><br>
         </p>
       </div>
-
+      </div>
     </div>
   </div>
 </div>
-</div style="padding-bottom:100px;">

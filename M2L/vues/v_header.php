@@ -6,16 +6,16 @@ if(!isset($_REQUEST['uc'])){
     <div class="container-fluid" style="z-index:1;height:auto; background-color:black; opacity:0.9;">
       <div class="row">
         <div class="col-md-8">
-					<p class="display-4" style="color:white"><img src="./images/logo_blk.png" width="70px"/> Maison des ligues de Lorraine</p>
+					<p class="display-4" style="color:white"><a href="<?php if((isset($_SESSION['demandeur'])&&$_SESSION['demandeur'] == 'ok') || (isset($_SESSION['tresorier'])&&$_SESSION['tresorier'] == 'ok')) { echo "index.php?uc=gererAccueil&action=informations";} else { echo "index.php?uc=accueil&action=accueil";} ?>"><img src="./images/logo_blk.png" width="70px"/></a> Maison des ligues de Lorraine</p>
           <p class="display-4" style="margin-left:20px;font-size:30px;color:<?php echo $colorHTML; ?>">Application de gestion des bordereaux de frais</p>
 				</div>
 				<div class="col-md-4" style="z-index:10;">
           <?php
            if((!isset($_SESSION['demandeur']) || $_SESSION['demandeur'] == "non") && (!isset($_SESSION['tresorier']) || $_SESSION['tresorier'] == "non")){
-              include("v_form_connexion.php");
+              include("./vues/v_form_connexion.php");
            }
           else {
-                  include("v_acces_profil.php");
+                  include("./vues/v_acces_profil.php");
                 } ?>
         </div>
 			</div>
@@ -27,7 +27,7 @@ if(!isset($_REQUEST['uc'])){
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav hoverNav">
 						<li class="nav-item <?php if($action == "informations"){?> active <?php } ?>">
-							<a class="nav-link hoverNav" href="<?php if($_SESSION['demandeur'] == 'ok' || $_SESSION['tresorier'] == 'ok') { echo "index.php?uc=gererAccueil&action=informations";} else { echo "index.php?uc=accueil&action=accueil";} ?>">Accueil<span class="sr-only">(current)</span></a>
+							<a class="nav-link hoverNav" href="<?php if((isset($_SESSION['demandeur'])&&$_SESSION['demandeur'] == 'ok') || (isset($_SESSION['tresorier'])&&$_SESSION['tresorier'] == 'ok')) { echo "index.php?uc=gererAccueil&action=informations";} else { echo "index.php?uc=accueil&action=accueil";} ?>">Accueil<span class="sr-only">(current)</span></a>
 						</li>
 							<?php
 								if(isset($_SESSION['demandeur']) && $_SESSION['demandeur'] == 'ok')
@@ -44,7 +44,7 @@ if(!isset($_REQUEST['uc'])){
 								</li>
 						<?php }else if(isset($_SESSION['tresorier']) && $_SESSION['tresorier'] == 'ok'){ ?>
 								<li class="nav-item <?php if($action == "fraisAttenteTre"){?> active <?php } ?>">
-									<a TITLE="Demandes à valider" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttenteTre">Frais à valider</a>
+									<a TITLE="Demandes à valider" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisAttenteTre">Frais à gérer</a>
 								</li>
 								<li class="nav-item <?php if($action == "fraisConfirmerTre"){?> active <?php } ?>">
 									<a TITLE="Demandes validées" class="nav-link hoverNav" href="index.php?uc=formulaire&action=fraisConfirmerTre">Frais acceptés</a>

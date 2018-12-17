@@ -26,7 +26,7 @@ switch($action)
 					$_SESSION['demandeur'] = "ok";
 					$_SESSION['tresorier'] = "non";
 					$lien=$pdo->recupLien($mail);
-					$message= "".$lien[0];
+					
 					if($lien[0]==null)
 					{
 						$_SESSION['type']='Demandeur';

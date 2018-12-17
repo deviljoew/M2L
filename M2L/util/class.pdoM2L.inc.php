@@ -302,7 +302,7 @@ public function recupTarifKM()
 
   public function recupLigneFraisAnnee($mail,$annee)
   {
-    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where ADRESSE_MAIL='$mail' and YEAR($annee)=DATE and valider=1;";
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where ADRESSE_MAIL='$mail' and YEAR(DATE)='$annee' and valider=1;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
     $frais= $res->fetchAll();
     return $frais;

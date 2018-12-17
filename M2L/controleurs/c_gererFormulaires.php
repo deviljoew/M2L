@@ -10,14 +10,13 @@ switch($action)
   		break;
 	}
 	case 'formvalider':
-	{
-		$mail=$_SESSION['mail'];
+	{	
 		$dateform=$_REQUEST['date'];
+		$dateactuelle = date('Y-m-d');
+		$mail=$_SESSION['mail'];
+		
 
-		if($_REQUEST['motif'] == "autre")
-			$motif = $_REQUEST['motifA'];
-		else
-			$motif=$_REQUEST['motif'];
+		$motif=$_REQUEST['motif'];
 
 		$km=$_REQUEST['km'];
 		$peage=$_REQUEST['peage'];
@@ -25,9 +24,16 @@ switch($action)
 		$repas=$_REQUEST['repas'];
 		$trajet=$_REQUEST['depart']."_".$_REQUEST['arrivee'];
 		$motifs = $pdo->recupMotifs();
+		if($dateform>$dateactuelle)
+		{
+			$erreurs="Veuillez saisir une date valide";
+			include("./vues/v_form_dons.php");
+		} else {
+		
 		$dateform= strftime('%Y-%m-%d',strtotime($dateform));
 		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
 		include("./vues/v_form_valider.php");
+	}
 		break;
 	}
 	case 'fraisAttente':

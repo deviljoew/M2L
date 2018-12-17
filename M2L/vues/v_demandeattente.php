@@ -4,7 +4,7 @@
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Vos notes de frais :</p>
       <?php
         if(isset($message)){
-          include("vues/v_message.php");
+          include("./vues/v_message.php");
         }
       ?>
         <table class="table table-light table-hover table-bordered">

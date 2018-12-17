@@ -99,19 +99,19 @@
       <form name="inscription" style="margin:50px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
           <div class="form-row">
               <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
-              <input type="email" class="form-control form-control-sm" value="<?php if(isset($_POST['mail'])) { echo $_REQUEST['mail'];} ;?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com">
+              <input type="email" class="form-control form-control-sm" value="<?php if(isset($_POST['adressemail'])) { echo $_REQUEST['adressemail'];} ;?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com" required>
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">@mail</span>
               </div>
             </div>
               <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
-              <input type="password" class="form-control form-control-sm" id="motdepasse1" name="motdepasse1" placeholder="Mot de passe">
+              <input type="password" class="form-control form-control-sm" id="motdepasse1" name="motdepasse1" placeholder="Mot de passe" required>
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Mot de passe</span>
               </div>
             </div>
               <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
-              <input type="password" class="form-control form-control-sm" id="motdepasse2" name="motdepasse2" placeholder="Confirmer le mot de passe">
+              <input type="password" class="form-control form-control-sm" id="motdepasse2" name="motdepasse2" placeholder="Confirmer le mot de passe" required>
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Confirmer</span>
               </div>
@@ -146,7 +146,7 @@
           </div>
           <div class="form-row">
             <strong><span id="unchecked1" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-5">
-              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['nom'])) { echo $_REQUEST['nom'];} ?>" id="nom" name="nom" placeholder="Nom">
+              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['nom'])) { echo $_REQUEST['nom'];} ?>" id="nom" name="nom" placeholder="Nom"required>
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Nom</span>
               </div>

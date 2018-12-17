@@ -74,31 +74,50 @@ switch($action)
 					$nom=$_REQUEST['nom'];
 					$civilite = $_REQUEST['civilite'];
 					$date=$_REQUEST['datenaissance'];
-					$motdepasse1 = $_REQUEST['motdepasse1'];
-
-					$daten= strftime('%Y-%m-%d',strtotime($date));
 					$rue=$_REQUEST['rue'];
 					$ville=$_REQUEST['ville'];
-					//Permet de savoir si le code postal est valide
-					if(!estUnCp($_REQUEST['codepostal']))
+					//Récupère la dtae actuelle
+					$dateactuelle = date('Y-m-d');
+					//décompose la date actuelle
+					$dateparse = date_parse($dateactuelle);
+					$annee = $dateparse['year'];
+					 $jour = $dateparse['day'];
+			 		$mois = $dateparse['month'];
+					//décompose la date du demandeur
+					$dateparse2 = date_parse($date);
+					$anneedem = $dateparse2['year'];
+					 $jourdem = $dateparse2['day'];
+			 		$moisdem = $dateparse2['month'];
+					if(($anneedem>=($annee-18))&&($jourdem>$jour)&&($moisdem>=$mois))
 					{
-						$erreurs="Veuillez saisir un code postal valide";
+						$erreurs="Veuillez saisir une date valide (vous devez avoir au moins 18 ans)";
 						include("./vues/v_inscription.php");
-					}
-					else {
+					} else {
+						$motdepasse1 = $_REQUEST['motdepasse1'];
 
-					$codepostal = $_REQUEST['codepostal'];
+						$daten= strftime('%Y-%m-%d',strtotime($date));
+						
+						//Permet de savoir si le code postal est valide
+						if(!estUnCp($_REQUEST['codepostal']))
+						{
+							$erreurs="Veuillez saisir un code postal valide";
+							include("./vues/v_inscription.php");
+						}
+						else {
 
-					if($civilite=="F")
-						$civ="Madame";
-					else
-						$civ="Monsieur";
-					//$stringmail="Bonjour, "+$civ+" "+$nom+", veuillez confirmer votre email pour confirmer votre inscription";
-					//Envoie d'un email
-					//mail($mail, "Confirmation d'inscription", $stringmail, "From: M2L@gmail.com");
-					//On insert un nouveau demandeur dans la bdd
-					$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu, $motdepasse1,$civilite,$daten );
-					include("./vues/v_verif_mail.php");
+							$codepostal = $_REQUEST['codepostal'];
+
+							if($civilite=="F")
+								$civ="Madame";
+							else
+								$civ="Monsieur";
+							//$stringmail="Bonjour, "+$civ+" "+$nom+", veuillez confirmer votre email pour confirmer votre inscription";
+							//Envoie d'un email
+							//mail($mail, "Confirmation d'inscription", $stringmail, "From: M2L@gmail.com");
+							//On insert un nouveau demandeur dans la bdd
+							$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu, $motdepasse1,$civilite,$daten );
+							include("./vues/v_verif_mail.php");
+						}
 					}
 				}
 				else

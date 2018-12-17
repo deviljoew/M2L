@@ -69,7 +69,7 @@
         <tr>
           <td colspan=10 style="text-align:center;">
 
-             <a href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" TITLE="Visualiser/Imprimer votre bordereau"><button type="submit" style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
+             <a href="index.php?uc=formulaire&action=afficherBordereau&mail=<?=$mail;?>&annee=<?=$annee;?>" TITLE="Visualiser/Imprimer votre bordereau" target="_blank"><button type="submit" style="width:100%;" class="btn btn-success">Visualiser/Imprimer le bordereau de frais de   <?php echo $annee; ?>   <img src="./images/print.png" width="25px"></button></a>
 
            </td>
         </tr>

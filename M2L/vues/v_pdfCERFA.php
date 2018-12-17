@@ -58,8 +58,8 @@ define('FPDF_FONTPATH',"C:/Windows/fonts/");
 
 $pdf = new PDF();
 // Add Unicode fonts (.ttf files)
-$fontName = 'Calibri';
-$pdf->AddFont($fontName,'','Calibri.ttf',true);
+$fontName = 'Arial';
+$pdf->AddFont($fontName,'','Arial.ttf',true);
 $pdf->AddPage();
 $pdf->SetTitle('Reçu CERFA don',true);
 $pdf->SetFont('$fontName','B',14);

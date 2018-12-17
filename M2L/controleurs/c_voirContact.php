@@ -5,7 +5,7 @@ switch($action)
 {
 	case 'voirContact':
 	{
-		include("vues/v_contact.php");
+		include("./vues/v_contact.php");
   		break;
 	}
 	case 'envoyerMessage' :
