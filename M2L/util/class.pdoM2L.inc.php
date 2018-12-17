@@ -374,13 +374,13 @@ public function recupTarifKM()
   * @return le mail et le mdp
  */
 
- 	public function retrouverMail($adressemail)
- 	{
- 	    $req="select ADRESSE_MAIL,MDP from demandeurs where ADRESSE_MAIL = '$adressemail';";
- 		$res = PdoM2L::$monPdo->query($req)or die ("La récup du mail à échoué".$req);
- 		$email= $res->fetch();
- 		return $email;
- 	}
+ public function retrouverMdp($adressemail)
+ {
+     $req="select MDP from demandeurs where ADRESSE_MAIL = '$adressemail';";
+   $res = PdoM2L::$monPdo->query($req)or die ("La récup du mail à échoué".$req);
+   $mdp= $res->fetch();
+   return $mdp;
+ }
 
   /**
  * Modifie la ligne de frais sélectionnée

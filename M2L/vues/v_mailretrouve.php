@@ -4,7 +4,25 @@
       <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Mot de passe retrouvé !</p>
       <p class="h5" style="color:white;margin-left:20px;margin-right:10px;">
       <br>
-      Vous allez recevoir à l'adresse mail saisi votre mot de passe.
+      Vous allez recevoir à l'adresse mail saisi votre mot de passe.<br><br><br>
+      <?php
+        if(isset($_REQUEST['message']))
+        {
+          $message = $_REQUEST['message'];
+        }
+        if(isset($_REQUEST['erreurs']))
+        {
+          $erreurs = $_REQUEST['erreurs'];
+        }
+
+        if(isset($erreurs)){
+          include("./vues/v_erreurs.php");
+        }
+        if(isset($message)){
+          include("./vues/v_message.php");
+        }
+
+      ?>
       </p>
       <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=accueil&action=accueil" method="POST">
         <div class="form-group">

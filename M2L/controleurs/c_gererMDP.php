@@ -4,22 +4,26 @@ switch($action)
 {
 	case 'envoimdp':
 	{
-		
+
 		include("./vues/v_mdpoublie.php");
 		break;
 	}
 	case 'mail':
-	{	
-		$adressemail=$_REQUEST['adressemail'];
-		
-		$mail=$pdo->retrouverMail($adressemail);
-		if($mail!=null)
+	{
+		$adressemail=$_POST['adressemail'];
+
+		$mdp=$pdo->retrouverMdp($adressemail);
+		if($adressemail!=null)
 		{
-			//$stringmail="Bonjour, voici votre mot de passe : ".$mail[0]." Merci de votre confiance;
-			//Envoie d'un email
-			//mail($mail, "Oublie du mot de passe", $stringmail, "From: M2L@gmail.com");
-		
-			include("./vues/v_mailretrouve.php");}
+			// Préparation du mail contenant le lien d'activation
+			$destinataire = $adressemail;
+			$sujet = "Retrouvez votre mot de passe" ;
+			$entete = "From: maisondesliguesde@lorraine.com" ;
+
+			// Le lien d'activation est composé du login(log) et de la clé(cle)
+			$message = 'MAIL : Voici votre mot de passe récupéré : ' . $mdp[0];
+			include("./vues/v_mailretrouve.php");
+		}
 		else{
 			include("./vues/v_mauvaismail.php");
 		}

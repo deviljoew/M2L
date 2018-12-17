@@ -4,14 +4,10 @@
       <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Mail non existant !</p>
       <p class="h5" style="color:white;margin-left:20px;margin-right:10px;">
       <br>
-      Nous n'avons pas pu retrouver votre adresse mail car elle n'est pas inscrite dans notre base de données ! <br>
+      Nous n'avons pas pu retrouver votre adresse mail car elle n'est pas inscrite dans notre base de données ! <br><br>
       </p>
 
-      <form style="margin-left:20px;margin-top:20px;" action="index.php?uc=accueil&action=accueil" method="POST">
-        <div class="form-group">
-          <button TITLE="Retourner à l'accueil" type="submit" class="btn btn-danger">Retour à l'accueil</button>
-        </div>
-      </form>
+          <a style="margin-left:20px;" href="index.php?uc=accueil&action=accueil" TITLE="Retourner à l'accueil" ><button class="btn btn-danger">Retour à l'accueil</button></a><span style="margin-left:10px;"><a href="index.php?uc=oubliemdp&action=envoimdp" TITLE="Retourner à l'accueil" ><button class="btn btn-light">Entrer un nouveau mail</button></a></span>
     </div>
     <div class="col-md-8" style="background-color:#00000055;height:740px;">
     </div>
