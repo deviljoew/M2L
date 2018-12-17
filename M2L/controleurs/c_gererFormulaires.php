@@ -179,7 +179,7 @@ switch($action)
 		$annee=$_REQUEST['annee'];
         $fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
 
-        
+
 
         $club =$pdo->recupClub($licence);
         $association=$club[0].', '.$club[1].', '.$club[2].' '.$club[3];

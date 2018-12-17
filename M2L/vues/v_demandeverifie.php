@@ -31,7 +31,7 @@
           </tr>
 
         <?php } $backgroundColor = "#FFFFFF";?>
-        <?php if($_SESSION['type']="Demandeur") { ?>
+        <?php if($_SESSION['type']=="Demandeur") { echo $_SESSION['type'];?>
         <tr>
           <td colspan=6 style="text-align:center;">
 
@@ -45,11 +45,11 @@
 
              <?php foreach($adherents as $unadh)
              {
-                
+
                 ?>
                 <option value="<?php echo $unadh[0];?>"><?php echo $unadh[0].' '.$unadh[1].' '.$unadh[2]; ?></option>
                 <?php
-                
+
              }
               ?>
             </select>

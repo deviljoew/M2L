@@ -174,7 +174,7 @@ public function recupTarifKM()
   {
       $req="select NUMERO_LICENCE from lien where ADRESSE_MAIL= '$mail';";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup de l'adherent à échoué".$req);
-    $renvoi = $res->fetchAll();
+    $renvoi = $res->fetch();
     return $renvoi;
   }
 
@@ -347,7 +347,7 @@ public function recupTarifKM()
 
   public function RecupAdherentSR()
   {
-      $req="select distinct NUMERO_LICENCE,NOM,PRENOM from adherents;";
+    $req="select distinct NUMERO_LICENCE,NOM,PRENOM from adherents;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup de l'adherent sr à échoué".$req);
     $adherent= $res->fetchAll();
     return $adherent;

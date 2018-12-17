@@ -61,9 +61,9 @@
 
 <div class="container-fluid">
   <div class="row" style="padding-bottom:30px;">
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
+    <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">La maison des ligues de Lorraine</p>
-      <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
+      <p class="h5" style="font-size:17px;color:white;margin-left:10px;margin-right:10px;">
         <br>
         Elle a pour mission de fournir des espaces et des services aux différentes ligues sportives régionales de Lorraine et à d’autres structures hébergées.<br><br>
 
@@ -98,22 +98,22 @@
         <!-- !!!!! Renvoie en name " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form name="inscription" style="margin:50px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
           <div class="form-row">
-              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
               <input type="email" class="form-control form-control-sm" value="<?php if(isset($_POST['mail'])) { echo $_REQUEST['mail'];} ;?>" id="adressemail" name="adressemail" placeholder="nom@exemple.com">
               <div class="input-group-append">
-                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Adresse mail</span>
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">@mail</span>
               </div>
             </div>
-              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
               <input type="password" class="form-control form-control-sm" id="motdepasse1" name="motdepasse1" placeholder="Mot de passe">
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Mot de passe</span>
               </div>
             </div>
-              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-4">
+              <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
               <input type="password" class="form-control form-control-sm" id="motdepasse2" name="motdepasse2" placeholder="Confirmer le mot de passe">
               <div class="input-group-append">
-                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Confirmer le mot de passe</span>
+                <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Confirmer</span>
               </div>
             </div>
           </div>
