@@ -65,7 +65,7 @@
     {
 
           $lesadh=$pdo->RecupAdherent($unadh);
-          echo $lesadh[2].' '.$lesadh[1].', licence n° '.$lesadh[0].'</br>';
+          echo $lesadh[1].' '.$lesadh[0].', licence n° '.$unadh.'</br>';
         
         } }?>
 

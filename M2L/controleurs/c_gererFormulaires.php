@@ -112,7 +112,7 @@ switch($action)
 			 $annee = $date['year'];
 			 if($mois==12&&$jour>=24)
 					 $annee++;
-		if($_SESSION['type']="Demandeur")
+		if($_SESSION['type']=="Demandeur")
 		{
 			$adherents =$pdo->RecupAdherentSR();
 		}
@@ -162,7 +162,7 @@ switch($action)
 	case 'afficherBordereau' :
 	{
 		$mail = $_REQUEST['mail'];
-		if($_SESSION['type']="Demandeur")
+		if($_SESSION['type']=="Demandeur")
 		{
 			$adherents =$_POST['adh'];
 			/*$i=0
