@@ -2,9 +2,10 @@
 
 ob_get_clean();
 require('./util/tfpdf/tfpdf.php');
+define("_SYSTEM_TTFONTS", "C:/Windows/Fonts/");
 
 $pdf = new tFPDF();
-$pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+$pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
 $pdf->AddPage();
 $pdf->SetTitle('Reçu CERFA don',true);
 $pdf->SetFont('DejaVu','',14);
@@ -43,7 +44,7 @@ $pdf->SetFont('DejaVu','',14);
 $pdf->SetFillColor(210,210,200);
 $pdf->Cell(190, 8, "Donateur", 1, 1, "C", true);
 $pdf->SetFont('DejaVu','',12);
-$pdf->MultiCell(190,8, "\nNom : \nAdresse : \nCode postal :                     Commune : \n ", 1, "L", false);
+$pdf->MultiCell(190,8, "\nNom : \nAdresse : \nCode postal : $CP                   Commune : $rue \n ", 1, "L", false);
 $pdf->MultiCell(190,8, "\nLe bénéficiaire reconnait avoir reçu au titre des versements ouvrant droit à réduction d'impôt, la somme de : \n
 Somme en toute lettre : $totalEnLettre euros \n
 Date du paiement : \n
