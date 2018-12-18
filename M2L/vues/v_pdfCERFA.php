@@ -4,7 +4,7 @@ ob_get_clean();
 require('./util/tfpdf/tfpdf.php');
 
 $pdf = new tFPDF();
-$pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+$pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
 $pdf->AddPage();
 $pdf->SetTitle('Reçu CERFA don',true);
 $pdf->SetFont('DejaVu','',14);
