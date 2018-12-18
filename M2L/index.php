@@ -1,8 +1,8 @@
 <?php session_start();
 require_once("./util/fonctions.inc.php");
 require('./util/fpdf/fpdf.php');
+require("./util/enlettre.php");
 require_once("./util/class.pdoM2L.inc.php");
-
   /* Création d'une instance d'accès à la base de données */
 	$pdo = PdoM2L::getPdoM2L();
 ?>
@@ -17,6 +17,7 @@ require_once("./util/class.pdoM2L.inc.php");
     <link rel="stylesheet" href='./util/bootstrap.min.css'/>
     <link rel="stylesheet" href='./util/background.css'/>
     <link rel="stylesheet" href='./util/style.css'/>
+		<link rel="stylesheet" href='./util/miseenforme.css'/>
     <title>Maison des ligues de Lorraine</title>
   </head>
 <body style="background-color:#000000">

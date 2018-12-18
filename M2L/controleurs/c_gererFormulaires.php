@@ -158,12 +158,11 @@ switch($action)
 
 	case 'genererpdf' :
 	{
-		require("./util/enlettre.php");
 		$mail = $_REQUEST['mail'];
 		$adherents = $pdo->RecupDemandeur($mail);
 		$rue = $adherents['RUE'];
 		$CP = $adherents['CP'];
-		$totalEnLettre = enlettres(25698);
+		$totalEnLettre = CreerChiffreEnLettre(25698.26);
 		include('./vues/v_pdfCERFA.php');
 		break;
 	}

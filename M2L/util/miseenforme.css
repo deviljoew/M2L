@@ -1,20 +1,9 @@
-@media screen and (max-width: 600px) {
-    .setHeight{
-       height:500px;
-     }
-}
-@media screen and (max-width: 1020px) {
-    .setHeight{
-       height:400px;
-     }
-}
-@media screen and (max-width: 1500px) {
-    .setHeight{
-       height:400px;
-     }
-}
-@media screen and (max-width: 1920px) {
-    .setHeight{
-       height:780px;
-     }
+.setFrontSize{
+   font-size: 17px;
+ }
+
+@media only screen and (max-width: 600px) {
+  .setFrontSize{
+    font-size: 15px;
+  }
 }
