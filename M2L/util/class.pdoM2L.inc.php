@@ -257,7 +257,7 @@ public function recupTarifKM()
 
   public function recupNomPrenomDemandeursTre()
   {
-    $req="select DISTINCT NOM,PRENOM from lignes_frais, demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=1 order by NOM;";
+    $req="select DISTINCT demandeurs.ADRESSE_MAIL,NOM,PRENOM from lignes_frais, demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=1 order by NOM;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des nom des demandeur de lignes de frais a échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -318,9 +318,9 @@ public function recupTarifKM()
 
   public function RecupDemandeur($mail)
   {
-    $req="select NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN,MDP from demandeurs where ADRESSE_MAIL = '$mail';";
+    $req="select ADRESSE_MAIL,NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN,MDP from demandeurs where ADRESSE_MAIL = '$mail';";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup du demandeur à échoué".$req);
-    $adherent= $res->fetch();
+    $adherent= $res->fetchAll();
     return $adherent;
   }
 /**
