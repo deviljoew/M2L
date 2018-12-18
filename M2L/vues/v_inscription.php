@@ -152,7 +152,7 @@
               </div>
             </div>
             <strong><span id="unchecked2" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-5">
-            <input type="text" class="form-control form-control-sm" id="prenom" value="<?php if(isset($_POST['prenom'])) { echo $_REQUEST['prenom'];} ?>" name="prenom" placeholder="Prénom">
+            <input type="text" class="form-control form-control-sm" id="prenom" value="<?php if(isset($_POST['prenom'])) { echo $_REQUEST['prenom'];} ?>" name="prenom" placeholder="Prénom" required>
             <div class="input-group-append">
               <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Prenom</span>
             </div>
@@ -160,7 +160,7 @@
           </div>
           <div class="form-row">
             <strong><span id="unchecked3" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group col-md-5">
-              <input type="date" class="form-control form-control-sm" id="datenaissance" value="<?phpif(isset($_POST['datenaissance'])) { echo $_REQUEST['datenaissance'];} ?>" name="datenaissance">
+              <input type="date" class="form-control form-control-sm" id="datenaissance" value="<?phpif(isset($_POST['datenaissance'])) { echo $_REQUEST['datenaissance'];} ?>" name="datenaissance" required>
               <div class="form-group input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Date naissance</span>
               </div>
@@ -168,7 +168,7 @@
           </div>
           <div class="form-row">
             <strong><span id="unchecked4" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-6">
-              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['rue'])) { echo $_REQUEST['rue'];} ?>" id="rue" name="rue" placeholder="Rue">
+              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['rue'])) { echo $_REQUEST['rue'];} ?>" id="rue" name="rue" placeholder="Rue" required>
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Rue</span>
               </div>
@@ -176,13 +176,13 @@
           </div>
           <div class="form-row">
             <strong><span id="unchecked5" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-3">
-              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['codepostal'])) { echo $_REQUEST['codepostal'];} ?>" id="codepostal" name="codepostal" placeholder="Code postal">
+              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['codepostal'])) { echo $_REQUEST['codepostal'];} ?>" id="codepostal" name="codepostal" placeholder="Code postal" required>
               <div class="input-group-append">
                 <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Code postal</span>
               </div>
             </div>
             <strong><span id="unchecked6" style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group form-group col-md-5">
-              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['ville'])) { echo $_REQUEST['ville'];} ?>" id="ville" name="ville" placeholder="Ville">
+              <input type="text" class="form-control form-control-sm" value="<?php if(isset($_POST['ville'])) { echo $_REQUEST['ville'];} ?>" id="ville" name="ville" placeholder="Ville" required>
                 <div class="input-group-append">
                   <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Ville</span>
                 </div>
