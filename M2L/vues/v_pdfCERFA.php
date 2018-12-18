@@ -30,28 +30,24 @@ $pdf->Cell(120);
 $pdf->Cell(30,10,'Numero d\'orde du reçu:',0,1,'C');
 $pdf->Cell(150);
 $pdf->SetFont('DejaVu','',14);
-$pdf->Cell(30,10,'2016-14',1,1,'C');
+$pdf->Cell(30,10,$numrecu,1,1,'C');
 
 
 
-$pdf->Cell(190, 8, "Bénéficiaire de versements", 1, 1, "C", true);
+$pdf->Cell(190, 8, "Bénéficiaire des versements", 1, 1, "C", true);
 $pdf->SetFont('DejaVu','',12);
-$pdf->MultiCell(190,5, "\nNom ou dénomination : \n
-Adresse : \n
-............................................................................................................................................................... \n
+$pdf->MultiCell(190,5, "\nNom ou dénomination : \n".$nomclub."\n
+Adresse : \n".$adresseclub." \n
                                        Oeuvre ou organisme d'intérêt général \n ", 1, "L", false);
 $pdf->SetFont('DejaVu','',14);
 $pdf->SetFillColor(210,210,200);
 $pdf->Cell(190, 8, "Donateur", 1, 1, "C", true);
 $pdf->SetFont('DejaVu','',12);
-$pdf->MultiCell(190,8, "\nNom : \nAdresse : \nCode postal : $CP                   Commune : $rue \n ", 1, "L", false);
-$pdf->MultiCell(190,8, "\nLe bénéficiaire reconnait avoir reçu au titre des versements ouvrant droit à réduction d'impôt, la somme de : \n
-Somme en toute lettre : $totalEnLettre euros \n
-Date du paiement : \n
-Motif du versement : Autres \n
-                                                                                                                         Date et signature: \n
-                                                                                                                         \n
-                                                                                                                         ", 1, "L", false);
+$pdf->MultiCell(190,8, "\nNom : ".$nom." \nAdresse :".$adresse." \nCode postal : ".$cp."     Commune : ".$ville." \n ", 1, "L", false);
+$pdf->MultiCell(190,8, "\nLe bénéficiaire reconnait avoir reçu au titre des versements ouvrant droit à réduction d'impôt, la somme de :  \n
+Somme en toute lettre : ".$totalEnLettre." euros \n
+Date du paiement : ".$date."\n
+Motif du versement : Autres \n                                                                               Date et signature: \n\n ", 1, "L", false);
 
 $pdf->SetFont('DejaVu','',14);
 $pdf->Output();

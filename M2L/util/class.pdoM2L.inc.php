@@ -75,6 +75,21 @@ public function recupClub($licence)
   $club=$res->fetch();
   return $club;
 }
+  /**
+ * Retourne le club grace au num
+ *
+ * @param
+ * @param
+ * @return le club
+*/
+public function recupClubNum($num)
+{
+  $req = "Select NOM,RUE,CP,VILLE from clubs where NUM_CLUB='$num';";
+  $res = PdoM2L::$monPdo->query($req) or die ("La recup du club num a échoué");
+  $club=$res->fetch();
+  return $club;
+}
+
  /**
  * Retourne le tarif km
  *
@@ -98,9 +113,9 @@ public function recupTarifKM()
   * @return le demandeur créé
  */
 
- 	public function ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu,$motdepasse,$civ,$daten)
+ 	public function ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$motdepasse,$civ,$daten)
 	{
-		$req="Insert into demandeurs values ('$mail','$nom','$prenom','$rue','$codepostal','$ville',$num_recu,'$motdepasse','$civ','$daten');";
+		$req="Insert into demandeurs values ('$mail','$nom','$prenom','$rue','$codepostal','$ville',null,'$motdepasse','$civ','$daten',null);";
 		$res = PdoM2L::$monPdo->query($req) or die ("L'insertion du demandeur à échoué".$req);
 
 	}
@@ -318,9 +333,9 @@ public function recupTarifKM()
 
   public function RecupDemandeur($mail)
   {
-    $req="select ADRESSE_MAIL,NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN,MDP from demandeurs where ADRESSE_MAIL = '$mail';";
+    $req="select ADRESSE_MAIL,NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN,MDP,NUMCLUBA,NUM_RECU from demandeurs where ADRESSE_MAIL = '$mail';";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup du demandeur à échoué".$req);
-    $adherent= $res->fetchAll();
+    $adherent= $res->fetch();
     return $adherent;
   }
 /**
@@ -332,7 +347,7 @@ public function recupTarifKM()
 
   public function RecupAdherent($licence)
   {
-      $req="select NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN from adherents where NUMERO_LICENCE = '$licence'";
+      $req="select NOM,PRENOM,SEXE,RUE,CP,VILLE,DATEN,NUM_CLUB from adherents where NUMERO_LICENCE = '$licence'";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup de l'adherent à échoué".$req);
     $adherent= $res->fetch();
     return $adherent;
