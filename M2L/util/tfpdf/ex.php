@@ -1,8 +1,8 @@
 <?php
 
-// Définition facultative du répertoire des polices systèmes
-// Sinon tFPDF utilise le répertoire [chemin vers tFPDF]/font/unifont/
-// define("_SYSTEM_TTFONTS", "C:/Windows/Fonts/");
+// Dï¿½finition facultative du rï¿½pertoire des polices systï¿½mes
+// Sinon tFPDF utilise le rï¿½pertoire [chemin vers tFPDF]/font/unifont/
+//define("_SYSTEM_TTFONTS", "C:/Windows/Fonts/");
 
 require('tfpdf.php');
 
@@ -13,11 +13,11 @@ $pdf->AddPage();
 $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
 $pdf->SetFont('DejaVu','',14);
 
-// Charge une chaîne UTF-8 à partir d'un fichier
+// Charge une chaï¿½ne UTF-8 ï¿½ partir d'un fichier
 $txt = file_get_contents('HelloWorld.txt');
 $pdf->Write(8,$txt);
 
-// Sélectionne une police standard (utilise windows-1252)
+// Sï¿½lectionne une police standard (utilise windows-1252)
 $pdf->SetFont('Arial','',14);
 $pdf->Ln(10);
 $pdf->Write(5,"La taille de ce PDF n'est que de 13 ko.");

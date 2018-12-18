@@ -161,6 +161,8 @@ switch($action)
 		require("./util/enlettre.php");
 		$mail = $_REQUEST['mail'];
 		$adherents = $pdo->RecupDemandeur($mail);
+		$rue = $adherents['RUE'];
+		$CP = $adherents['CP'];
 		$totalEnLettre = enlettres(25698);
 		include('./vues/v_pdfCERFA.php');
 		break;
