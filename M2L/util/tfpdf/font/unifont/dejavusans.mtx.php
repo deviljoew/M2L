@@ -13,7 +13,11 @@ $desc=array (
 );
 $up=-63;
 $ut=44;
-$ttffile='E:\GitHub_repositories\M2L\M2L\util\tfpdf/font/unifont/DejaVuSans.ttf';
+
+$ttffile='C:/Windows/Fonts/DejaVuSans.ttf';
+
+//$ttffile='E:/GitHub_repositories/M2L/M2L/util/tfpdf/font/unifont/DejaVuSans.ttf';
+
 $originalsize=757076;
 $fontkey='dejavu';
 ?>

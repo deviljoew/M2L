@@ -53,8 +53,6 @@ switch($action)
 					}
 					else
 					{
-						
-						$num_recu=0;
 						//Récupère les infos adhérent
 
 						$nom = $demandeurinfos[0];
@@ -72,7 +70,7 @@ switch($action)
 						//Envoie d'un email
 						//mail($mail, "Confirmation d'inscription", $stringmail, "From: M2L@gmail.com");
 						//Ajoute au demandeur ses infos
-						$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu,$motdepasse1,$civilite,$daten);
+						$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$motdepasse1,$civilite,$daten);
 						//Fait le lien entre les deux
 						$lien=$pdo->DemandeurVersAdherent($licence,$mail);
 						include("./vues/v_verif_mail.php");
@@ -81,7 +79,7 @@ switch($action)
 			else if($recupmail==null)
 					{
 						//On récupere les infos du formulaire
-						$num_recu=0;
+						
 						$prenom = $_REQUEST['prenom'];
 						$nom=$_REQUEST['nom'];
 						$civilite = $_REQUEST['civilite'];
@@ -127,7 +125,7 @@ switch($action)
 								//Envoie d'un email
 								//mail($mail, "Confirmation d'inscription", $stringmail, "From: M2L@gmail.com");
 								//On insert un nouveau demandeur dans la bdd
-								$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$num_recu, $motdepasse1,$civilite,$daten );
+								$demandeur=$pdo->ajouterDemandeur($mail,$nom,$prenom,$rue,$codepostal,$ville,$motdepasse1,$civilite,$daten );
 								include("./vues/v_verif_mail.php");
 							}
 						}

@@ -140,7 +140,7 @@ switch($action)
 		$mail=$_SESSION['mail'];
 		$fraisValides = $pdo->recupLigneFraisValideTre();
 		$fraisDemandeur = $pdo->recupNomPrenomDemandeursTre();
-		Include("./vues/v_demandeverifieTre.php");
+		include("./vues/v_demandeverifieTre.php");
 		break;
 	}
 
@@ -159,10 +159,33 @@ switch($action)
 	case 'genererpdf' :
 	{
 		$mail = $_REQUEST['mail'];
-		$adherents = $pdo->RecupDemandeur($mail);
-		$rue = $adherents['RUE'];
-		$CP = $adherents['CP'];
-		$totalEnLettre = CreerChiffreEnLettre(25698.26);
+		$demandeur = $pdo->RecupDemandeur($mail);
+		$nom = $demandeur['NOM'];
+		$prenom = $demandeur['PRENOM'];
+		$ville = $demandeur['VILLE'];
+		$cp = $demandeur['CP'];
+		$adresse = $demandeur['RUE'];
+		$numrecu = $demandeur['NUM_RECU'];
+		$lien=$pdo->recupLien($mail);
+		if($lien[0]==null) //Si demandeur alors
+		{
+			$num = $demandeur['NUMCLUBA'];
+			$club=$pdo->recupClubNum($num);
+			$adresseclub = $club['RUE'];
+			$nomclub = $club['NOM'];
+		}
+		else//Sinon si adhérents
+		{
+			$adherent=$pdo->RecupAdherent($lien[0]);
+			$club=$pdo->recupClubNum($adherent['NUM_CLUB']);
+			$adresseclub = $club['RUE'];
+			$nomclub = $club['NOM'];
+		}
+
+		//Récupération de la date d'aujourd'hui
+		$date= date('d/m/Y');
+		//$date = strftime('%d/%m/%Y',$datetoday);
+		$totalEnLettre = enlettres(25698);
 		include('./vues/v_pdfCERFA.php');
 		break;
 	}
