@@ -10,11 +10,11 @@ switch($action)
   		break;
 	}
 	case 'formvalider':
-	{	
+	{
 		$dateform=$_REQUEST['date'];
 		$dateactuelle = date('Y-m-d');
 		$mail=$_SESSION['mail'];
-		
+
 
 		$motif=$_REQUEST['motif'];
 
@@ -29,7 +29,7 @@ switch($action)
 			$erreurs="Veuillez saisir une date valide";
 			include("./vues/v_form_dons.php");
 		} else {
-		
+
 		$dateform= strftime('%Y-%m-%d',strtotime($dateform));
 		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
 		include("./vues/v_form_valider.php");
@@ -171,15 +171,8 @@ switch($action)
 		if($_SESSION['type']=="Demandeur")
 		{
 			$adherents =$_POST['adh'];
-			/*$i=0
-			foreach($adherents as $unadh))
-			{
-				$lesadh[$i]=$pdo->RecupAdherent($unadh);
-				$i++;
-
-			}*/
 			$club =$pdo->recupClub($adherents[0]);
-		} 
+		}
 		else {
 			$licence=$_SESSION['licence'];
 			$club =$pdo->recupClub($licence);
