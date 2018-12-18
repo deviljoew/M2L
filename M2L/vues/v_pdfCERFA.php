@@ -45,7 +45,7 @@ $pdf->Cell(190, 8, "Donateur", 1, 1, "C", true);
 $pdf->SetFont('DejaVu','',12);
 $pdf->MultiCell(190,8, "\nNom : \nAdresse : \nCode postal :                     Commune : \n ", 1, "L", false);
 $pdf->MultiCell(190,8, "\nLe bénéficiaire reconnait avoir reçu au titre des versements ouvrant droit à réduction d'impôt, la somme de : \n
-Somme en toute lettre :  euros \n
+Somme en toute lettre : $totalEnLettre euros \n
 Date du paiement : \n
 Motif du versement : Autres \n
                                                                                                                          Date et signature: \n
