@@ -158,8 +158,8 @@ switch($action)
 
 	case 'genererpdf' :
 	{
-		$nom = $_REQUEST['nom'];
-		$prenom = $_REQUEST['prenom'];
+		$mail = $_REQUEST['mail'];
+		$adherents = $pdo->RecupDemandeur($mail);
 		include('./vues/v_pdfCERFA.php');
 		break;
 	}

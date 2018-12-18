@@ -13,11 +13,11 @@ $pdf->SetFont('DejaVu','',12);
 // Logo
 $pdf->Image('./images/cerfa.png',10,6,30);
 // Police Arial gras 15
-$pdf->SetFont('DejaVu','',14);
+$pdf->SetFont('DejaVu','',13);
 // Décalage à droite
-$pdf->Cell(80);
+$pdf->Cell(90);
 // Titre
-$pdf->Cell(30,10,'Reçu au titre des dons à \n certains organismes d\'intérêt général',0,0,'C');
+$pdf->Cell(30,10,'Reçu au titre des dons à certains organismes d\'intérêt général',0,0,'C');
 // Saut de ligne
 $pdf->Ln(20);
 $pdf->SetFont('DejaVu','',12);
