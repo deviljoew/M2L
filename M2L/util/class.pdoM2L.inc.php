@@ -225,12 +225,11 @@ public function recupTarifKM()
   * @param $mail
   * @return un tableau associatif du motif
  */
-
   public function recupLigneFrais($mail)
   {
     $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais where ADRESSE_MAIL='$mail' and valider=0;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
-    $frais= $res->fetch();
+    $frais= $res->fetchAll();
     return $frais;
   }
   /**
