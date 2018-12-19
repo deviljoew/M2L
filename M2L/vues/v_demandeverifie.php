@@ -17,9 +17,11 @@
             </tr>
           <?php
                 foreach($fraisAttente as $unfrais){
+                  $date=strftime('%d/%m/%Y',strtotime(substr($unfrais['DATE'],0,10)));
             ?>
           <tr>
-            <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['DATE'] != ""){echo substr($unfrais['DATE'],0,10);}else{ echo "non renseigné";}?></td>
+
+            <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['DATE'] != ""){echo  $date;}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['LIBELLE'] != ""){echo $unfrais['LIBELLE'];}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['TRAJET'] != ""){echo $unfrais['TRAJET'];}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['KM'] != ""){echo $unfrais['KM'].' km';}else{ echo "non renseigné";}?></td>
@@ -28,6 +30,7 @@
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['cout_total'].' €'; ?></td>
+
           </tr>
 
         <?php } $backgroundColor = "#FFFFFF";?>

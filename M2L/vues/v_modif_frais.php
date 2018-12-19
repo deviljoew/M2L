@@ -15,8 +15,15 @@ function verifChamps()
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8">
-    <p class="display-4 setFrontTitle" style="color:white;margin-left:20px;margin-top:10px;">Modifier vos notes de frais :</p>
+
+    <div class="col-md-8" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
+    <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Modifier vos notes de frais :</p>
+    <?php
+        if(isset($erreurs)){
+          include("./vues/v_erreurs.php");
+        }
+      ?>
+
       <form onSubmit="return verifChamps();" action="index.php?uc=formulaire&date=<?=$date?>&motif=<?=$_REQUEST['motif']?>&trajet=<?=$_REQUEST['trajet']?>&km=<?=$_REQUEST['km']?>&peage=<?=$_REQUEST['peage']?>&repas=<?=$_REQUEST['repas']?>&hebergement=<?=$_REQUEST['hebergement']?>&action=misAjoursFrais" method="POST">
         <table class="table table-light table-hover table-bordered">
           <tr>
@@ -29,8 +36,8 @@ function verifChamps()
             <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
           </tr>
           <tr>
-              <td class="display-4" style="font-size:20px;text-align:center;"><input type="date" class="form-control form-control-sm" value="<?php echo $date?>" id="date" name="date" placeholder="Date"></td>
-              <td class="display-4" style="font-size:20px;text-align:center;"><select class="form-control form-control-sm" id="motif" name="motif">
+              <td class="display-4" style="font-size:20px;text-align:center;"><input type="date" class="form-control form-control-sm" value="<?php echo $date?>" id="date" name="date" placeholder="Date" required></td>
+              <td class="display-4" style="font-size:20px;text-align:center;"><select class="form-control form-control-sm" id="motif" name="motif" required>
                 <option disabled="disabled" selected>Motif</option>
                <?php foreach($motifs as $unmotif)
                {
@@ -39,7 +46,7 @@ function verifChamps()
                 <?php
                }?>
               </select></td>
-              <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $_REQUEST['trajet'];?>" id="trajet" name="trajet" placeholder="Trajet"></td>
+              <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $_REQUEST['trajet'];?>" id="trajet" name="trajet" placeholder="Trajet" required></td>
               <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $_REQUEST['km'];?>" id="km" name="km" placeholder="km"></td>
               <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $_REQUEST['peage'];?>" id="peage" name="peage" placeholder="Peage"></td>
               <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $_REQUEST['repas'];?>" id="repas" name="repas" placeholder="Repas"></td>
