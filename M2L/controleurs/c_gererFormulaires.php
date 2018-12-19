@@ -229,14 +229,19 @@ switch($action)
 			$adresseclub = $club['RUE'];
 			$nomclub = $club['NOM'];
 		}
+		//Récupération de la date d'aujourd'hui
+		$date= date('d/m/Y');
+		$date = date_parse($date);
+		$annee = $date['year'];
+		if($mois==12&&$jour>=24)
+				$annee++;
 		$fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
 		$total = 0;
         foreach($fraisValide as $unfrais)
         {
         	$total += $unfrais['cout_total'];
         }
-		//Récupération de la date d'aujourd'hui
-		$date= date('d/m/Y');
+		
 		//$date = strftime('%d/%m/%Y',$datetoday);
 		$totalEnLettre = enlettres($total);
 		include('./vues/v_pdfCERFA.php');
