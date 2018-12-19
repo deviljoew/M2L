@@ -23,7 +23,7 @@
             </tr>
           <?php
                 foreach($fraisAttente as $unfrais){
-                  $date=substr($unfrais['DATE'],0,10);?>
+                  $date=strftime('%d/%m/%Y',strtotime(substr($unfrais['DATE'],0,10)));?>
           <tr>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['DATE'] != ""){echo $date;}else{ echo "non renseigné";}?></td>
             <td class="h4" style="font-size:17px;text-align:center;"><?php if($unfrais['LIBELLE'] != ""){echo $unfrais['LIBELLE'];}else{ echo "non renseigné";}?></td>

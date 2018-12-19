@@ -11,9 +11,6 @@ function verifChamps()
     return true;
 }
 
-</script>
-<script lang="javascript">
-
 function motifAutre(obj1)
 {
   if(document.getElementById("motif").value == "autre"){
@@ -99,13 +96,13 @@ function motifAutre(obj1)
 
         <div class="form-row form-group">
           <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group group-form col-md-4">
-            <input type="text" class="form-control form-control-sm" value="<?php echo $trajet;?>" id="depart" name="depart" placeholder="Ville départ" required>
+            <input type="text" class="form-control form-control-sm" value="<?php if(isset($depart)) { echo $depart; } ?>" id="depart" name="depart" placeholder="Ville départ" required>
             <div class="input-group-append">
               <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Ville départ</span>
             </div>
           </div>
           <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="input-group group-form col-md-4">
-            <input type="text" class="form-control form-control-sm" value="<?php echo $trajet;?>" id="arrivee" name="arrivee" placeholder="Ville arrivée" required>
+            <input type="text" class="form-control form-control-sm" value="<?php if(isset($arrivee)) { echo $arrivee; }?>" id="arrivee" name="arrivee" placeholder="Ville arrivée" required>
             <div class="input-group-append">
               <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Ville arrivée</span>
             </div>
