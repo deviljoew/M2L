@@ -228,6 +228,11 @@ switch($action)
 			$adresseclub = $club['RUE'];
 			$nomclub = $club['NOM'];
 		}
+		$datea = date('Y-m-d');
+		$datea = date_parse($datea);
+		$annee = $datea['year'];
+		if($mois==12&&$jour>=24)
+				$annee++;
 		$fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
 		$total = 0;
     foreach($fraisValide as $unfrais)
