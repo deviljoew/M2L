@@ -29,9 +29,9 @@ switch($action)
 			$erreurs="Veuillez saisir une date valide";
 			include("./vues/v_form_dons.php");
 		} else {
-
+		$total = $km*$_SESSION['tarif']+$repas+$peage+$hebergement;
 		$dateform= strftime('%Y-%m-%d',strtotime($dateform));
-		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement);
+		$lignefrais = $pdo->ajouterLigneFrais($mail,$dateform,$motif,$trajet,$km,$peage,$repas,$hebergement,$total);
 		include("./vues/v_form_valider.php");
 	}
 		break;
@@ -59,11 +59,32 @@ switch($action)
 			$date=strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
 			$motif=$_REQUEST['motif'];
 			$trajet=$_REQUEST['trajet'];
-			$km=$_REQUEST['km'];
-			$peage=$_REQUEST['peage'];
-			$repas=$_REQUEST['repas'];
-			$hebergement=$_REQUEST['hebergement'];
-			//Récupere la ligne de frais actuelle concerné pour pouvoir utiliser les valeur de la ligne existante
+			//Fait les test pour mettre la valeur 0
+			if($_REQUEST['km']=="")
+			{
+				$km=0;
+			} else {
+				$km=$_REQUEST['km'];
+			}
+			if($_REQUEST['peage']=="")
+			{
+				$peage=0;
+			} else {
+				$peage=$_REQUEST['peage'];
+			}
+			if($_REQUEST['repas']=="")
+			{
+				$repas=0;
+			} else {
+				$repas=$_REQUEST['repas'];
+			}
+			if($_REQUEST['hebergement']=="")
+			{
+				$hebergement=0;
+			} else {
+				$hebergement=$_REQUEST['hebergement'];
+			}
+			//Récupere la ligne de frais actuelle concerné pour pouvoir utiliser les valeurs de la ligne existante
 			$lignefraisactuelle=$pdo->recupLigneFrais2($mail,$date);
 			$motif2=$lignefraisactuelle['LIBELLE'];
 			$trajet2=$lignefraisactuelle['TRAJET'];
@@ -74,7 +95,8 @@ switch($action)
 			//Permet de savoir si l'administrateur a réalisé des modifications
 			if($motif!=$motif2||$trajet!=$trajet2||$km!=$km2||$peage!=$peage2||$repas!=$repas2||$hebergement!=$hebergement2)
 			{
-				$ligneFrais=$pdo->modifierFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement);
+				$total = ($km*$_SESSION['tarif'])+$repas+$peage+$hebergement;
+				$ligneFrais=$pdo->modifierFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement,$total);
 
 				$message="Les modifications ont bien été enregistré";
 			}
@@ -211,7 +233,7 @@ switch($action)
         $fraisTotal = 0;
         foreach($fraisValide as $unfrais)
         {
-        	$fraisTotal += ($unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+$unfrais['KM']*$tarifkm);
+        	$fraisTotal += $unfrais['cout_total'];
         }
 
         include("./vues/v_bordereau.php");

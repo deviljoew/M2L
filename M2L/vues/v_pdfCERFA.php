@@ -1,7 +1,11 @@
 <?php
 
 ob_get_clean();
-$pdf = new PDF();
+require('./util/tfpdf/tfpdf.php');
+define("_SYSTEM_TTFONTS", "C:/Windows/Fonts/");
+
+$pdf = new tFPDF();
+$pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
 $pdf->AddPage();
 $pdf->SetTitle('Reçu CERFA don',true);
 $pdf->SetFont('Arial','',11);
@@ -37,7 +41,8 @@ function Header(){
 $pdf->Cell(190, 8, "Bénéficiaire des versements", 1, 1, "C", true);
 $pdf->SetFont('Arial','',12);
 $pdf->SetFillColor(255,255,255);
-$pdf->Cell(190, 8, "Nom ou dénomination : \n", 0, 0, "C", true); $pdf->Cell(190, 8, $nomclub, 0, 1, "C", true);
+$pdf->Cell(190, 8, "Nom ou dénomination : \n", 0, 0, "C", true);
+$pdf->Cell(190, 8, $nomclub, 0, 1, "C", true);
 $pdf->Cell(190, 8, "Adresse : \n" . $adresseclub , 0, 1, "C", true);
 $pdf->Cell(190, 8, "Oeuvre ou organisme d'intérêt général", 0, 1, "C", true);
 

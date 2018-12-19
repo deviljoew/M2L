@@ -99,7 +99,7 @@ public function recupClubNum($num)
 */
 public function recupTarifKM()
 {
-  $req = "Select tarifKM from tresorier where ADRESSE_MAIL='estelle@gmail.com';";
+  $req = "Select tarifKM from tresorier where ADRESSE_MAIL='berbier@gmail.com';";
   $res = PdoM2L::$monPdo->query($req) or die ("La recup du tarif a échoué");
   $tarif=$res->fetch();
   return $tarif;
@@ -126,9 +126,9 @@ public function recupTarifKM()
   * @return la ligne ajouté
  */
 
-  public function ajouterLigneFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement)
+  public function ajouterLigneFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement,$total)
   {
-    $req="Insert into lignes_frais values ('$mail','$date','$motif','$trajet',$km,$peage,$repas,$hebergement,0);";
+    $req="Insert into lignes_frais values ('$mail','$date','$motif','$trajet',$km,$peage,$repas,$hebergement,0,$total);";
     $res = PdoM2L::$monPdo->query($req) or die ("L'insertion de ligne frais à échoué ".$req);
 
   }
@@ -228,7 +228,7 @@ public function recupTarifKM()
 
   public function recupLigneFrais($mail)
   {
-    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where ADRESSE_MAIL='$mail' and valider=0;";
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais where ADRESSE_MAIL='$mail' and valider=0;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -242,7 +242,7 @@ public function recupTarifKM()
 
   public function recupLigneFraisTre()
   {
-    $req="select distinct lignes_frais.ADRESSE_MAIL,NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais,demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=0 order by NOM;";
+    $req="select distinct lignes_frais.ADRESSE_MAIL,NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais,demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=0 order by NOM;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais trésorier à échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -256,7 +256,7 @@ public function recupTarifKM()
 
   public function recupLigneFraisValideTre()
   {
-    $req="select NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais,demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=1 order by NOM;";
+    $req="select NOM,PRENOM,DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais,demandeurs where lignes_frais.ADRESSE_MAIL=demandeurs.ADRESSE_MAIL and valider=1 order by NOM;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais trésorier validé a échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -287,7 +287,7 @@ public function recupTarifKM()
 
   public function recupLigneFrais2($mail,$date)
   {
-    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where DATE='$date' and lignes_frais.ADRESSE_MAIL='$mail' and valider=0;";
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais where DATE='$date' and lignes_frais.ADRESSE_MAIL='$mail' and valider=0;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des fraisss à échoué".$req);
     $frais= $res->fetch();
     return $frais;
@@ -302,7 +302,7 @@ public function recupTarifKM()
 
   public function recupLigneFraisValide($mail)
   {
-    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where ADRESSE_MAIL='$mail' and valider=1;";
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais where ADRESSE_MAIL='$mail' and valider=1;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -317,7 +317,7 @@ public function recupTarifKM()
 
   public function recupLigneFraisAnnee($mail,$annee)
   {
-    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT from lignes_frais where ADRESSE_MAIL='$mail' and YEAR(DATE)='$annee' and valider=1;";
+    $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais where ADRESSE_MAIL='$mail' and YEAR(DATE)='$annee' and valider=1;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
     $frais= $res->fetchAll();
     return $frais;
@@ -404,12 +404,14 @@ public function recupTarifKM()
  * @param $
  * @return la ligne de frais mis à jours dans la bdd
 */
-  public function modifierFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement)
+  public function modifierFrais($mail,$date,$motif,$trajet,$km,$peage,$repas,$hebergement,$total)
   {
-    $req="Update lignes_frais set LIBELLE='$motif', TRAJET='$trajet',KM=$km,COUT_PEAGE=$peage,COUT_REPAS=$repas, COUT_HEBERGEMENT=$hebergement where DATE='$date' and ADRESSE_MAIL='$mail';";
+    $req="Update lignes_frais set LIBELLE='$motif', TRAJET='$trajet',KM=$km,COUT_PEAGE=$peage,COUT_REPAS=$repas, COUT_HEBERGEMENT=$hebergement,cout_total='$total' where DATE='$date' and ADRESSE_MAIL='$mail';";
     $res = PdoM2L::$monPdo->query($req) or die ("La modification de la ligne de frais à échoué".$req);
 
   }
+
+
 
 /**
  * Valide la ligne de frais sélectionnée
