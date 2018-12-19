@@ -61,8 +61,8 @@
 
 <div class="container-fluid">
   <div class="row" style="padding-bottom:30px;">
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">La maison des ligues de <br>Lorraine</p>
+    <div class="col-md-4 setheight" style="background-color:black; opacity:0.75;align:center;">
+      <p class="display-4 setFrontTitle" style="color:white;margin-left:10px;margin-top:10px;">La maison des ligues de <br>Lorraine</p>
       <p class="h5 setFrontSize" style="color:white;margin-left:5px;margin-right:5px;">
         <br>
         Elle a pour mission de fournir des espaces et des services aux différentes ligues sportives régionales de Lorraine et à d’autres structures hébergées.<br><br>
@@ -74,7 +74,7 @@
         Les associations sportives (les clubs) peuvent profiter de dispositions fiscales apparues en 2008 pour faire bénéficier de remises d'impôts aux adhérents engageant des frais, en particulier dans le cadre de déplacements liés à des compétitions, des stages sportifs, des réunions... Il s'agit de faciliter par l'informatisation l'établissement du document officiel permettant la remise d'impôts.
       </p>
     </div>
-    <div class="col-md-8" style="background-color:#00000055;z-index:1;height:740px;">
+    <div class="col-md-8">
       <?php
         if(isset($_REQUEST['message']))
         {
@@ -94,7 +94,7 @@
 
         $colorHTMLi = "#070d13";
       ?>
-  <p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
+  <p class="display-4 setFrontTitle" style="color:white;margin-left:50px;margin-top:10px;">Inscription<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en name " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form name="inscription" style="margin:5px;" action="index.php?uc=gererAccueil&action=inscription" onSubmit="return verifChamps();" method="POST">
           <div class="form-row">

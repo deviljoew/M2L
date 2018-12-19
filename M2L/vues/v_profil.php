@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 setHeight" style="background-color:#00000055; opacity:0.9;text-align:center;height:740px;">
+    <div class="col-md-12" style="text-align:center;">
       <a class="Display-4" style="font-size:20px;text-align:center;color:white;decoration:none;font:bold;" href="index.php?uc=Profil&action=voirProfil"><img style="margin:20px;" src="./images/usericone.png" width="150px"/></a>
       <?php
         if(isset($erreurs)){

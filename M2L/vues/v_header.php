@@ -3,7 +3,7 @@ if(!isset($_REQUEST['uc'])){
 	 $_REQUEST['action'] = 'accueil';
 }
 ?>
-    <div class="container-fluid" style="z-index:1;height:auto; background-color:black; opacity:0.9;">
+    <div class="container-fluid" style="margin-top:-25px;z-index:1;height:auto; background-color:black; opacity:0.9;">
       <div class="row">
         <div class="col-md-8">
 					<p class="display-4" style="color:white"><a href="<?php if((isset($_SESSION['demandeur'])&&$_SESSION['demandeur'] == 'ok') || (isset($_SESSION['tresorier'])&&$_SESSION['tresorier'] == 'ok')) { echo "index.php?uc=gererAccueil&action=informations";} else { echo "index.php?uc=accueil&action=accueil";} ?>"><img src="./images/logo_blk.png" width="70px"/></a> Maison des ligues de Lorraine</p>

@@ -211,7 +211,10 @@ switch($action)
 		$cp = $demandeur['CP'];
 		$adresse = $demandeur['RUE'];
 		$numrecu = $demandeur['NUM_RECU'];
+		$resTotal = $pdo->recupLigneFrais($mail);
+		$total = $resTotal[7];
 		$lien=$pdo->recupLien($mail);
+
 		if($lien[0]==null) //Si demandeur alors
 		{
 			$num = $demandeur['NUMCLUBA'];
@@ -235,7 +238,7 @@ switch($action)
 		//Récupération de la date d'aujourd'hui
 		$date= date('d/m/Y');
 		//$date = strftime('%d/%m/%Y',$datetoday);
-		$totalEnLettre = enlettres(111111);
+		$totalEnLettre = enlettres($total);
 		include('./vues/v_pdfCERFA.php');
 		break;
 	}

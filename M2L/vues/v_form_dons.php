@@ -30,9 +30,9 @@ function motifAutre(obj1)
 <?php $colorHTMLi = "#070d13";?>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Notes de frais</p>
-      <p class="h5" style="color:white;margin-left:10px;margin-right:10px;font-size:17px;">
+    <div class="col-md-4 setheight" style="background-color:black; opacity:0.75;align:center;">
+      <p class="display-4 setFrontTitle" style="color:white;margin-left:10px;margin-top:10px;">Notes de frais</p>
+      <p class="h5 setFrontSize" style="color:white;margin-left:10px;margin-right:10px;">
         <br>
         Nous souhaitons permettre aux adhérents ne désirant pas être remboursé de pouvoir faire valoir leur don lors de leur déclaration de revenus et de bénéficier alors d'une remise d’impôts.<br><br>
 
@@ -41,7 +41,7 @@ function motifAutre(obj1)
         Le tresorier validera ou non la note frais et celle-ci viendra alimenter votre bordereau disponible dans l'onglet <span style="color:<?php echo $colorHTML; ?>">Demandes validées</span>.
       </p>
     </div>
-    <div class="col-md-8" style="background-color:#00000055;height:740px;">
+    <div class="col-md-8">
       <?php
         if(isset($_REQUEST['message']))
         {
@@ -61,11 +61,11 @@ function motifAutre(obj1)
 
         $colorHTMLi = "#070d13";
       ?>
-	<p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Création de notes de frais<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
+	<p class="display-4 setFrontTitle" style="color:white;margin-left:50px;margin-top:10px;">Création de notes de frais<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en id " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form class="needs-validation" name="dons" style="margin:50px;" action="index.php?uc=formulaire&action=formvalider" method="POST" onsubmit="return verifChamps();">
         <div class="form-row">
-          <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="group-form input-group col-md-5">
+          <strong><span style="color:<?php echo $colorHTML ?>;">*</span></strong><div class="group-form input-group col-md-6">
             <input type="date" class="form-control form-control-sm" value="<?php echo $dateform;?>" id="date" name="date" required>
             <div class="form-group input-group-append">
               <span style="color:white;background-color:<?php echo $colorHTMLi;?>" class="input-group-text form-control-sm">Date de l'évenement</span>
