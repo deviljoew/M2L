@@ -11,13 +11,13 @@
     <p class="display-4" style="text-align:center;font-size:40px;color:black;margin-left:20px;margin-top:10px;">Bordereau de frais de l'année <?php echo $annee; ?></p>
     <br>
     <p class="display-4" style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Je soussigné(e) <strong><?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?></strong>
-      <br><br>
+      <br>
     </p>
     <p class="display-4" style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">demeurant <strong><?php echo $_SESSION['rue'].' '.$_SESSION['cp'].' '.$_SESSION['ville']; ?></strong>
-      <br><br>
+      <br>
     </p>
     <p class="display-4" style="text-align:center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">certifie renoncer au remboursement des frais ci-dessous et les laisser à l'association <br><strong><?php echo $association.' '; ?></strong><br>en tant que don.
-      <br><br>
+      <br>
     </p>
 
     <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Frais de déplacements :</p>
@@ -29,7 +29,7 @@
           <td class="display-4" style="color:black;font-size:15px;text-align:center;">Motif</td>
           <td class="display-4" style="color:black;font-size:15px;text-align:center;">Trajet</td>
           <td class="display-4" style="color:black;font-size:15px;text-align:center;">Kilomètres</td>
-          <td class="display-4" style="color:black;font-size:20px;text-align:center;background-color:#CCCCCC;">Coût trajet</td>
+          <td class="display-4" style="color:black;font-size:15px;text-align:center;background-color:#CCCCCC;">Coût trajet</td>
           <td class="display-4" style="color:black;font-size:15px;text-align:center;">Coût péage</td>
           <td class="display-4" style="color:black;font-size:15px;text-align:center;">Coût repas</td>
           <td class="display-4" style="color:black;font-size:15px;text-align:center;">Coût hébergement</td>
@@ -48,7 +48,7 @@
         <td class="h4" style="color:black;font-size:17px;text-align:center;"><?php if($unfrais['COUT_PEAGE'] != ""){echo $unfrais['COUT_PEAGE'].' €';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="color:black;font-size:17px;text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].' €';}else{ echo "non renseigné";}?></td>
         <td class="h4" style="color:black;font-size:17px;text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
-        <td class="h4" style="color:black;font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['COUT_HEBERGEMENT']+$unfrais['COUT_REPAS']+$unfrais['COUT_PEAGE']+($unfrais['KM']*$tarifkm).'€'; ?></td>
+        <td class="h4" style="color:black;font-size:17px;text-align:center;background-color:#AAAAAA;"><?php echo $unfrais['cout_total'].'€'; ?></td>
 
 
       </tr>
@@ -71,14 +71,14 @@
         <?php
         } }?>
 
-      <br><br>
+      <br>
      <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Montant total des dons :
         <span style="color:red;"><?php echo $fraisTotal.' €' ?></span>
         <br>
       </p>
 
-        <br>
-      <p class="display-4" style="text-align: center;font-size:20px;color:black;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de tous les justificatifs correspondants
+        
+      <p class="display-4" style="font-size:20px;color:black;margin-left:20px;margin-top:10px;">Pour bénéficier du reçu de dons, cette note de frais doit être accompagnée de tous les justificatifs correspondants.
         <br>
       </p>
       <div >
@@ -87,7 +87,7 @@
   <div class="col-md-3">
   </div>
       <div class="col-md-6">
-        <p class="h4" style="margin-left:50%;font-size:20px;color:black;margin-top:10px;">A<span style="margin-left:10%;">Le</span>
+        <p class="h4" style="margin-left:50%;font-size:20px;color:black;margin-top:10px;">A<span style="margin-left:30%;">Le</span>
           <br><br>
         </p>
 
