@@ -35,7 +35,7 @@
             <td class="h4 setFrontSize" style="text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['cout_total'].' €'; ?></td>
 
            </tr>
-                     <?php } ?>
+               <?php } ?>
            <tr>
              <td colspan=10 style="text-align:center;"><div class="dropdown">
                <button style="width:800px;" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -27,18 +27,18 @@ switch($action)
 		if(($_REQUEST['km']==""||$_REQUEST['km']==0)&&($_REQUEST['peage']!=""||$_REQUEST['peage']!=0))
 			{
 				$erreurs="Vous ne pouvez pas avoir 0 km et avoir des frais de péages";
-				
+
 			} else {
-				
+
 					if($_REQUEST['km']=="")
 						$km=0;
-				
+
 					if($_REQUEST['peage']=="")
 						$peage=0;
-					
+
 					if($_REQUEST['repas']=="")
 						$repas=0;
-					
+
 					if($_REQUEST['hebergement']=="")
 						$hebergement=0;
 
@@ -47,7 +47,7 @@ switch($action)
 					if($dateform>$dateactuelle)
 					{
 						$erreurs="Veuillez saisir une date valide";
-						
+
 					} else {
 						$total = $km*$_SESSION['tarif']+$repas+$peage+$hebergement;
 						$dateform= strftime('%Y-%m-%d',strtotime($dateform));
@@ -90,18 +90,18 @@ switch($action)
 			if(($_REQUEST['km']==""||$_REQUEST['km']==0)&&($_REQUEST['peage']!=""||$_REQUEST['peage']!=0))
 			{
 				$erreurs="Vous ne pouvez pas avoir 0 km et avoir des frais de péages";
-				
+
 			} else {
-				
+
 					if($_REQUEST['km']=="")
 						$km=0;
-				
+
 					if($_REQUEST['peage']=="")
 						$peage=0;
-					
+
 					if($_REQUEST['repas']=="")
 						$repas=0;
-					
+
 					if($_REQUEST['hebergement']=="")
 						$hebergement=0;
 					//Récupere la ligne de frais actuelle concerné pour pouvoir utiliser les valeurs de la ligne existante
@@ -212,7 +212,6 @@ switch($action)
 		$adresse = $demandeur['RUE'];
 		$numrecu = $demandeur['NUM_RECU'];
 		$resTotal = $pdo->recupLigneFrais($mail);
-		$total = $resTotal[7];
 		$lien=$pdo->recupLien($mail);
 
 		if($lien[0]==null) //Si demandeur alors
@@ -236,13 +235,12 @@ switch($action)
 				$annee++;
 		$fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
 		$total = 0;
-        foreach($fraisValide as $unfrais)
-        {
-        	$total += $unfrais['cout_total'];
-        }
+    foreach($fraisValide as $unfrais)
+    {
+    	$total += $unfrais['cout_total'];
+    }
 		//Récupération de la date d'aujourd'hui
 		$date= date('d/m/Y');
-		//$date = strftime('%d/%m/%Y',$datetoday);
 		$totalEnLettre = CreerChiffreEnLettre($total);
 		include('./vues/v_pdfCERFA.php');
 		break;
