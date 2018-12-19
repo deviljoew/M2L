@@ -58,7 +58,7 @@ $pdf->Cell(190, 8, "Donateur", 1, 1, "C", true);
 $pdf->SetFont('Arial','',12);
 
 $pdf->MultiCell(190,8, "Nom : ".$nom." \nAdresse : ".$adresse." \nCode postal : ".$cp."     Commune : ".$ville." \n ", 1, "L", false);
-$pdf->MultiCell(190,8, "Le beneficiaire reconnait avoir recu au titre des versements ouvrant droit a reduction d'impot, la somme de : ".$total." \n
+$pdf->MultiCell(190,8, "Le beneficiaire reconnait avoir recu au titre des versements ouvrant droit a reduction d'impot, la somme de : ".$total." €\n
 Somme en toute lettre : $totalEnLettre euros \n
 Date du paiement : ".$date."\n
 Motif du versement : Autres \n                                                                               Date et signature: \n\n ", 1, "L", false);
