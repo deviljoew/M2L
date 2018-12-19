@@ -243,7 +243,7 @@ switch($action)
 		//Récupération de la date d'aujourd'hui
 		$date= date('d/m/Y');
 		//$date = strftime('%d/%m/%Y',$datetoday);
-		$totalEnLettre = enlettres($total);
+		$totalEnLettre = CreerChiffreEnLettre($total);
 		include('./vues/v_pdfCERFA.php');
 		break;
 	}
