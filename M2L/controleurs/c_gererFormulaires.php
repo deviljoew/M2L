@@ -79,7 +79,7 @@ switch($action)
 	{
 		$mail=$_SESSION['mail'];
 
-			$date=strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
+			$date=strftime('%Y-%m-%d',$_REQUEST['date']);
 			$motif=$_REQUEST['motif'];
 			$trajet=$_REQUEST['trajet'];
 			$peage=$_REQUEST['peage'];
