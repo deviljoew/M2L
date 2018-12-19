@@ -16,9 +16,9 @@
               <td class="display-4 setFrontSize" style="text-align:center;">Coût hébergement</td>
               <td class="display-4 setFrontSize" style="text-align:center;background-color:#CCCCCC;">Coût total</td>
             </tr>
-          <?php
-                foreach($fraisValides as $unfrais){
-            ?>
+                <?php
+                      foreach($fraisValides as $unfrais){
+                  ?>
           <tr>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['NOM'] != ""){echo $unfrais['NOM'];}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['PRENOM'] != ""){echo $unfrais['PRENOM'];}else{ echo "non renseigné";}?></td>
@@ -32,7 +32,7 @@
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['cout_total'].' €'; ?></td>
            </tr>
-                     <?php } ?>
+               <?php } ?>
            <tr>
              <td colspan=10 style="text-align:center;"><div class="dropdown">
                <button style="width:800px;" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
