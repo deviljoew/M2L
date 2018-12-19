@@ -41,12 +41,13 @@ $pdf->SetFont('Arial','',9);
 $pdf->Cell(190, 8, "Beneficiaire des versements", 1, 1, "C", true);
 $pdf->SetFont('Arial','',12);
 $pdf->SetFillColor(255,255,255);
-$pdf->MultiCell(190,8, "Nom ou denomination : ".$nomclub." \n \nAdresse :" . $adresseclub ." \n ", 1, "L", false);
-
-$pdf->Ln(5);
+$pdf->MultiCell(190,8, "Nom ou denomination : ".$nomclub." \n \nAdresse : " . $adresseclub ." \n ", 1, "L", false);
 
 $pdf->SetFont('Arial','B',14);
 $pdf->SetFillColor(230,230,230);
+$pdf->Cell(190, 8, "Type de beneficiaire :", 1, 1, "C", true);
+$pdf->SetFont('Arial','',14);
+$pdf->SetFillColor(255,255,255);
 $pdf->Cell(190, 8, "Oeuvre ou organisme d'interet general", 1, 1, "C", true);
 $pdf->SetFont('Arial','',12);
 
@@ -58,7 +59,7 @@ $pdf->Cell(190, 8, "Donateur", 1, 1, "C", true);
 $pdf->SetFont('Arial','',12);
 
 $pdf->MultiCell(190,8, "Nom : ".$nom." \nAdresse : ".$adresse." \nCode postal : ".$cp."     Commune : ".$ville." \n ", 1, "L", false);
-$pdf->MultiCell(190,8, "Le beneficiaire reconnait avoir recu au titre des versements ouvrant droit a reduction d'impot, la somme de : ".$total." €\n
+$pdf->MultiCell(190,8, "Le beneficiaire reconnait avoir recu au titre des versements ouvrant droit a reduction d'impot, la somme de : ".$total." euros\n
 Somme en toute lettre : $totalEnLettre euros \n
 Date du paiement : ".$date."\n
 Motif du versement : Autres \n                                                                               Date et signature: \n\n ", 1, "L", false);
