@@ -230,7 +230,7 @@ public function recupTarifKM()
   {
     $req="select DATE,LIBELLE,TRAJET,KM,COUT_PEAGE,COUT_REPAS,COUT_HEBERGEMENT,cout_total from lignes_frais where ADRESSE_MAIL='$mail' and valider=0;";
     $res = PdoM2L::$monPdo->query($req)or die ("La récup des frais à échoué".$req);
-    $frais= $res->fetchAll();
+    $frais= $res->fetch();
     return $frais;
   }
   /**

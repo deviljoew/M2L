@@ -33,8 +33,8 @@ function motifAutre(obj1)
 <?php $colorHTMLi = "#070d13";?>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Notes de frais</p>
+    <div class="col-md-4 setheight" style="background-color:black; opacity:0.75;align:center;">
+      <p class="display-4 setFrontTitle" style="color:white;margin-left:10px;margin-top:10px;">Notes de frais</p>
       <p class="h5 setFrontSize" style="color:white;margin-left:10px;margin-right:10px;">
         <br>
         Nous souhaitons permettre aux adhérents ne désirant pas être remboursé de pouvoir faire valoir leur don lors de leur déclaration de revenus et de bénéficier alors d'une remise d’impôts.<br><br>
@@ -64,7 +64,7 @@ function motifAutre(obj1)
 
         $colorHTMLi = "#070d13";
       ?>
-	<p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Création de notes de frais<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
+	<p class="display-4 setFrontTitle" style="color:white;margin-left:50px;margin-top:10px;">Création de notes de frais<strong><span style="font-size:15px;color:<?php echo $colorHTML ?>;">  * Champs obligatoires</span></strong></p>
         <!-- !!!!! Renvoie en id " adressemail, motdepasse, prenom, nom, civilite, ville, codepostal, checkboxlicence, licence (si licencié) " par la methode POST dans inscription.php !!!!!!-->
       <form class="needs-validation" name="dons" style="margin:50px;" action="index.php?uc=formulaire&action=formvalider" method="POST" onsubmit="return verifChamps();">
         <div class="form-row">

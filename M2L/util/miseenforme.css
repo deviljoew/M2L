@@ -1,10 +1,41 @@
 .setFrontSize{
-   font-size: 20px;
+   font-size: 18px;
+ }
+
+ .setFrontTitle{
+    font-size: 45px;
+  }
+
+.Size25{
+   font-size: 25px;
+ }
+
+.setheight{
+   height:725px;
+ }
+
+ @media only screen and (max-width: 760px) {
+   .setheight{
+     height:auto;
+     padding-bottom:30px;
+   }
+ }
+
+ @media only screen and (max-width: 760px) {
+   .setFrontTitle{
+      font-size: 32px;
+    }
  }
 
  @media only screen and (max-width: 1100px) {
    .setFrontSize{
      font-size: 15px;
+   }
+ }
+
+ @media only screen and (max-width: 1100px) {
+   .Size25{
+     font-size: 20px;
    }
  }
 
@@ -14,8 +45,20 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .Size25{
+    font-size: 15px;
+  }
+}
+
 @media only screen and (max-width: 360px) {
   .setFrontSize{
     font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .Size25{
+    font-size: 10px;
   }
 }

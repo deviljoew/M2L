@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-9">
-    <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Vos notes de frais validées :</p>
+    <p class="display-4 setFrontTitle" style="color:white;margin-left:20px;margin-top:10px;">Vos notes de frais validées :</p>
         <table class="table table-light table-hover table-bordered">
             <tr>
               <td class="display-4 setFrontSize" style="text-align:center;">Date</td>
@@ -77,8 +77,8 @@
       </table>
 
     </div>
-    <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
+    <div class="col-md-3 setheight" style="background-color:black; opacity:0.75;align:center;">
+      <p class="display-4 setFrontTitle" style="color:white;margin-left:10px;margin-top:10px;">Demandes acceptées</p>
       <p class="h5 setFrontSize" style="color:white;margin-left:10px;margin-right:10px;">
         Votre liste de frais acceptées.<br>En fin d'année, vous allez pouvoir recevoir un document CERFA (pdf) qui vous sera envoyé par mail (Cela comprend uniquement les frais acceptés de l'année en cours)<br>Vous pourrez ainsi le joindre à vos impots et faire valoir ce don lors de votre déclaration de revenus pour
 bénéficier de remise d’impôts.

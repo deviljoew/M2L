@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-9">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Vos notes de frais :</p>
+      <p class="display-4 setFrontTitle" style="color:white;margin-left:10px;margin-top:10px;">Vos notes de frais :</p>
       <?php
         if(isset($message)){
           include("./vues/v_message.php");
@@ -43,8 +43,8 @@
         </table>
 
     </div>
-    <div class="col-md-3" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Demandes en attentes</p>
+    <div class="col-md-3 setheight" style="background-color:black; opacity:0.75;align:center;">
+      <p class="display-4 setFrontTitle" style="color:white;margin-left:10px;margin-top:10px;">Demandes en attentes</p>
       <p class="h5 setFrontSize" style="color:white;margin-left:10px;margin-right:10px;">
         Vos lignes de frais en attente de validation par le trésorier.<br><br>
 
