@@ -388,10 +388,9 @@ public function recupTarifKM()
   * @param $adressemail
   * @return le mail et le mdp
  */
-
  public function retrouverMdp($adressemail)
  {
-     $req="select MDP from demandeurs where ADRESSE_MAIL = '$adressemail';";
+   $req="select MDP from demandeurs where ADRESSE_MAIL = '$adressemail';";
    $res = PdoM2L::$monPdo->query($req)or die ("La récup du mail à échoué".$req);
    $mdp= $res->fetch();
    return $mdp;

@@ -1,9 +1,9 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12" style="background-color:black; opacity:0.75; height:740px;align:center;">
-      <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">La maison des ligues de Lorraine</p>
-      <p class="h5" style="color:white;margin-left:20px;margin-right:10px;">
+    <div class="col-md-12" style="background-color:#00000055;height:700px;">
+      <p class="display-4" style="text-align:center;color:white;margin-left:20px;margin-top:10px;">La maison des ligues de Lorraine</p>
+      <p class="h5 setFrontSize" style="text-align:center;color:white;margin-left:20px;margin-right:10px;">
         <br>
         Elle a pour mission de fournir des espaces et des services aux différentes ligues sportives régionales de Lorraine et à d’autres structures hébergées.<br><br>
 

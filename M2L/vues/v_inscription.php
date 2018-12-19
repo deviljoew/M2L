@@ -74,7 +74,7 @@
         Les associations sportives (les clubs) peuvent profiter de dispositions fiscales apparues en 2008 pour faire bénéficier de remises d'impôts aux adhérents engageant des frais, en particulier dans le cadre de déplacements liés à des compétitions, des stages sportifs, des réunions... Il s'agit de faciliter par l'informatisation l'établissement du document officiel permettant la remise d'impôts.
       </p>
     </div>
-    <div class="col-md-8" style="background-color:#00000055;z-index:1;height:740px;">
+    <div class="col-md-8">
       <?php
         if(isset($_REQUEST['message']))
         {

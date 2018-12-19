@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Nous contacter</p>
-      <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
+      <p class="h5 setFrontSize" style="color:white;margin-left:10px;margin-right:10px;">
         Nous pouvons répondre à toutes vos questions concernant votre adhésion à M2L.<br><br>
 
         Nous nous chargeons de régler toutes éventuelles erreurs ou problèmes liés aux document CERFA.
       </p>
     </div>
-    <div class="col-md-8" style="background-color:#00000055;height:740px;">
+
+    <div class="col-md-8">
 		<p class="display-4" style="color:white;margin-left:50px;margin-top:10px;">Contact</p>
       <form style="margin:50px;width:700px;" action="index.php?uc=contact&action=envoyerMessage" method="POST">
         <div class="form-group">

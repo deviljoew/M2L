@@ -15,7 +15,7 @@ function verifChamps()
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8" style="padding-bottom:30px;background-color:#00000055;opacity:0.9;">
+    <div class="col-md-8">
     <p class="display-4" style="color:white;margin-left:20px;margin-top:10px;">Modifier vos notes de frais :</p>
       <form onSubmit="return verifChamps();" action="index.php?uc=formulaire&date=<?=$date?>&motif=<?=$_REQUEST['motif']?>&trajet=<?=$_REQUEST['trajet']?>&km=<?=$_REQUEST['km']?>&peage=<?=$_REQUEST['peage']?>&repas=<?=$_REQUEST['repas']?>&hebergement=<?=$_REQUEST['hebergement']?>&action=misAjoursFrais" method="POST">
         <table class="table table-light table-hover table-bordered">
@@ -56,7 +56,7 @@ function verifChamps()
     </div>
     <div class="col-md-4" style="background-color:black; opacity:0.75; height:740px;align:center;">
       <p class="display-4" style="color:white;margin-left:10px;margin-top:10px;">Modification des demandes</p>
-      <p class="h5" style="color:white;margin-left:10px;margin-right:10px;">
+      <p class="h5 setFrontSize" style="color:white;margin-left:10px;margin-right:10px;">
         Vous pouvez modifier vos lignes de frais ci contre<br><br>
       </p>
     </div>
