@@ -77,9 +77,9 @@ switch($action)
 	}
 	case 'misAjoursFrais' :
 	{
-		$mail=$_SESSION['mail'];
-
-			$date=strftime('%Y-%m-%d',$_REQUEST['date']);
+			$mail=$_SESSION['mail'];
+			$date=date($annee.'-'.$mois.'-'.$jours);
+			//$date=strftime('%Y-%m-%d',date);
 			$motif=$_REQUEST['motif'];
 			$trajet=$_REQUEST['trajet'];
 			$peage=$_REQUEST['peage'];
@@ -228,6 +228,7 @@ switch($action)
 			$adresseclub = $club['RUE'];
 			$nomclub = $club['NOM'];
 		}
+		//Récupération de l'année en cours
 		$datea = date('Y-m-d');
 		$datea = date_parse($datea);
 		$annee = $datea['year'];
@@ -235,10 +236,10 @@ switch($action)
 				$annee++;
 		$fraisValide =$pdo->recupLigneFraisAnnee($mail,$annee);
 		$total = 0;
-    foreach($fraisValide as $unfrais)
-    {
-    	$total += $unfrais['cout_total'];
-    }
+	    foreach($fraisValide as $unfrais)
+	    {
+	    	$total += $unfrais['cout_total'];
+	    }
 		//Récupération de la date d'aujourd'hui
 		$date= date('d/m/Y');
 		$totalEnLettre = CreerChiffreEnLettre($total);

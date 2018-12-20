@@ -14,15 +14,17 @@ $pdf->SetFont('Arial','',9);
 
   // Logo
   $pdf->Ln(5);
-  $pdf->Image('./images/cerfa.png',10,11,30);
+  $pdf->Image('./images/cerfa.png',10,9,30);
   // Police Arial gras 15
-  $pdf->SetFont('Arial','B',11);
+  $pdf->SetFont('Arial','B',16);
+  $pdf->Ln(10);
   // Décalage à droite
-  $pdf->Cell(90);
+  $pdf->Cell(85);
+
   // Titre
   $pdf->Cell(20,10,'Recu au titre des dons a certains organismes d\'interet general',0,0,'C');
   // Saut de ligne
-  $pdf->Ln(20);
+  $pdf->Ln(10);
 
   $pdf->SetFont('Arial','',9);
   //n° CERFA
@@ -33,7 +35,7 @@ $pdf->SetFont('Arial','',9);
   $pdf->Cell(30,10,'Numero d\'orde du recu : ',0,1,'C');
   $pdf->Cell(150);
   $pdf->SetFont('Arial','B',14);
-  $pdf->Cell(30,10,$numrecu.'',1,1,'C');
+  $pdf->Cell(30,10,$annee.'-'.$numrecu.'',1,1,'C');
   $pdf->Ln(5);
 
 
