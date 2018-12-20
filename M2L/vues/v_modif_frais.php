@@ -24,7 +24,7 @@ function verifChamps()
         }
       ?>
 
-      <form onSubmit="return verifChamps();" action="index.php?uc=formulaire&date=<?=$date?>&motif=<?=$_REQUEST['motif']?>&trajet=<?=$_REQUEST['trajet']?>&km=<?=$_REQUEST['km']?>&peage=<?=$_REQUEST['peage']?>&repas=<?=$_REQUEST['repas']?>&hebergement=<?=$_REQUEST['hebergement']?>&action=misAjoursFrais" method="POST">
+      <form onSubmit="return verifChamps();" action="index.php?uc=formulaire&date=<?=$_REQUEST['date']?>&motif=<?=$_REQUEST['motif']?>&trajet=<?=$_REQUEST['trajet']?>&km=<?=$_REQUEST['km']?>&peage=<?=$_REQUEST['peage']?>&repas=<?=$_REQUEST['repas']?>&hebergement=<?=$_REQUEST['hebergement']?>&action=misAjoursFrais" method="POST">
         <table class="table table-light table-hover table-bordered">
           <tr>
             <td class="display-4" style="font-size:15px;text-align:center;">Date</td>
@@ -36,7 +36,7 @@ function verifChamps()
             <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
           </tr>
           <tr>
-              <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $date?>" id="date" name="date" placeholder="Date" required></td>
+              <td class="display-4" style="font-size:20px;text-align:center;"><input type="date" class="form-control form-control-sm" value="<?php echo $date?>" id="date" name="date" placeholder="Date" required></td>
               <td class="display-4" style="font-size:20px;text-align:center;"><select class="form-control form-control-sm" id="motif" name="motif" required>
                 <option disabled="disabled" selected>Motif</option>
                <?php foreach($motifs as $unmotif)

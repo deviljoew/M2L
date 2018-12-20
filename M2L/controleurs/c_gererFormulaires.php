@@ -77,9 +77,9 @@ switch($action)
 	}
 	case 'misAjoursFrais' :
 	{
-			$mail=$_SESSION['mail'];
-			$date=date($annee.'-'.$mois.'-'.$jours);
-			//$date=strftime('%Y-%m-%d',date);
+		$mail=$_SESSION['mail'];
+			
+			$date=strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
 			$motif=$_REQUEST['motif'];
 			$trajet=$_REQUEST['trajet'];
 			$peage=$_REQUEST['peage'];
