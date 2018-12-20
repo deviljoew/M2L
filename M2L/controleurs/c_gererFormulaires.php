@@ -70,13 +70,7 @@ switch($action)
 	}
 	case 'modifierfrais':
 	{
-		$date = $_REQUEST['date'];
-
-		$dateExplode = explode('/', $date);
-		$d = $dateExplode[0];
-		$m = $dateExplode[1];
-		$y = $dateExplode[2];
-		$date = $y .'-'. $m .'-'. $d;
+		$date = strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
 
 		$motifs = $pdo->recupMotifs();
 		include("./vues/v_modif_frais.php");
@@ -87,8 +81,7 @@ switch($action)
 
 		$mail=$_SESSION['mail'];
 			
-			$date=$_REQUEST['date'];
-
+			$date = strftime('%Y-%m-%d',strtotime($_REQUEST['date']));
 			$motif=$_REQUEST['motif'];
 			$trajet=$_REQUEST['trajet'];
 			$peage=$_REQUEST['peage'];
