@@ -6,6 +6,9 @@
         if(isset($message)){
           include("./vues/v_message.php");
         }
+        if(isset($erreurs)){
+          include("./vues/v_erreurs.php");
+        }
       ?>
         <table class="table table-light table-hover table-bordered">
             <tr>
@@ -23,7 +26,8 @@
             </tr>
           <?php
                 foreach($fraisAttente as $unfrais){
-                  $date=strftime('%d/%m/%Y',strtotime(substr((string)$unfrais['DATE'],0,10)));?>
+
+                  $date=strftime('%d/%m/%Y',strtotime(substr($unfrais['DATE'],0,10)));?>
           <tr>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['DATE'] != ""){echo $date;}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['LIBELLE'] != ""){echo $unfrais['LIBELLE'];}else{ echo "non renseigné";}?></td>
@@ -34,7 +38,7 @@
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['COUT_REPAS'] != ""){echo $unfrais['COUT_REPAS'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;"><?php if($unfrais['COUT_HEBERGEMENT'] != ""){echo $unfrais['COUT_HEBERGEMENT'].' €';}else{ echo "non renseigné";}?></td>
             <td class="h4 setFrontSize" style="text-align:center;background-color:#CCCCCC;"><?php echo $unfrais['cout_total'].' €'; ?></td>
-            <td class="h4 setFrontSize" style="text-align:center;"><a TITLE="Modifier votre demande" href="index.php?uc=formulaire&date=<?=$date?>&motif=<?=$unfrais['LIBELLE']?>&trajet=<?=$unfrais['TRAJET']?>&km=<?=$unfrais['KM']?>&peage=<?=$unfrais['COUT_PEAGE']?>&repas=<?=$unfrais['COUT_REPAS']?>&hebergement=<?=$unfrais['COUT_HEBERGEMENT']?>&action=modifierfrais"><img width="30px" src="./images/edit.png"/></a></td>
+            <td class="h4 setFrontSize" style="text-align:center;"><a TITLE="Modifier votre demande" href="index.php?uc=formulaire&date=<?php echo $date; ?>&motif=<?=$unfrais['LIBELLE']?>&trajet=<?=$unfrais['TRAJET']?>&km=<?=$unfrais['KM']?>&peage=<?=$unfrais['COUT_PEAGE']?>&repas=<?=$unfrais['COUT_REPAS']?>&hebergement=<?=$unfrais['COUT_HEBERGEMENT']?>&action=modifierfrais"><img width="30px" src="./images/edit.png"/></a></td>
             <td class="h4 setFrontSize" style="text-align:center;"><a TITLE="Supprimer votre demande"href="index.php?uc=formulaire&date=<?=$unfrais['DATE']?>&action=supprimerfrais" onclick="return confirm('Voulez-vous vraiment supprimer cette ligne de frais? Attention, aucun retour ne sera possible.');"><img width="30px" src="./images/suppr.png"/></a></td>
           </tr>
 

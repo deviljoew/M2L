@@ -36,7 +36,7 @@ function verifChamps()
             <td class="display-4" style="font-size:15px;text-align:center;">Coût hébergement</td>
           </tr>
           <tr>
-              <td class="display-4" style="font-size:20px;text-align:center;"><input type="date" class="form-control form-control-sm" value="<?php echo $date;?>" id="date" name="date" placeholder="Date" required></td>
+              <td class="display-4" style="font-size:20px;text-align:center;"><input type="text" class="form-control form-control-sm" value="<?php echo $date?>" id="date" name="date" placeholder="Date" required></td>
               <td class="display-4" style="font-size:20px;text-align:center;"><select class="form-control form-control-sm" id="motif" name="motif" required>
                 <option disabled="disabled" selected>Motif</option>
                <?php foreach($motifs as $unmotif)

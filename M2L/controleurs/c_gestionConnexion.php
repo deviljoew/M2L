@@ -44,7 +44,7 @@ switch($action)
 					$_SESSION['cp'] = $demandeur['CP'];
 					$_SESSION['ville'] = $demandeur['VILLE'];
 					$_SESSION['sexe'] = $demandeur['SEXE'];
-					$_SESSION['daten'] = strftime('%d-%m-%Y',strtotime($demandeur['DATEN']));
+					$_SESSION['daten'] = strftime('%d/%m/%Y',strtotime($demandeur['DATEN']));
 					$fraisAttente = $pdo->recupLigneFrais($mail);
 					header("Location: index.php?uc=formulaire&action=formdon&message=$message",true);
 				}else{
@@ -63,7 +63,7 @@ switch($action)
 					$_SESSION['cp'] = $tresorier['CP'];
 					$_SESSION['ville'] = $tresorier['VILLE'];
 					$_SESSION['sexe'] = $tresorier['SEXE'];
-					$_SESSION['daten'] = strftime('%d-%m-%Y',strtotime($tresorier['DATEN']));
+					$_SESSION['daten'] = strftime('%d/%m/%Y',strtotime($tresorier['DATEN']));
 					$fraisAttente = $pdo->recupLigneFraisTre();
 					header("Location: index.php?uc=formulaire&action=fraisAttenteTre",true);
 				}
