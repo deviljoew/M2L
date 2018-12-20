@@ -91,8 +91,8 @@ switch($action)
 			$d = $dateExplode[0];
 			$m = $dateExplode[1];
 			$y = $dateExplode[2];
-			$date = date($y.'/'.$m.'/'.$d);
-			$date = $date.'00:00:00.000000';
+			$date = date($y.'-'.$m.'-'.$d);
+			$date = $date.' 00:00:00';
 			//$date=strftime('%Y-%m-%d',date);
 			$motif=$_REQUEST['motif'];
 			$trajet=$_REQUEST['trajet'];
