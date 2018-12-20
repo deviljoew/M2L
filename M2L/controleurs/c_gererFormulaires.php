@@ -70,7 +70,14 @@ switch($action)
 	}
 	case 'modifierfrais':
 	{
-		$date=$_REQUEST['date'];
+		$date = $_REQUEST['date'];
+
+		$dateExplode = explode('/', $date);
+		$d = $dateExplode[0];
+		$m = $dateExplode[1];
+		$y = $dateExplode[2];
+		$date = $y .'-'. $m .'-'. $d;
+
 		$motifs = $pdo->recupMotifs();
 		include("./vues/v_modif_frais.php");
 		break;

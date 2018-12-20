@@ -18,7 +18,7 @@
             </tr>
           <?php
                 foreach($fraisValides as $unfrais){
-                  $date=strftime('%d/%m/%Y',strtotime(substr($unfrais['DATE'],0,10)));
+                  $date = strftime('%d/%m/%Y',strtotime(substr($unfrais['DATE'],0,10)));
             ?>
           <tr>
 
