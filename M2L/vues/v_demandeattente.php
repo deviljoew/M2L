@@ -6,6 +6,9 @@
         if(isset($message)){
           include("./vues/v_message.php");
         }
+        if(isset($erreurs)){
+          include("./vues/v_erreurs.php");
+        }
       ?>
         <table class="table table-light table-hover table-bordered">
             <tr>
